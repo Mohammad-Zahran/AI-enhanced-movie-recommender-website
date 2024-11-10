@@ -25,15 +25,15 @@
     background-color: #222;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-height: 500px
+    max-height: 500px;
 }
 
 .recommendation-swiper .swiper-slide img {
     width: 100%;
     border-radius: 10px;
     transition: transform 0.3s ease;
-    height: 350px;  
-    object-fit: cover;  
+    height: 350px;
+    object-fit: cover;
 }
 
 .recommendation-swiper .swiper-slide:hover img {
@@ -43,36 +43,82 @@
 .recommendation-swiper .swiper-slide h3 {
     font-size: 1.2rem;
     margin: 0.5rem 0;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .recommendation-swiper .swiper-slide p {
     font-size: 0.9rem;
     color: #BBB;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: #FFF;  
-    background-color: transparent; 
+    color: #FFF;
+    background-color: transparent;
     border-radius: 50%;
-    width: 1px; 
-    height: 1px;  
-    font-size: 1.2rem;  
+    width: 25px; 
+    height: 25px;  
+    font-size: 1.5rem;  
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     cursor: pointer;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-    font-size: 1rem; 
+    font-size: 1.5rem;  
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-    background-color: transparent;  
+    background-color: transparent;
 }
 
+/* Mobile and tablet responsive styles */
+@media (max-width: 768px) {
+    .recommendation-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .recommendation-swiper .swiper-slide {
+        max-height: 600px; 
+    }
+
+    .recommendation-swiper .swiper-slide img {
+        height: 600px;  
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 20px;  
+        height: 20px;  
+        font-size: 1.2rem;  
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendation-section {
+        padding: 1.5rem;
+    }
+
+    .recommendation-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .recommendation-swiper .swiper-slide {
+        max-height: 600px;  /* Even smaller height */
+    }
+
+    .recommendation-swiper .swiper-slide img {
+        height: 600px;  
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 18px;  
+        height: 18px;  
+        font-size: 1rem;  
+    }
+}
