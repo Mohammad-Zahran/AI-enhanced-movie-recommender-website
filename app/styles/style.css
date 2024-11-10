@@ -8,6 +8,7 @@
 .recommendation-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .recommendation-swiper {
@@ -120,5 +121,135 @@
         width: 18px;  
         height: 18px;  
         font-size: 1rem;  
+    }
+}
+
+/* Common Styles for both Recommendation and Popular Sections */
+.popular-section {
+    text-align: center;
+    color: #FFF;
+    padding: 2rem;
+    background-color: #020814;
+}
+
+.popular-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.popular-swiper {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.popular-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-height: 500px;
+    flex-grow: 1;
+    margin: 0.5rem;
+}
+
+.popular-swiper .swiper-slide img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    height: 350px;
+    object-fit: cover;
+}
+
+.popular-swiper .swiper-slide:hover img {
+    transform: scale(1.05);
+}
+
+.popular-swiper .swiper-slide h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.popular-swiper .swiper-slide p {
+    font-size: 0.9rem;
+    color: #BBB;
+    overflow: hidden;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #FFF;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.5rem;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: transparent;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .popular-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .popular-swiper .swiper-slide {
+        max-height: 450px;
+        padding: 0.8rem;
+    }
+
+    .popular-swiper .swiper-slide img {
+        height: 300px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 20px;
+        height: 20px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-section {
+        padding: 1rem;
+    }
+
+    .popular-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .popular-swiper .swiper-slide {
+        max-height: 400px;
+        padding: 0.5rem;
+    }
+
+    .popular-swiper .swiper-slide img {
+        height: 250px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 18px;
+        height: 18px;
+        font-size: 1rem;
     }
 }
