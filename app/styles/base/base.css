@@ -4,9 +4,27 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
+@font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Regular.ttf') format('truetype');
+    font-weight: 400; 
+  }
+  
+  @font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Medium.ttf') format('truetype');
+    font-weight: 500; 
+  }
+  
+  @font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Bold.ttf') format('truetype');
+    font-weight: 700; 
+}
+
+  body {
+    font-family: 'Neue Haas Unica', sans-serif;
     background-color: #1E1E1E;
     color: #FFF;
 }
-
+  

@@ -1,3 +1,5 @@
+/* Recommendation-section */
+
 .recommendation-section {
     text-align: center;
     color: #FFF;
@@ -109,7 +111,7 @@
     }
 
     .recommendation-swiper .swiper-slide {
-        max-height: 600px;  /* Even smaller height */
+        max-height: 600px; 
     }
 
     .recommendation-swiper .swiper-slide img {
@@ -124,6 +126,7 @@
     }
 }
 
+/* Popular Section */
 /* Common Styles for both Recommendation and Popular Sections */
 .popular-section {
     text-align: center;

@@ -1,93 +1,183 @@
-  
-  body {
+/* Base styling */
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #1e1e1e;
     font-family: Arial, sans-serif;
-  }
-  
-  .container {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     text-align: center;
-    width: 300px;
-    padding: 20px;
+    width: 400px;
+    padding: 30px;
     background-color: #333;
     border-radius: 8px;
-  }
-  
-  .title {
-    font-size: 24px;
-    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 26px;
+    color: #FFF;
     margin-bottom: 20px;
-  }
-  
-  .form {
+    font-weight: bold;
+}
+
+.form {
     display: flex;
     flex-direction: column;
-  }
-  
-  label {
-    font-size: 14px;
-    color: white;
+}
+
+label {
+    font-size: 16px;
+    color: #FFF;
     margin-bottom: 5px;
     text-align: left;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    padding: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
     margin-bottom: 15px;
     border: none;
     border-bottom: 2px solid #444;
     background-color: #333;
-    color: white;
-    font-size: 16px;
+    color: #FFF;
+    font-size: 18px;
     outline: none;
-  }
-  
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="password"]:focus {
-    border-bottom: 2px solid #555;
-  }
-  
-  .forgot-password {
-    font-size: 12px;
+    transition: border-bottom 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-bottom: 2px solid #007bff;
+}
+
+.forgot-password {
+    font-size: 14px;
     color: #aaa;
     text-decoration: none;
     align-self: flex-start;
     margin-bottom: 15px;
-  }
-  
-  .register-button {
-    padding: 10px;
-    font-size: 16px;
+}
+
+.register-button {
+    padding: 12px;
+    font-size: 18px;
     background-color: #007bff;
-    color: white;
+    color: #FFF;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
-  }
-  
-  .register-button:hover {
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
     background-color: #0056b3;
-  }
-  
-  .no-account {
-    font-size: 14px;
+}
+
+.no-account {
+    font-size: 16px;
     color: #aaa;
     margin-top: 15px;
-  }
-  
-  .create-one {
+}
+
+.create-one {
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .create-one:hover {
+    font-weight: 500;
+}
+
+.create-one:hover {
     text-decoration: underline;
-  }
-  
+}
+
+/* iPad Pro (1024px and above) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .container {
+        width: 600px;
+        padding: 40px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        font-size: 20px;
+        padding: 14px;
+    }
+
+    .register-button {
+        font-size: 20px;
+        padding: 14px;
+    }
+
+    .no-account {
+        font-size: 18px;
+    }
+}
+
+/* Tablet (768px and above) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 500px;
+        padding: 35px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    .register-button {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    .no-account {
+        font-size: 16px;
+    }
+}
+
+/* Phones (up to 767px) */
+@media (max-width: 767px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .register-button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .no-account {
+        font-size: 14px;
+    }
+}
