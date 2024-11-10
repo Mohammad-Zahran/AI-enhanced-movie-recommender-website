@@ -1,0 +1,93 @@
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #444;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-bottom: 2px solid #555;
+  }
+  
+  .forgot-password {
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .register-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .register-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .no-account {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 15px;
+  }
+  
+  .create-one {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .create-one:hover {
+    text-decoration: underline;
+  }
+  
