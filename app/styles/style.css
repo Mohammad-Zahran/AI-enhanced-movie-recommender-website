@@ -1,6 +1,4 @@
 /* Recommendation-section */
-
-
 .recommendation-section {
     text-align: center;
     color: #FFF;
@@ -147,7 +145,7 @@
 .popular-section {
     text-align: center;
     color: #FFF;
-    padding: 2rem 1rem; /* Add padding to section for spacing */
+    padding: 2rem 1rem; 
     background-color: #020814;
 }
 
@@ -157,7 +155,7 @@
 }
 
 .popular-swiper {
-    width: 100%; /* Use full width */
+    width: 100%; 
     margin: auto;
     padding: 0 1rem; /* Add padding for side spacing */
 }
