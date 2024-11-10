@@ -9,7 +9,7 @@
     margin-bottom: 1rem;
 }
 
-/* Swiper container */
+
 .recommendation-swiper {
     width: 100%;
     max-width: 900px;
@@ -48,7 +48,6 @@
     color: #BBB;
 }
 
-/* Pagination and navigation controls */
 .swiper-button-prev,
 .swiper-button-next {
     color: #FFF;
