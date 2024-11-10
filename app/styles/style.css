@@ -2,6 +2,7 @@
     text-align: center;
     color: #FFF;
     padding: 2rem;
+    background-color: #020814;
 }
 
 .recommendation-section h2 {
@@ -9,14 +10,12 @@
     margin-bottom: 1rem;
 }
 
-
 .recommendation-swiper {
     width: 100%;
     max-width: 900px;
     margin: auto;
 }
 
-/* Slide styling */
 .recommendation-swiper .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -26,12 +25,15 @@
     background-color: #222;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-height: 500px
 }
 
 .recommendation-swiper .swiper-slide img {
     width: 100%;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    height: 350px;  
+    object-fit: cover;  
 }
 
 .recommendation-swiper .swiper-slide:hover img {
@@ -41,21 +43,36 @@
 .recommendation-swiper .swiper-slide h3 {
     font-size: 1.2rem;
     margin: 0.5rem 0;
+    overflow: hidden; 
 }
 
 .recommendation-swiper .swiper-slide p {
     font-size: 0.9rem;
     color: #BBB;
+    overflow: hidden; 
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: #FFF;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;  
+    background-color: transparent; 
     border-radius: 50%;
+    width: 1px; 
+    height: 1px;  
+    font-size: 1.2rem;  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1rem; 
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;  
 }
+
