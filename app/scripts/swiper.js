@@ -43,13 +43,19 @@ let popularSwiper = new Swiper('.popular-swiper', {
 
     breakpoints: {
         0: {
-            slidesPerView: 1,  
+            slidesPerView: 1,  // 1 card for mobile
+        },
+        576: {
+            slidesPerView: 2,  // 2 cards for small screens
         },
         768: {
-            slidesPerView: 2,  
+            slidesPerView: 3,  // 3 cards for tablets
         },
         1024: {
-            slidesPerView: 3,
+            slidesPerView: 4,  // 4 cards for desktops
+        },
+        1200: {
+            slidesPerView: 5,  // 5 cards for larger screens
         },
     },
 });

@@ -1,5 +1,6 @@
 /* Recommendation-section */
 
+
 .recommendation-section {
     text-align: center;
     color: #FFF;
@@ -55,6 +56,8 @@
     overflow: hidden;
 }
 
+
+
 .swiper-button-prev,
 .swiper-button-next {
     color: #FFF;
@@ -78,6 +81,20 @@
 .swiper-button-next:hover {
     background-color: transparent;
 }
+
+.swiper-pagination-bullet {
+    width: 10px; 
+    height: 10px;
+    background-color: #BBB; 
+    opacity: 0.6; 
+    margin: 0 6px; 
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #FFF; 
+    opacity: 1; 
+}
+
 
 /* Mobile and tablet responsive styles */
 @media (max-width: 768px) {
@@ -126,12 +143,11 @@
     }
 }
 
-/* Popular Section */
-/* Common Styles for both Recommendation and Popular Sections */
+/* Popular Section Styling */
 .popular-section {
     text-align: center;
     color: #FFF;
-    padding: 2rem;
+    padding: 2rem 1rem; /* Add padding to section for spacing */
     background-color: #020814;
 }
 
@@ -141,119 +157,92 @@
 }
 
 .popular-swiper {
-    width: 100%;
-    max-width: 900px;
+    width: 100%; /* Use full width */
     margin: auto;
+    padding: 0 1rem; /* Add padding for side spacing */
 }
 
 .popular-swiper .swiper-slide {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 1rem;
     background-color: #222;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-height: 500px;
-    flex-grow: 1;
     margin: 0.5rem;
+    max-height: 600px;
 }
 
 .popular-swiper .swiper-slide img {
     width: 100%;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-    height: 350px;
+    height: 400px;
     object-fit: cover;
 }
 
-.popular-swiper .swiper-slide:hover img {
-    transform: scale(1.05);
-}
-
-.popular-swiper .swiper-slide h3 {
+.popular-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1475E6;
+    color: #FFF;
+    padding: 0.5rem 1rem;
     font-size: 1.2rem;
-    margin: 0.5rem 0;
-    overflow: hidden;
+    font-weight: bold;
+    border-radius: 50%;
+    z-index: 1;
 }
 
-.popular-swiper .swiper-slide p {
-    font-size: 0.9rem;
+/* Popular Details Section */
+.popular-details {
+    text-align: left;
+    padding: 1rem 0.5rem;
+    color: #FFF;
+}
+
+.popular-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    color: #1144AA;
+}
+
+.popular-details p {
+    font-size: 1rem;
     color: #BBB;
-    overflow: hidden;
 }
 
+/* Swiper Navigation Buttons */
 .swiper-button-prev,
 .swiper-button-next {
     color: #FFF;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-    background-color: transparent;
+    background-color: #ff4500;
 }
 
-/* Media Queries for responsiveness */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .popular-section h2 {
         font-size: 1.5rem;
     }
-
+    
     .popular-swiper .swiper-slide {
-        max-height: 450px;
-        padding: 0.8rem;
-    }
-
-    .popular-swiper .swiper-slide img {
-        height: 300px;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: 20px;
-        height: 20px;
-        font-size: 1.2rem;
+        max-height: 500px;
     }
 }
 
-@media (max-width: 480px) {
-    .popular-section {
-        padding: 1rem;
-    }
-
-    .popular-section h2 {
-        font-size: 1.2rem;
-    }
-
-    .popular-swiper .swiper-slide {
-        max-height: 400px;
-        padding: 0.5rem;
-    }
-
-    .popular-swiper .swiper-slide img {
-        height: 250px;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: 18px;
-        height: 18px;
-        font-size: 1rem;
-    }
-}
 
