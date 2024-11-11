@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot UI</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/base/base.css">
-    <link rel="stylesheet" href="./styles/base/utilities.css">
-    <link rel="stylesheet" href="./styles/base/colors.css">
+    <title>Chatbot</title>
 </head>
 <body>
-    <div class="chat-container">
-        <header class="chat-header">
-            <h1>CineMate</h1>
-        </header>
-        <div class="chat-sidebar">
-            <button>Recommend a movie</button>
-            <button>Top 10 movies</button>
+    <div class="container">
+        <div class="chat-header">
+            <div class="bot">
+                <img src="./assets/images/bot.png" alt="bot-img" draggable="false">
+                <span></span>
+            </div>
+            <div class="title">
+                Robima
+            </div>
         </div>
-        <div class="chat-area">
-            <div class="chat-message user-message">Hello Robima</div>
-            <div class="chat-message bot-message">Hello! Nice to meet you. Hope you're having a great day.</div>
-            <div class="chat-message user-message">Yes, good. Can you help me with this problem?</div>
-            <div class="chat-message bot-message">Yeah sure.</div>
-            <div class="chat-message user-message">Thank you, Robima.</div>
-            <div class="chat-message bot-message">Any time, human! dajj</div>
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Start a new chat...">
-            <button>➤</button>
+        <div class="chat-body">
+            <div class="chats">
+                <div class="message">
+                    <div>
+                        Hello!
+                    </div>
+                </div>
+                <div class="message response">
+                    <div>
+                        How can I help you?
+                    </div>
+                </div>
+            </div>
+            <div class="sender">
+                <input type="text" placeholder="Write a message" autofocus>
+                <button>
+                    <img src="./assets/images/send.png" alt="send-btn">
+                </button>
+            </div>
         </div>
     </div>
 </body>
