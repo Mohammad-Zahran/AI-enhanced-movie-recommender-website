@@ -1,8 +1,9 @@
 
 
 body{
-    background: linear-gradient(150deg, #D1D0FF, #A9C8FD);
+    background-color: #0D1A33;
     font-family: 'Neue Haas Unica', sans-serif;
+    color: white;
 }
 @font-face {
     font-family: 'Neue Haas Unica';
@@ -33,9 +34,10 @@ body{
 }
 
 .chat-history {
-    width: 30%; /* Set chat history to 30% */
+    width: 30%; 
     min-height: 580px;
-    background-color: #eff2fa;
+    background-color: #1A2B50; 
+    color: #ffffff;
     border-radius: 33px;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, 
@@ -126,7 +128,7 @@ body{
 }
 
 .chat-body{
-    background-color: #eff2fa;
+    background-color: #0D1A33;
     width: calc(100% - 30px);
     min-height: 500px;
     border-radius: 33px;
@@ -194,7 +196,6 @@ body{
 
 /* Sender */
 .chat-body .sender{
-    background-color: white;
     padding: 15px;
     border-radius: 30px;
     position: absolute;
@@ -203,15 +204,23 @@ body{
     box-shadow: rgb(50 50 93 / 14%) 0px -20px 100px -20px;
 }
 .chat-body .sender input{
-    background-color: #EDF2FE;
+    background-color: #1144AA;
     font-family: 'Noto Sans Adlam Unjoined', sans-serif;
     padding: 16px 20px;
     font-size: 17px;
     border-radius: 30px;
     width: calc(100% - 100px);
     margin-right: 10px;
+    color: white;
 }
-.chat-body .sender button{
+
+.chat-body .sender input::placeholder {
+    color: #ffffff; /* Set placeholder text color to white */
+    opacity: 1; /* Ensures the color is fully opaque */
+}
+
+
+.chat-body .sender button {
     position: absolute;
     top: 50%;
     bottom: 50%;
@@ -220,8 +229,19 @@ body{
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    background-color: #457df6;
+    background-color: black;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
+
+.chat-body .sender button:hover {
+    background-color: #1144AA; /* Changes button color on hover */
+    box-shadow: 0px 4px 12px rgba(17, 68, 170, 0.4); /* Adds a soft shadow */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarges the button */
+}
+
+
+
+
 .chat-body .sender img{
     position: relative;
     top: 1px;
