@@ -1,0 +1,10 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.movies_page{
+    margin: 30px 80px;
+}
