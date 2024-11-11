@@ -1,0 +1,246 @@
+/* Recommendation-section */
+.recommendation-section {
+    text-align: center;
+    color: #FFF;
+    padding: 2rem;
+    background-color: #020814;
+}
+
+.recommendation-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.recommendation-swiper {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.recommendation-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-height: 500px;
+}
+
+.recommendation-swiper .swiper-slide img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    height: 350px;
+    object-fit: cover;
+}
+
+.recommendation-swiper .swiper-slide:hover img {
+    transform: scale(1.05);
+}
+
+.recommendation-swiper .swiper-slide h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.recommendation-swiper .swiper-slide p {
+    font-size: 0.9rem;
+    color: #BBB;
+    overflow: hidden;
+}
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #FFF;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 25px; 
+    height: 25px;  
+    font-size: 1.5rem;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.5rem;  
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: transparent;
+}
+
+.swiper-pagination-bullet {
+    width: 10px; 
+    height: 10px;
+    background-color: #BBB; 
+    opacity: 0.6; 
+    margin: 0 6px; 
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #FFF; 
+    opacity: 1; 
+}
+
+
+/* Mobile and tablet responsive styles */
+@media (max-width: 768px) {
+    .recommendation-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .recommendation-swiper .swiper-slide {
+        max-height: 600px; 
+    }
+
+    .recommendation-swiper .swiper-slide img {
+        height: 600px;  
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 20px;  
+        height: 20px;  
+        font-size: 1.2rem;  
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendation-section {
+        padding: 1.5rem;
+    }
+
+    .recommendation-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .recommendation-swiper .swiper-slide {
+        max-height: 600px; 
+    }
+
+    .recommendation-swiper .swiper-slide img {
+        height: 600px;  
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 18px;  
+        height: 18px;  
+        font-size: 1rem;  
+    }
+}
+
+/* Popular Section Styling */
+.popular-section {
+    text-align: center;
+    color: #FFF;
+    padding: 2rem 1rem; 
+    background-color: #020814;
+}
+
+.popular-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.popular-swiper {
+    width: 100%; 
+    margin: auto;
+    padding: 0 1rem; /* Add padding for side spacing */
+}
+
+.popular-swiper .swiper-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0.5rem;
+    max-height: 600px;
+}
+
+.popular-swiper .swiper-slide img {
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.popular-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1475E6;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Popular Details Section */
+.popular-details {
+    text-align: left;
+    padding: 1rem 0.5rem;
+    color: #FFF;
+}
+
+.popular-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    color: #1144AA;
+}
+
+.popular-details p {
+    font-size: 1rem;
+    color: #BBB;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #ff4500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .popular-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .popular-swiper .swiper-slide {
+        max-height: 500px;
+    }
+}
+
+

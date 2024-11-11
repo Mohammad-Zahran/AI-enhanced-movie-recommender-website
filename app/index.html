@@ -1,16 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="./styles/style.css">
-        <link rel="stylesheet" href="./styles/base/base.css">
-        <link rel="stylesheet" href="./styles/base/utilities.css">
-        <link rel="stylesheet" href="./styles/base/colors.css">
-        <script src="scripts/script.js"></script>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/base/base.css">
+    <link rel="stylesheet" href="./styles/base/utilities.css">
+    <link rel="stylesheet" href="./styles/base/colors.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="./scripts/gsap.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Recommendation Section -->
+    <section class="recommendation-section">
+        <h2>Recommendations</h2>
+        <div class="swiper recommendation-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./assets/images/gruu.jpeg" alt="Despicable Me 4">
+                    <h3>Despicable Me 4</h3>
+                    <p>Jan 07 2024, USA</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/images/dune.jpg" alt="Dune">
+                    <h3>Dune</h3>
+                    <p>Jan 07 2024, USA</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/images/smile.jpg" alt="Smile 2">
+                    <h3>Smile 2</h3>
+                    <p>Jan 07 2024, USA</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/images/smile.jpg" alt="Smile 2">
+                    <h3>Smile 2</h3>
+                    <p>Jan 07 2024, USA</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/images/smile.jpg" alt="Smile 2">
+                    <h3>Smile 2</h3>
+                    <p>Jan 07 2024, USA</p>
+                </div>
+            </div>
+
+            <div class="swiper-postion">
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Slide Item -->
+    <section class="popular-section">
+        <h2>Top 10 on Title This Week</h2>
+        <div class="swiper popular-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="popular-number">1</div>
+                    <img src="./assets/images/smile.jpg" alt="Jurassic Park">
+                    <div class="popular-details">
+                        <h3>Jurassic Park</h3>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="popular-number">2</div>
+                    <img src="./assets/images/d.jpeg" alt="Jurassic Park">
+                    <div class="popular-details">
+                        <h3>Jurassic Park</h3>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="popular-number">3</div>
+                    <img src="./assets/images/d.jpeg" alt="Jurassic Park">
+                    <div class="popular-details">
+                        <h3>Jurassic Park</h3>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="popular-number">4</div>
+                    <img src="./assets/images/d.jpeg" alt="Jurassic Park">
+                    <div class="popular-details">
+                        <h3>Jurassic Park</h3>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="popular-number">5</div>
+                    <img src="./assets/images/d.jpeg" alt="Jurassic Park">
+                    <div class="popular-details">
+                        <h3>Jurassic Park</h3>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="popular-number">6</div>
+                    <img src="./assets/images/d.jpeg" alt="Jurassic Park">
+                    <div class="popular-details">
+                        <h3>Jurassic Park</h3>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+                <!-- Additional slides follow the same structure -->
+            </div>
+            <!-- Pagination and Navigation for Swiper -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./scripts/swiper.js"></script>
+
+
+</body>
+
 </html>
