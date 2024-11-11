@@ -2,10 +2,24 @@
 
 body{
     background: linear-gradient(150deg, #D1D0FF, #A9C8FD);
+    font-family: 'Neue Haas Unica', sans-serif;
 }
-
-body {
-    background: linear-gradient(150deg, #D1D0FF, #A9C8FD);
+@font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Regular.ttf') format('truetype');
+    font-weight: 400; 
+  }
+  
+  @font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Medium.ttf') format('truetype');
+    font-weight: 500; 
+  }
+  
+  @font-face {
+    font-family: 'Neue Haas Unica';
+    src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Bold.ttf') format('truetype');
+    font-weight: 700; 
 }
 
 .ai-section {
@@ -28,6 +42,42 @@ body {
                 rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     overflow-y: auto;
 }
+
+.chat-item {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+}
+
+.chat-item:hover {
+    background-color: #e8f0ff; /* Highlight on hover */
+}
+
+.chat-title {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.chat-snippet {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-timestamp {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: right;
+    display: block;
+}
+
 
 .container {
     width: 70%; /* Set chat container to 70% */
