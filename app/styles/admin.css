@@ -1,0 +1,32 @@
+body{
+    background-color: #020814;
+}
+
+.navbar{
+    background-color: #0D1A33;
+    justify-content: space-between;
+    padding: 0;
+    
+}
+.navbar > .logo,.navbar > .bell{
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar > .search-bar{
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
