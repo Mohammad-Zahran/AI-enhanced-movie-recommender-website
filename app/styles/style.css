@@ -96,3 +96,14 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
+/* Footer */
+footer{
+    height: 194px;
+    align-items: center;
+    background-color: #020814;
+}
+
+.footer-1, .footer-2{
+    width: 50%;
+}
