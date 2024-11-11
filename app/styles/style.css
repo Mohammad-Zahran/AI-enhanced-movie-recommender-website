@@ -10,6 +10,108 @@ body{
 }
 
 /* Movies Section */
+.movies-cards {
+    justify-content: space-around;
+    padding: 20px;
+    margin: 50px;
+}
+
+.movie-card {
+    background-color: #1a1a2e;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    width: 300px;
+    color: #fff;
+    margin: 15px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-poster {
+    width: 100px;
+    height: 140px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.movie-details {
+    flex-grow: 1;
+    position: relative;
+}
+
+.title-like-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.movie-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.likes-number {
+    margin-left: 5px;
+    color: #aaaaaa;
+}
+
+.movie-duration {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 5px 0;
+}
+
+.movie-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bookmark-btn svg {
+    cursor: pointer;
+}
+
+.bookmark-btn:hover{
+    color: green;
+}
+
+.movie-rating {
+    display: flex;
+    gap: 3px;
+    font-size: 25px;
+    color: #ffdd57;
+    margin-top: 5px;
+}
+
+.movie-rating span {
+    color: #ccc;
+}
 
 
 /* Recommendation-section */
