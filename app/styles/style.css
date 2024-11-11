@@ -107,3 +107,25 @@ footer{
 .footer-1, .footer-2{
     width: 50%;
 }
+.footer-1{
+    justify-content: flex-start;
+    padding-left: 156px;
+}
+
+.footer-2{
+    gap: 100px;   
+}
+
+.footer-2 ul li a {
+    font-size: 16px;
+    color: #BACDF5;
+}
+.footer-1 > p {
+    font-size: 18px;
+    color: #BACDF5;
+}
+.footer-1 > h2 ,.footer-2 ul li:first-child a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+}
