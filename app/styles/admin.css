@@ -37,3 +37,101 @@ main .sidebar .sidebar-links > a{
 main .sidebar .sidebar-links > a:focus{
     color: #524F4F;
 }
+
+main .main{
+    flex: 1;
+    height: calc(100vh - 87px);
+    margin-top: 87px;
+}
+
+.main > .welcome-div{
+    width: 1071px;
+    height: 163px;
+    background-color: #0d1a3394;
+    border-radius: 12px;
+    display: block;
+    margin: 5% auto;
+}
+.main > .welcome-div > h1{
+    color: #FFF;
+    font-size: 20px;
+    padding: 29px 0px 0px 32px;
+}
+.main > .welcome-div > p{
+    color: #524F4F;
+    font-size: 16px;
+    padding: 15px 0px 0px 32px;
+}
+
+.main > .stats{
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.main > .stats > .stats-card{
+    background-color: #0d1a3394;
+    border-radius: 12px;
+    width: 330px;
+    height: 163px;
+}
+.main > .stats > .stats-card > p{
+    color: #FFF;
+    font-size: 16px;
+    padding: 21px 0px 0px 27px;
+}
+.main > .stats > .stats-card > .stats-container > h1{
+    font-size: 60px;
+    color: #1144AA;
+    padding: 42px 0px 0px 27px;
+}
+
+.main > .stats > .stats-card > .stats-container > p{
+    font-size: 16px;
+    color: #524F4F;
+    padding: 81px 0px 0px 27px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsiveness */
+/* @media (max-width: 1000px) { */
+    /* .login-header > h1{
+        color: #FFF;
+        font-size: 40px;
+        margin-bottom: 2%;
+    }
+    
+    .login-form{
+        width: 400px;
+        height: 400px;
+    }
+    
+    .login-form > input{
+        width: 60%;
+        height: 30px;
+    }
+    
+    .login-form > input::placeholder{
+        font-size: 18px;
+    }
+    
+    .login-button{
+        margin: 5% auto 1%;
+    }
+} */
