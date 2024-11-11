@@ -28,3 +28,33 @@
     justify-content: center;
     gap: 50px;
 }
+
+.navbar-tools{
+    gap: 20px;
+}
+
+.navbar-tools > button{
+    width: 76px;
+    font-size: 18px;
+    padding: 7px 11px;
+}
+
+.search-bar > input{
+    width: 150px;
+    height: 36px;
+}
+
+.search-bar > input::placeholder{
+    color: #3d3d3d;
+}
+
+.search-bar{
+    position: relative;
+}
+
+.search-icon{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
