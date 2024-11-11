@@ -1,5 +1,215 @@
 [
   {
+    "title": "Gladiator II",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007481/poster/md/87/movie&uuid=8C8A2897-61A9-4327-8A05-87BB50B355B1",
+    "genres": "Action, Aventure, Drame",
+    "duration": "2h30",
+    "movieLink": "https://www.pathe.fr/films/gladiator-ii-38423",
+    "additionalData": {
+      "numberOfLikes": "65",
+      "summary": "L'histoire de Lucius, le fils de Lucilla (Connie Nielsen dans Gladiator) et neveu de Commode (Joaquin Phoenix). Lucius est très admiratif du parcours de Maximus et devrait suivre ses traces.",
+      "directors": "Ridley Scott",
+      "cast": [
+        "Paul Mescal,",
+        "Denzel Washington,",
+        "Pedro Pascal,"
+      ],
+      "releaseDate": "13 nov. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "The Substance",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007842/poster/md/35/movie&uuid=D64EEBB3-3E37-41AA-BC26-E21FE566125D",
+    "genres": "Drame, Epouvante-horreur",
+    "duration": "2h20",
+    "movieLink": "https://www.pathe.fr/films/the-substance-40005",
+    "additionalData": {
+      "numberOfLikes": "1,5K",
+      "summary": "Avez-vous déjà rêvé d’une meilleure version de vous-même ? Vous devriez essayer ce nouveau produit : THE SUBSTANCE Il a changé ma vie. Il permet de générer une autre version de vous-même, plus jeune, plus belle, plus parfaite. Respectez les instructions :VOUS ACTIVEZ une seule fois VOUS STABILISEZ chaque jour VOUS PERMUTEZ tous les sept jours sans exception. Il suffit de partager le temps. C’est si simple, qu’est-ce qui pourrait mal tourner ?",
+      "directors": "Coralie Fargeat",
+      "cast": [
+        "Dennis Quaid,",
+        "Demi Moore,",
+        "Margaret Qualley,"
+      ],
+      "releaseDate": "06 nov. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "À toute allure",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00006269/poster/md/40/movie&uuid=9A06F9EF-B612-42C8-AD00-EC347A736622",
+    "genres": "Comédie, Romance",
+    "duration": "1h25",
+    "movieLink": "https://www.pathe.fr/films/a-toute-allure-35334",
+    "additionalData": {
+      "numberOfLikes": "812",
+      "summary": "Elle est officier de sous-marin tactique. Il est steward. Ils se rencontrent lors d'une escale. Mais leur aventure naissante doit subitement s'interrompre. Et le voilà qui s'accroche ! Qui la suit ! Qui la colle ! Comme si on avait le temps d'être amoureuse à bord d'un bâtiment militaire ! Reste que l'océan Pacifique n'est pas assez grand pour le décourager. L'océan Arctique non plus d'ailleurs. Le monde est si petit quand on s'aime d'un si grand amour...",
+      "directors": "Lucas Bernard",
+      "cast": [
+        "Eye Haidara,",
+        "José Garcia,",
+        "Pio Marmaï,"
+      ],
+      "releaseDate": "06 nov. 2024",
+      "nationality": "France"
+    }
+  },
+  {
+    "title": "Here - Les plus belles années de notre vie",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00008278/poster/md/39/movie&uuid=F9887A57-0F1C-4EA9-BC34-78C0071B1DA8",
+    "genres": "Drame",
+    "duration": "1h44",
+    "movieLink": "https://www.pathe.fr/films/here-les-plus-belles-annees-de-notre-vie-42366",
+    "additionalData": {
+      "numberOfLikes": "423",
+      "summary": "Toute l’équipe de FORREST GUMP revient au cinéma, et vous transporte dans un voyage unique à travers le temps.  L’histoire de familles dont les peines, les joies et les moments de doutes se font écho à travers les générations.",
+      "directors": "Robert Zemeckis",
+      "cast": [
+        "Robin Wright,",
+        "Tom Hanks,",
+        "Paul Bettany,"
+      ],
+      "releaseDate": "06 nov. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "Venom: The Last Dance",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007480/poster/md/58/movie&uuid=EA09B5FD-809D-4111-8D31-D0F173ED5D86",
+    "genres": "Action, Aventure",
+    "duration": "1h49",
+    "movieLink": "https://www.pathe.fr/films/venom-the-last-dance-38422",
+    "additionalData": {
+      "numberOfLikes": "7,3K",
+      "summary": "Dans VENOM: THE LAST DANCE, ultime opus de la trilogie, Tom Hardy est de retour sous les traits de Venom, l’un des personnages le plus complexes de l’univers Marvel. Eddie et Venom sont en cavale. Chacun est traqué par ses semblables et alors que l’étau se resserre, le duo doit prendre une décision dévastatrice qui annonce la conclusion des aventures d’Eddie & Venom.",
+      "directors": "Kelly Marcel",
+      "cast": [
+        "Chiwetel Ejiofor,",
+        "Juno Temple,",
+        "Tom Hardy,"
+      ],
+      "releaseDate": "30 oct. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "Anora",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007688/poster/md/70/movie&uuid=8965A8F9-D75E-4DFD-A65A-94BBAEE3D9E9",
+    "genres": "Drame",
+    "duration": "2h18",
+    "movieLink": "https://www.pathe.fr/films/anora-38943",
+    "additionalData": {
+      "numberOfLikes": "3,1K",
+      "summary": "Anora, jeune strip-teaseuse de Brooklyn, se transforme en Cendrillon des temps modernes lorsqu’elle rencontre le fils d’un oligarque russe. Sans réfléchir, elle épouse avec enthousiasme son prince charmant ; mais lorsque la nouvelle parvient en Russie, le conte de fées est vite menacé : les parents du jeune homme partent pour New York avec la ferme intention de faire annuler le mariage...  Festival de Cannes 2024 - Palme d'Or",
+      "directors": "Sean Baker",
+      "cast": [
+        "Ivy Wolk,",
+        "Lindsey Normington,",
+        "Karren Karagulian,"
+      ],
+      "releaseDate": "30 oct. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "JURE N°2",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00008324/poster/md/27/movie&uuid=37655D4B-6E68-4D14-88CB-C94E58DEAD04",
+    "genres": "Drame, Thriller",
+    "duration": "1h54",
+    "movieLink": "https://www.pathe.fr/films/jure-n-2-42498",
+    "additionalData": {
+      "numberOfLikes": "8K",
+      "summary": "Le film suit Justin Kemp, un père de famille ordinaire, qui se retrouve juré dans un procès pour meurtre très médiatisé. Alors qu'il est confronté à un dilemme moral déchirant, Justin réalise qu'il détient le pouvoir d'influencer le verdict du jury, ce qui pourrait soit condamner, soit libérer l'accusé.",
+      "directors": "Clint Eastwood",
+      "cast": [
+        "Nicholas Hoult,",
+        "Toni Collette,",
+        "J.K Simmons,"
+      ],
+      "releaseDate": "30 oct. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "Monsieur Aznavour",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00006381/poster/md/118/movie&uuid=9CD278A5-823C-48CB-8C8E-FC5F6EF9837B",
+    "genres": "Biopic, Musical",
+    "duration": "2h13",
+    "movieLink": "https://www.pathe.fr/films/monsieur-aznavour-35492",
+    "additionalData": {
+      "numberOfLikes": "13,1K",
+      "summary": "Fils de réfugiés, petit, pauvre, à la voix voilée, on disait de lui qu’il n’avait rien pour réussir. À force de travail, de persévérance et d’une volonté hors norme, Charles Aznavour est devenu un monument de la chanson, et un symbole de la culture française. Avec près de 1200 titres interprétés dans le monde entier et dans toutes les langues, il a inspiré des générations entières. Découvrez le parcours exceptionnel et intemporel de MONSIEUR AZNAVOUR.",
+      "directors": "Grand Corps Malade, Mehdi Idir",
+      "cast": [
+        "Lionel Cecilio,",
+        "Tahar Rahim,",
+        "Bastien Bouillon,",
+        "Grand Corps Malade,"
+      ],
+      "releaseDate": "23 oct. 2024",
+      "nationality": "France"
+    }
+  },
+  {
+    "title": "L'Amour ouf",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00003500/poster/md/153/movie&uuid=57F7FFC4-CA75-458C-A4C6-DE0A4677E815",
+    "genres": "Comédie dramatique, Romance",
+    "duration": "2h40",
+    "movieLink": "https://www.pathe.fr/films/l-amour-ouf",
+    "additionalData": {
+      "numberOfLikes": "24,1K",
+      "summary": "Les années 80, dans le nord de la France. Jackie et Clotaire grandissent entre les bancs du lycée et les docks du port. Elle étudie, il traîne. Et puis leurs destins se croisent et c'est l'amour fou. La vie s'efforcera de les séparer mais rien n'y fait, ces deux-là sont comme les deux ventricules du même cœur...",
+      "directors": "Gilles Lellouche",
+      "cast": [
+        "Mallory Wanecque,",
+        "Adèle Exarchopoulos,",
+        "François Civil,"
+      ],
+      "releaseDate": "16 oct. 2024",
+      "nationality": "France"
+    }
+  },
+  {
+    "title": "Smile 2",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007869/poster/md/122/movie&uuid=698F6563-5DAF-4905-83D0-3E76FC7BD898",
+    "genres": "Epouvante-horreur, Thriller",
+    "duration": "2h12",
+    "movieLink": "https://www.pathe.fr/films/smile-2-40082",
+    "additionalData": {
+      "numberOfLikes": "6,8K",
+      "summary": "À l’aube d’une nouvelle tournée mondiale, la star de la pop Skye Riley (Naomi Scott) se met à vivre des événements aussi terrifiants qu’inexplicables. Submergée par la pression de la célébrité et devant un quotidien qui bascule de plus en plus dans l’horreur, Skye est forcée de se confronter à son passé obscur pour tenter de reprendre le contrôle de sa vie avant qu’il ne soit trop tard.",
+      "directors": "Parker Finn",
+      "cast": [
+        "Dylan Gelula,",
+        "Kyle Gallner,",
+        "Lukas Gage,"
+      ],
+      "releaseDate": "16 oct. 2024",
+      "nationality": "Etats-Unis"
+    }
+  },
+  {
+    "title": "The Apprentice",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007687/poster/md/36/movie&uuid=84C55D35-80BC-459B-B6D5-6EB85E5FBB53",
+    "genres": "Biopic, Drame, Historique",
+    "duration": "2h00",
+    "movieLink": "https://www.pathe.fr/films/the-apprentice-38942",
+    "additionalData": {
+      "numberOfLikes": "4,9K",
+      "summary": "Véritable plongée dans les arcanes de l'empire américain, THE APPRENTICE retrace l'ascension vers le pouvoir du jeune Donald Trump grâce à un pacte faustien avec l'avocat conservateur et entremetteur politique Roy Cohn.",
+      "directors": "Ali Abbasi",
+      "cast": [
+        "Jeremy Strong,",
+        "Maria Bakalova,",
+        "Emily Mitchell,"
+      ],
+      "releaseDate": "09 oct. 2024",
+      "nationality": "Canada"
+    }
+  },
+  {
     "title": "Les Femmes au balcon",
     "imageUrl": "https://media.pathe.fr/movie/alex/HO00007679/poster/md/33/movie&uuid=7B42ECCE-F914-48C9-BAF3-C32A480BA1D0",
     "genres": "Comédie, Fantastique",
@@ -38,6 +248,21 @@
     }
   },
   {
+    "title": "Les Rendez-vous de l'Animé : OVERLORD The Sacred Kingdom",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00008571/poster/md/2/movie&uuid=521E30CA-17E9-4179-AAB0-051FB3871CF7",
+    "genres": "Animation",
+    "duration": "2h15",
+    "movieLink": "https://www.pathe.fr/evenements/les-rendez-vous-de-l-anime-overlord-the-sacred-kingdom-43052",
+    "additionalData": {
+      "numberOfLikes": "9",
+      "summary": "Grâce aux Rendez-vous de l’animé, découvrez le film OVERLORD : The Sacred Kingdom. Synopsis : Pour se protéger des invasions extérieures, le Royaume Sacré a érigé une muraille imprenable, sans imaginer que cette quiétude apparente serait ébranlée par l’armée du démon Jaldabaoth. Refusant de se soumettre à l’ennemi, les dirigeants du pays sollicitent le célèbre sorcier Ainz Ooal Gown afin qu’il leur prête main-forte.",
+      "directors": null,
+      "cast": null,
+      "releaseDate": "16 nov. 2024",
+      "nationality": null
+    }
+  },
+  {
     "title": "Sadrak",
     "imageUrl": "https://media.pathe.fr/movie/alex/HO00008528/poster/md/3/movie&uuid=B2846EDA-9986-4FA4-AF65-1DDE070E866A",
     "genres": "Drame",
@@ -48,7 +273,7 @@
       "summary": "Un homme emploie une jeune aide-soignante pour s'occuper de son père, qui souffre de la maladie d'Alzheimer, mais l'aide-soignante elle-même souffre d'une grave maladie rénale.",
       "directors": "Narcisse Wandji",
       "cast": null,
-      "releaseDate": "15 Nov 2024",
+      "releaseDate": "15 nov. 2024",
       "nationality": null
     }
   },
@@ -86,25 +311,6 @@
     }
   },
   {
-    "title": "Gladiator II",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007481/poster/md/87/movie&uuid=8C8A2897-61A9-4327-8A05-87BB50B355B1",
-    "genres": "Action, Aventure, Drame",
-    "duration": "2h30",
-    "movieLink": "https://www.pathe.fr/films/gladiator-ii-38423",
-    "additionalData": {
-      "numberOfLikes": "56",
-      "summary": "L'histoire de Lucius, le fils de Lucilla (Connie Nielsen dans Gladiator) et neveu de Commode (Joaquin Phoenix). Lucius est très admiratif du parcours de Maximus et devrait suivre ses traces.",
-      "directors": "Ridley Scott",
-      "cast": [
-        "Paul Mescal,",
-        "Denzel Washington,",
-        "Pedro Pascal,"
-      ],
-      "releaseDate": "13 nov. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
     "title": "Tejiri",
     "imageUrl": "https://media.pathe.fr/movie/alex/HO00008538/poster/md/3/movie&uuid=3D61E788-C7E0-4149-8D60-1F15E68DC1E0",
     "genres": "Drame",
@@ -116,40 +322,6 @@
       "directors": null,
       "cast": null,
       "releaseDate": "13 nov. 2024",
-      "nationality": null
-    }
-  },
-  {
-    "title": "Séance All Inclusive : Gladiator II",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00008557/poster/md/9/movie&uuid=C327BAFF-7F16-47C2-80E9-F49582334CD8",
-    "genres": "Action, Drame, Péplum",
-    "duration": "2h30",
-    "movieLink": "https://www.pathe.fr/films/seance-all-inclusive-gladiator-ii-43025",
-    "additionalData": {
-      "numberOfLikes": "10",
-      "summary": "Venez découvrir en Avant-Première et dans les meilleures conditions, le nouveau chef-d’œuvre de Ridley Scott : Gladiator II. L’offre All Inclusive, c’est un accueil personnalisé par l’équipe de votre cinéma, un verre de bienvenu offert, ainsi qu’une collation gourmande salée et sucrée, pour un moment privilégié exceptionnel !  Synopsis : Des années après avoir assisté à la mort du héros vénéré Maximus aux mains de son oncle, Lucius est forcé d'entrer dans le Colisée lorsque son pays est conquis par les empereurs tyranniques qui gouvernent désormais Rome d'une main de fer. La rage au cœur et l'avenir de l'Empire en jeu, Lucius doit se tourner vers son passé pour trouver la force et l'honneur de rendre la gloire de Rome à son peuple",
-      "directors": "Ridley Scott",
-      "cast": [
-        "Pedro Pascal,",
-        "Denzel Washington,",
-        "Paul Mescal,"
-      ],
-      "releaseDate": "10 nov. 2024",
-      "nationality": null
-    }
-  },
-  {
-    "title": "Disco Afrika : une histoire malgache",
-    "imageUrl": "https://www.pathe.fr/assets/source/img/poster-placeholder-pathe-empty.jpg",
-    "genres": "Drame",
-    "duration": "1h21",
-    "movieLink": "https://www.pathe.fr/films/disco-afrika-une-histoire-malgache-42994",
-    "additionalData": {
-      "numberOfLikes": "0",
-      "summary": "Madagascar, aujourd’hui. Kwame, 20 ans, tente de gagner sa vie dans les mines clandestines de saphir. Suite à un événement inattendu, il doit rejoindre sa ville natale où il retrouve sa mère, d’anciens amis, mais aussi la corruption qui gangrène son pays. Ballotté par des sentiments contraires, il va devoir choisir entre argent facile et fraternité, individualisme et éveil à une conscience politique.",
-      "directors": null,
-      "cast": null,
-      "releaseDate": "10 nov. 2024",
       "nationality": null
     }
   },
@@ -173,70 +345,13 @@
     }
   },
   {
-    "title": "The Substance",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007842/poster/md/35/movie&uuid=D64EEBB3-3E37-41AA-BC26-E21FE566125D",
-    "genres": "Drame, Epouvante-horreur",
-    "duration": "2h20",
-    "movieLink": "https://www.pathe.fr/films/the-substance-40005",
-    "additionalData": {
-      "numberOfLikes": "1,4K",
-      "summary": "Avez-vous déjà rêvé d’une meilleure version de vous-même ? Vous devriez essayer ce nouveau produit : THE SUBSTANCE Il a changé ma vie. Il permet de générer une autre version de vous-même, plus jeune, plus belle, plus parfaite. Respectez les instructions :VOUS ACTIVEZ une seule fois VOUS STABILISEZ chaque jour VOUS PERMUTEZ tous les sept jours sans exception. Il suffit de partager le temps. C’est si simple, qu’est-ce qui pourrait mal tourner ?",
-      "directors": "Coralie Fargeat",
-      "cast": [
-        "Dennis Quaid,",
-        "Demi Moore,",
-        "Margaret Qualley,"
-      ],
-      "releaseDate": "06 nov. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
-    "title": "À toute allure",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00006269/poster/md/40/movie&uuid=9A06F9EF-B612-42C8-AD00-EC347A736622",
-    "genres": "Comédie, Romance",
-    "duration": "1h25",
-    "movieLink": "https://www.pathe.fr/films/a-toute-allure-35334",
-    "additionalData": {
-      "numberOfLikes": "776",
-      "summary": "Elle est officier de sous-marin tactique. Il est steward. Ils se rencontrent lors d'une escale. Mais leur aventure naissante doit subitement s'interrompre. Et le voilà qui s'accroche ! Qui la suit ! Qui la colle ! Comme si on avait le temps d'être amoureuse à bord d'un bâtiment militaire ! Reste que l'océan Pacifique n'est pas assez grand pour le décourager. L'océan Arctique non plus d'ailleurs. Le monde est si petit quand on s'aime d'un si grand amour...",
-      "directors": "Lucas Bernard",
-      "cast": [
-        "Eye Haidara,",
-        "José Garcia,",
-        "Pio Marmaï,"
-      ],
-      "releaseDate": "06 nov. 2024",
-      "nationality": "France"
-    }
-  },
-  {
-    "title": "Here - Les plus belles années de notre vie",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00008278/poster/md/39/movie&uuid=F9887A57-0F1C-4EA9-BC34-78C0071B1DA8",
-    "genres": "Drame",
-    "duration": "1h44",
-    "movieLink": "https://www.pathe.fr/films/here-les-plus-belles-annees-de-notre-vie-42366",
-    "additionalData": {
-      "numberOfLikes": "398",
-      "summary": "Toute l’équipe de FORREST GUMP revient au cinéma, et vous transporte dans un voyage unique à travers le temps.  L’histoire de familles dont les peines, les joies et les moments de doutes se font écho à travers les générations.",
-      "directors": "Robert Zemeckis",
-      "cast": [
-        "Robin Wright,",
-        "Tom Hanks,",
-        "Paul Bettany,"
-      ],
-      "releaseDate": "06 nov. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
     "title": "Louise Violet",
     "imageUrl": "https://media.pathe.fr/movie/alex/HO00006938/poster/md/126/movie&uuid=C24572C5-7E1A-4435-8DAD-58D9EB698690",
     "genres": "Drame, Historique",
     "duration": "1h48",
     "movieLink": "https://www.pathe.fr/films/louise-violet-37065",
     "additionalData": {
-      "numberOfLikes": "874",
+      "numberOfLikes": "973",
       "summary": "1889. Envoyée dans un village de la campagne française, l’institutrice Louise Violet doit y imposer l’école de la République (gratuite, obligatoire et laïque). Une mission qui ne la rend populaire ni auprès des enfants… ni auprès des parents.",
       "directors": "Éric Besnard",
       "cast": [
@@ -254,7 +369,7 @@
     "duration": "1h57",
     "movieLink": "https://www.pathe.fr/films/trois-amies-39058",
     "additionalData": {
-      "numberOfLikes": "742",
+      "numberOfLikes": "786",
       "summary": "Joan n'est plus amoureuse de Victor et souffre de se sentir malhonnête avec lui. Alice, sa meilleure amie, la rassure : elle-même n’éprouve aucune passion pour Eric et pourtant leur couple se porte à merveille ! Elle ignore qu’il a une liaison avec Rebecca, leur amie commune... Quand Joan décide finalement de quitter Victor et que celui-ci disparaît, la vie des trois amies et leurs histoires s’en trouvent bouleversées.",
       "directors": "Emmanuel Mouret",
       "cast": [
@@ -267,70 +382,13 @@
     }
   },
   {
-    "title": "Venom: The Last Dance",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007480/poster/md/58/movie&uuid=EA09B5FD-809D-4111-8D31-D0F173ED5D86",
-    "genres": "Action, Aventure",
-    "duration": "1h49",
-    "movieLink": "https://www.pathe.fr/films/venom-the-last-dance-38422",
-    "additionalData": {
-      "numberOfLikes": "7,1K",
-      "summary": "Dans VENOM: THE LAST DANCE, ultime opus de la trilogie, Tom Hardy est de retour sous les traits de Venom, l’un des personnages le plus complexes de l’univers Marvel. Eddie et Venom sont en cavale. Chacun est traqué par ses semblables et alors que l’étau se resserre, le duo doit prendre une décision dévastatrice qui annonce la conclusion des aventures d’Eddie & Venom.",
-      "directors": "Kelly Marcel",
-      "cast": [
-        "Chiwetel Ejiofor,",
-        "Juno Temple,",
-        "Tom Hardy,"
-      ],
-      "releaseDate": "30 oct. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
-    "title": "JURE N°2",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00008324/poster/md/27/movie&uuid=37655D4B-6E68-4D14-88CB-C94E58DEAD04",
-    "genres": "Drame, Thriller",
-    "duration": "1h54",
-    "movieLink": "https://www.pathe.fr/films/jure-n-2-42498",
-    "additionalData": {
-      "numberOfLikes": "7,8K",
-      "summary": "Le film suit Justin Kemp, un père de famille ordinaire, qui se retrouve juré dans un procès pour meurtre très médiatisé. Alors qu'il est confronté à un dilemme moral déchirant, Justin réalise qu'il détient le pouvoir d'influencer le verdict du jury, ce qui pourrait soit condamner, soit libérer l'accusé.",
-      "directors": "Clint Eastwood",
-      "cast": [
-        "Nicholas Hoult,",
-        "Toni Collette,",
-        "J.K Simmons,"
-      ],
-      "releaseDate": "30 oct. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
-    "title": "Anora",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007688/poster/md/70/movie&uuid=8965A8F9-D75E-4DFD-A65A-94BBAEE3D9E9",
-    "genres": "Drame",
-    "duration": "2h18",
-    "movieLink": "https://www.pathe.fr/films/anora-38943",
-    "additionalData": {
-      "numberOfLikes": "3K",
-      "summary": "Anora, jeune strip-teaseuse de Brooklyn, se transforme en Cendrillon des temps modernes lorsqu’elle rencontre le fils d’un oligarque russe. Sans réfléchir, elle épouse avec enthousiasme son prince charmant ; mais lorsque la nouvelle parvient en Russie, le conte de fées est vite menacé : les parents du jeune homme partent pour New York avec la ferme intention de faire annuler le mariage...  Festival de Cannes 2024 - Palme d'Or",
-      "directors": "Sean Baker",
-      "cast": [
-        "Ivy Wolk,",
-        "Lindsey Normington,",
-        "Karren Karagulian,"
-      ],
-      "releaseDate": "30 oct. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
     "title": "Flow, le chat qui n’avait plus peur de l’eau",
     "imageUrl": "https://media.pathe.fr/movie/alex/HO00007735/poster/md/45/movie&uuid=444119EF-3FC4-49CE-ADAF-5B2A90971BB7",
     "genres": "Animation, Aventure, Fantastique",
     "duration": "1h25",
     "movieLink": "https://www.pathe.fr/films/flow-le-chat-qui-n-avait-plus-peur-de-l-eau-39044",
     "additionalData": {
-      "numberOfLikes": "955",
+      "numberOfLikes": "977",
       "summary": "Un chat se réveille dans un univers envahi par l’eau où toute vie humaine semble avoir disparu. Il trouve refuge sur un bateau avec un groupe d’autres animaux.  Mais s’entendre avec eux s’avère un défi encore plus grand que de surmonter sa peur de l’eau ! Tous devront désormais apprendre à surmonter leurs différences et à s’adapter au nouveau monde qui s’impose à eux.",
       "directors": "Gints Zilbalodis",
       "cast": null,
@@ -345,7 +403,7 @@
     "duration": "1h56",
     "movieLink": "https://www.pathe.fr/films/sur-un-fil-37938",
     "additionalData": {
-      "numberOfLikes": "829",
+      "numberOfLikes": "832",
       "summary": "Jo, une jeune femme, artiste de cirque de rue, découvre le travail des clowns professionnels de \"Nez pour rire\". Vite - peut-être trop vite - entrée dans l’association, elle se retrouve à l’hôpital au contact des enfants, des malades, des soignants et des familles, à qui ces clowns tentent inlassablement d’apporter de la joie et du réconfort.",
       "directors": "Reda Kateb",
       "cast": [
@@ -354,26 +412,6 @@
         "Sara Giraudeau,"
       ],
       "releaseDate": "30 oct. 2024",
-      "nationality": "France"
-    }
-  },
-  {
-    "title": "Monsieur Aznavour",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00006381/poster/md/118/movie&uuid=9CD278A5-823C-48CB-8C8E-FC5F6EF9837B",
-    "genres": "Biopic, Musical",
-    "duration": "2h13",
-    "movieLink": "https://www.pathe.fr/films/monsieur-aznavour-35492",
-    "additionalData": {
-      "numberOfLikes": "12,9K",
-      "summary": "Fils de réfugiés, petit, pauvre, à la voix voilée, on disait de lui qu’il n’avait rien pour réussir. À force de travail, de persévérance et d’une volonté hors norme, Charles Aznavour est devenu un monument de la chanson, et un symbole de la culture française. Avec près de 1200 titres interprétés dans le monde entier et dans toutes les langues, il a inspiré des générations entières. Découvrez le parcours exceptionnel et intemporel de MONSIEUR AZNAVOUR.",
-      "directors": "Grand Corps Malade, Mehdi Idir",
-      "cast": [
-        "Lionel Cecilio,",
-        "Tahar Rahim,",
-        "Bastien Bouillon,",
-        "Grand Corps Malade,"
-      ],
-      "releaseDate": "23 oct. 2024",
       "nationality": "France"
     }
   },
@@ -397,44 +435,6 @@
     }
   },
   {
-    "title": "L'Amour ouf",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00003500/poster/md/153/movie&uuid=57F7FFC4-CA75-458C-A4C6-DE0A4677E815",
-    "genres": "Comédie dramatique, Romance",
-    "duration": "2h40",
-    "movieLink": "https://www.pathe.fr/films/l-amour-ouf",
-    "additionalData": {
-      "numberOfLikes": "23,9K",
-      "summary": "Les années 80, dans le nord de la France. Jackie et Clotaire grandissent entre les bancs du lycée et les docks du port. Elle étudie, il traîne. Et puis leurs destins se croisent et c'est l'amour fou. La vie s'efforcera de les séparer mais rien n'y fait, ces deux-là sont comme les deux ventricules du même cœur...",
-      "directors": "Gilles Lellouche",
-      "cast": [
-        "Mallory Wanecque,",
-        "Adèle Exarchopoulos,",
-        "François Civil,"
-      ],
-      "releaseDate": "16 oct. 2024",
-      "nationality": "France"
-    }
-  },
-  {
-    "title": "Smile 2",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007869/poster/md/122/movie&uuid=698F6563-5DAF-4905-83D0-3E76FC7BD898",
-    "genres": "Epouvante-horreur, Thriller",
-    "duration": "2h12",
-    "movieLink": "https://www.pathe.fr/films/smile-2-40082",
-    "additionalData": {
-      "numberOfLikes": "6,8K",
-      "summary": "À l’aube d’une nouvelle tournée mondiale, la star de la pop Skye Riley (Naomi Scott) se met à vivre des événements aussi terrifiants qu’inexplicables. Submergée par la pression de la célébrité et devant un quotidien qui bascule de plus en plus dans l’horreur, Skye est forcée de se confronter à son passé obscur pour tenter de reprendre le contrôle de sa vie avant qu’il ne soit trop tard.",
-      "directors": "Parker Finn",
-      "cast": [
-        "Dylan Gelula,",
-        "Kyle Gallner,",
-        "Lukas Gage,"
-      ],
-      "releaseDate": "16 oct. 2024",
-      "nationality": "Etats-Unis"
-    }
-  },
-  {
     "title": "Le Robot Sauvage",
     "imageUrl": "https://media.pathe.fr/movie/alex/HO00007217/poster/md/97/movie&uuid=A8AD4AE6-9E11-412A-B97C-7F6C7A1BCEA9",
     "genres": "Animation, Aventure",
@@ -447,25 +447,6 @@
       "cast": null,
       "releaseDate": "09 oct. 2024",
       "nationality": null
-    }
-  },
-  {
-    "title": "The Apprentice",
-    "imageUrl": "https://media.pathe.fr/movie/alex/HO00007687/poster/md/36/movie&uuid=84C55D35-80BC-459B-B6D5-6EB85E5FBB53",
-    "genres": "Biopic, Drame, Historique",
-    "duration": "2h00",
-    "movieLink": "https://www.pathe.fr/films/the-apprentice-38942",
-    "additionalData": {
-      "numberOfLikes": "4,8K",
-      "summary": "Véritable plongée dans les arcanes de l'empire américain, THE APPRENTICE retrace l'ascension vers le pouvoir du jeune Donald Trump grâce à un pacte faustien avec l'avocat conservateur et entremetteur politique Roy Cohn.",
-      "directors": "Ali Abbasi",
-      "cast": [
-        "Jeremy Strong,",
-        "Maria Bakalova,",
-        "Emily Mitchell,"
-      ],
-      "releaseDate": "09 oct. 2024",
-      "nationality": "Canada"
     }
   },
   {
@@ -512,7 +493,7 @@
     "duration": "2h58",
     "movieLink": "https://www.pathe.fr/films/le-comte-de-monte-cristo-20027",
     "additionalData": {
-      "numberOfLikes": "92,5K",
+      "numberOfLikes": "92,7K",
       "summary": "Victime d’un complot, le jeune Edmond Dantès est arrêté le jour de son mariage pour un crime qu’il n’a pas commis. Après quatorze ans de détention au château d’If, il parvient à s’évader. Devenu immensément riche, il revient sous l’identité du comte de Monte-Cristo pour se venger des trois hommes qui l’ont trahi.",
       "directors": "Alexandre De La Patellière, Matthieu Delaporte",
       "cast": null,
@@ -536,6 +517,36 @@
     }
   },
   {
+    "title": "Courts-métrages 2 Festival Africlap",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00005420/poster/md/3/movie&uuid=AF503A44-7E4F-4C9A-96C1-77A940113F5B",
+    "genres": "Courts-Métrages",
+    "duration": "1h12",
+    "movieLink": "https://www.pathe.fr/films/courts-metrages-2-festival-africlap",
+    "additionalData": {
+      "numberOfLikes": "3",
+      "summary": "Programme de Courts-métrages.",
+      "directors": "Egypte",
+      "cast": null,
+      "releaseDate": "10 nov. 2023",
+      "nationality": null
+    }
+  },
+  {
+    "title": "Courts-métrages 3 Festival Africlap",
+    "imageUrl": "https://media.pathe.fr/movie/alex/HO00005421/poster/md/3/movie&uuid=9946C8A5-5BD4-4B35-92DD-C51BC0B62415",
+    "genres": "Courts-Métrages",
+    "duration": "1h04",
+    "movieLink": "https://www.pathe.fr/films/courts-metrages-3-festival-africlap",
+    "additionalData": {
+      "numberOfLikes": "5",
+      "summary": "Programme de courts-métrages.",
+      "directors": "Cameroun",
+      "cast": null,
+      "releaseDate": "10 nov. 2023",
+      "nationality": null
+    }
+  },
+  {
     "title": "The Big Short : le Casse du siècle",
     "imageUrl": "https://www.pathe.fr/assets/source/img/poster-placeholder-pathe-empty.jpg",
     "genres": "Biopic, Comédie, Drame",
@@ -550,7 +561,7 @@
         "Ryan Gosling,",
         "Christian Bale,"
       ],
-      "releaseDate": "23 dec 2015",
+      "releaseDate": "23 déc. 2015",
       "nationality": "Etats-Unis"
     }
   },

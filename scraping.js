@@ -13,7 +13,7 @@ const getMovies = async () => {
 
   await page.goto("https://www.pathe.fr/cinemas/cinema-pathe-wilson", {
     waitUntil: "domcontentloaded",
-    timeout: 100000, 
+    timeout: 200000, 
   });
 
   await page.waitForSelector(".card-screening__content .h3 a");
