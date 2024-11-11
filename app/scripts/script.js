@@ -14,6 +14,7 @@ class Movies{
             
             const eightMovies = movies.slice(0, 8);
             this.displayMovies(eightMovies);
+            this.displayMoviesOnPage(movies);
         }
         catch(error){
             console.error("Error fetching data ", error);
@@ -69,7 +70,7 @@ class Movies{
             });
         });
     }
-
+    
     // fetch the API of get the most popular movies
     async fetchMostPopularMovies(){
         try{
@@ -105,8 +106,18 @@ class Movies{
             swiper_wrapper.innerHTML += swiper_slide;
         });
     }
+
+    viewMore(){
+        const view_button = document.getElementById("view-more-btn");
+        view_button.addEventListener("click", ()=>{
+            window.location.href = "./pages/movies.html";
+        })
+    }
 }
 
-const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
-movieFetcher.fetchMovies();
-movieFetcher.fetchMostPopularMovies();
+document.addEventListener("DOMContentLoaded", () => {
+    const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
+    movieFetcher.fetchMovies();
+    movieFetcher.fetchMostPopularMovies();
+    movieFetcher.viewMore();
+});

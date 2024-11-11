@@ -1,4 +1,5 @@
 let swiper = new Swiper('.recommendation-swiper',  {
+    slidesPerView: 3,
     loop: true,
     spaceBetween: 30,
 
@@ -27,6 +28,7 @@ let swiper = new Swiper('.recommendation-swiper',  {
 });
 
 let popularSwiper = new Swiper('.popular-swiper', {
+    slidesPerView: 4,
     loop: true,
     spaceBetween: 30,
 
