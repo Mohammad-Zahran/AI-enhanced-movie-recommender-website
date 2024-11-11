@@ -63,3 +63,12 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* Header Section */
+.header{
+    background-image: url(../assets/images/spider-man.jpeg);
+    height: 100vh;
+    background-size: cover;
+    justify-content: center;
+    align-items: flex-start;
+}
