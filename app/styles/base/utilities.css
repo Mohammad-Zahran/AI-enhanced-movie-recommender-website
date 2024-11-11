@@ -1,54 +1,78 @@
 .flex {
-    display: flex;
-  }
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.rounded {
+  border-radius: 100px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+.filled-btn {
+  background-color: #0d0c22;
+  color: white;
+  height: 45px;
+  padding: 0 25px;
+  border-radius: 100px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.filled-btn:hover {
+  opacity: 0.7;
+}
   
-  .row {
-    flex-direction: row;
-  }
+
+/* Added by Ahmad */
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style-type: none;
+}
+button{
+  cursor: pointer;
+}
   
-  .column {
-    flex-direction: column;
-  }
-  
-  .full-width {
-    width: 100%;
-  }
-  
-  .full-height {
-    height: 100%;
-  }
-  
-  .wrap {
-    flex-wrap: wrap;
-  }
-  
-  .rounded {
-    border-radius: 100px;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  .center {
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Buttons */
-  .filled-btn {
-    background-color: #0d0c22;
-    color: white;
-    height: 45px;
-    padding: 0 25px;
-    border-radius: 100px;
-    font-weight: bold;
-    transition: all 0.3s;
-  }
-  
-  .filled-btn:hover {
-    opacity: 0.7;
-  }
-  
-  
-  
+.button{
+  width: 240px;
+  background-color: #1144AA;
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  transition: 1s;
+}
+.button:hover{
+  transform: scale(1.1);
+}

@@ -14,7 +14,6 @@ class Movies{
             
             const eightMovies = movies.slice(0, 8);
             this.displayMovies(eightMovies);
-            this.displayMoviesOnPage(movies);
         }
         catch(error){
             console.error("Error fetching data ", error);
@@ -110,7 +109,7 @@ class Movies{
     viewMore(){
         const view_button = document.getElementById("view-more-btn");
         view_button.addEventListener("click", ()=>{
-            window.location.href = "./pages/movies.html";
+            window.location.href = "./pages/movies-page.html";
         })
     }
 }
@@ -120,4 +119,15 @@ document.addEventListener("DOMContentLoaded", () => {
     movieFetcher.fetchMovies();
     movieFetcher.fetchMostPopularMovies();
     movieFetcher.viewMore();
+
+    // Burger Menu
+    const burger = document.getElementById("burger");
+    const navLinks = document.querySelector(".nav-links");
+    var startButton = document.getElementById("start");
+    var start = document.getElementById("start-now");
+
+    burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    burger.classList.toggle("active");
+    });
 });

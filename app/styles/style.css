@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #020814;
+    background-color: #040e22;
 }
 
 h2{
@@ -14,6 +14,7 @@ h2{
     margin-bottom: 1rem;
     font-weight: bold;
     text-align: center;
+    color: white;
 }
 
 /* Movies Section */
@@ -28,7 +29,7 @@ h2{
 }
 
 .movie-card {
-    background-color: #1a1a2e;
+    background-color: #374f7a;
     border-radius: 20px;
     padding: 10px;
     display: flex;
@@ -144,12 +145,10 @@ h2{
     background-color: #1a73e8;
     color: white;
     border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-size: 16px;
     text-align: center;
     margin: 20px auto;
     cursor: pointer;
+    width: auto;
     transition: background-color 0.3s;
 }
 
@@ -181,7 +180,7 @@ h2{
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: #1a1a2e;
+    background-color: #102544;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     max-height: 500px;
@@ -304,7 +303,6 @@ h2{
     color: #FFF;
     padding: 2rem 1rem; 
     margin: 0 60px;
-    background-color: #020814;
 }
 
 .popular-swiper {
@@ -321,7 +319,7 @@ h2{
     text-align: center;
     align-items: center;
     padding: 1rem;
-    background-color: #1a1a2e;
+    background-color: #102544;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 10px;
