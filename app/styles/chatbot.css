@@ -170,7 +170,7 @@ body{
     padding: 12px 40px 12px 20px;
     display: inline-block;
     margin-right: 45px;
-    background-color: #457df6;
+    background-color: #1144AA;
     color: white;
     border-radius: 30px 30px 0px 30px;
     line-height: 25px;
@@ -231,4 +231,108 @@ body{
 .chat-body .sender button{
     border: none;
     outline: none;
+}
+
+
+/* Mobile view (max-width: 450px) */
+@media only screen and (max-width: 450px) {
+    .ai-section {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .chat-history {
+        width: 100%;
+        min-height: 200px;
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 100%;
+        min-height: 500px;
+        background-color: #ffffff35;
+        border-radius: 20px;
+        padding: 10px;
+        position: relative;
+        box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset, rgb(50 50 93 / 3%) 0px 50px 100px -20px, rgb(0 0 0 / 24%) 0px 30px 60px -30px;
+    }
+
+    .chat-header {
+        height: 120px;
+        border-radius: 25px 25px 0px 0px;
+        display: flex;
+        justify-content: start;
+        
+    }
+
+    .chat-header .title {
+        font-size: 1.5rem;
+        left: 90px;
+    }
+
+    .chat-body {
+        min-height: 400px;
+        top: 100px;
+        width: 95%;
+    }
+
+    .chat-body .sender input {
+        padding: 12px 15px;
+        font-size: 15px;
+        width: calc(100% - 60px);
+    }
+
+    .chat-body .sender button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-body .sender img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Reduce chat-item padding for smaller screens */
+    .chat-history .chat-item {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Desktop View: larger screens */
+@media (min-width: 900px) {
+    .ai-section {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .chat-history {
+        width: 30%;
+        min-height: 580px;
+        padding: 20px;
+    }
+
+    .container {
+        width: 70%;
+        min-height: 580px;
+        padding: 15px;
+    }
+
+    .chat-header {
+        height: 140px;
+    }
+
+    .chat-body {
+        min-height: 500px;
+    }
+
+    .chat-body .sender {
+        padding: 15px;
+    }
 }
