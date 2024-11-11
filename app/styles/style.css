@@ -9,7 +9,18 @@ body{
     background-color: #020814;
 }
 
+h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 /* Movies Section */
+.movies h2{
+    padding-top: 2rem;
+}
+
 .movies-cards {
     justify-content: space-around;
     padding: 20px;
@@ -113,6 +124,24 @@ body{
     color: #ccc;
 }
 
+.view-more-btn {
+    display: block;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-more-btn:hover {
+    background-color: #0059b3;
+}
+
 
 /* Recommendation-section */
 .recommendation-section {
@@ -120,13 +149,6 @@ body{
     color: #FFF;
     padding: 2rem;
 }
-
-.recommendation-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
 .recommendation-swiper {
     width: 100%;
     max-width: 900px;
@@ -262,11 +284,6 @@ body{
     color: #FFF;
     padding: 2rem 1rem; 
     background-color: #020814;
-}
-
-.popular-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
 }
 
 .popular-swiper {
