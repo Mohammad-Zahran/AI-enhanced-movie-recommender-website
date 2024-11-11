@@ -69,7 +69,44 @@ class Movies{
             });
         });
     }
+
+    // fetch the API of get the most popular movies
+    async fetchMostPopularMovies(){
+        try{
+            const response = await fetch(`${this.apiUrl}/getMostPopularMovies.php`);
+            if (!response.ok) throw new Error('Failed to fetch most popular movies');
+            const data = await response.json();
+            console.log(data);
+
+            const mostPopular = data.movies.slice(0, 10);
+            this.displayMostPopularMovies(mostPopular);
+        }
+        catch(error){
+            console.error("Error fetching data ", error);
+        }
+    }
+
+    // function to display most 10 popular moves
+    displayMostPopularMovies(movies){
+        let count = 1;
+        const swiper_wrapper = document.getElementById("swiper-wrapper");
+        movies.forEach(movie=>{
+            const swiper_slide =`
+                <div class="swiper-slide">
+                    <div class="popular-number">${count++}</div>
+                    <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
+                    <div class="popular-details">
+                        <h3>${movie.movie_title}</h3>
+                        <p>Number of likes: ${movie.number_of_likes}</p>
+                        <p>Top spot this week for action fans!</p>
+                    </div>
+                </div>
+            `;
+            swiper_wrapper.innerHTML += swiper_slide;
+        });
+    }
 }
 
 const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
 movieFetcher.fetchMovies();
+movieFetcher.fetchMostPopularMovies();
