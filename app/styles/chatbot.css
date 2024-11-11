@@ -4,19 +4,43 @@ body{
     background: linear-gradient(150deg, #D1D0FF, #A9C8FD);
 }
 
-.container{
-    max-width: 800px;
+body {
+    background: linear-gradient(150deg, #D1D0FF, #A9C8FD);
+}
+
+.ai-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1000px; /* Set a max-width to control overall layout width */
+    margin: auto;
+    padding: 20px;
+    gap: 30px;
+}
+
+.chat-history {
+    width: 30%; /* Set chat history to 30% */
+    min-height: 580px;
+    background-color: #eff2fa;
+    border-radius: 33px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, 
+                rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    overflow-y: auto;
+}
+
+.container {
+    width: 70%; /* Set chat container to 70% */
     min-height: 580px;
     background-color: #ffffff35;
-    margin: auto;
-    margin-top: 25px;
     border-radius: 47px;
     padding: 15px;
     position: relative;
     box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset, 
-    rgb(50 50 93 / 3%) 0px 50px 100px -20px, 
-    rgb(0 0 0 / 24%) 0px 30px 60px -30px;
+                rgb(50 50 93 / 3%) 0px 50px 100px -20px, 
+                rgb(0 0 0 / 24%) 0px 30px 60px -30px;
 }
+
 
 .chat-header {
     background-color: #457df6;
@@ -62,7 +86,7 @@ body{
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-/* chats */
+/* Chats */
 .chat-body .chats{
     width: 100%;
     max-height: 375px;
@@ -110,6 +134,12 @@ body{
     margin-right: 0px;
     margin-left: 45px;
     border-radius: 30px 30px 30px 0px;
+}
+.chat-body .chats img{
+    position: relative;
+    top: 3px;
+    left: 5px;
+    width: 40px;
 }
 
 /* Sender */
