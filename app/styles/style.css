@@ -162,9 +162,6 @@ footer{
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
-
-
 /* Responsiveness */
 @media (max-width: 1000px) {
     /* Responsiveness for the navbar  */
