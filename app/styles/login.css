@@ -49,3 +49,22 @@ body{
     align-self: flex-start;
     margin-left: 90px;
 }
+
+.login-button{
+    margin: 10% auto 1%;
+}
+
+.no-account{
+    gap: 10px;
+    margin: 1%;
+}
+.no-account > span{
+    color: #3D3D3D;
+}
+.no-account > a{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg,  rgba(17,68,170,1) 0%, rgba(136,161,212,1) 70%, rgba(255,255,255,1) 100%);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+}
