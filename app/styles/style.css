@@ -72,3 +72,27 @@
     justify-content: center;
     align-items: flex-start;
 }
+
+.header > h1, .header > p, .header > button{
+    margin-left: 10%;
+}
+
+.header > h1{
+    font-size: 120px;
+    color: #FFF;
+}
+
+.header > p{
+    font-size: 30px;
+    color: #BACDF5;
+    width: 600px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.header > h1 > span{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg,  rgba(17,68,170,1) 0%, rgba(136,161,212,1) 70%, rgba(255,255,255,1) 100%);    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
