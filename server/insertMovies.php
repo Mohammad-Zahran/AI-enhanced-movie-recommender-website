@@ -13,7 +13,7 @@ $query = $connection->prepare("INSERT IGNORE INTO movies (movie_title, summary, 
 foreach ($movies as $movie) {
     $title = $movie['title'];
     $summary = $movie['additionalData']['summary']; 
-    $cast = isset($movie['additionalData']['cast']) ? implode(", ", $movie['additionalData']['cast']) : '';  // implode: takes the cast array and joins its elements into a single string, with each element separated by a comma and space (", ")
+    $cast = isset($movie['additionalData']['cast']) ? implode(" ", $movie['additionalData']['cast']) : '';  // implode: takes the cast array and joins its elements into a single string, with each element separated by a comma and space (", ")
     $releaseDate = $movie['additionalData']['releaseDate']; 
     $numberOfLikes = $movie['additionalData']['numberOfLikes'];
     $genres = $movie['genres'];

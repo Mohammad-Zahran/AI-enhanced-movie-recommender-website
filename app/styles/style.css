@@ -1,21 +1,177 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #040e22;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+/* Movies Section */
+.movies h2{
+    padding-top: 2rem;
+}
+
+.movies-cards {
+    justify-content: space-around;
+    padding: 20px;
+    margin: 0 50px 50px 50px;
+}
+
+.movie-card {
+    background-color: #374f7a;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    width: 300px;
+    color: #fff;
+    margin: 15px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    justify-content: space-between;
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-poster {
+    width: 100px;
+    height: 140px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-bottom: 40px; 
+}
+
+.title-like-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.movie-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.like:hover {
+    color: #1a73e8;
+}
+
+.likes-number {
+    margin-left: 5px;
+    color: #aaaaaa;
+}
+
+.movie-duration {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 5px 0;
+}
+
+.movie-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bookmark-btn svg {
+    cursor: pointer;
+}
+
+.bookmark-btn:hover{
+    color:  #4CAF50;
+}
+
+.movie-rating {
+    position: absolute;
+    bottom: 20px;
+    left: 90%;
+    transform: translateX(-90%);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.movie-rating i {
+    color: #e6e6e6;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.movie-rating i.active {
+    color: #ff9c1a;
+}
+
+.view-more-btn {
+    display: block;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    text-align: center;
+    margin: 20px auto;
+    cursor: pointer;
+    width: auto;
+    transition: background-color 0.3s;
+}
+
+.view-more-btn:hover {
+    background-color: #0059b3;
+}
+
+
 /* Recommendation-section */
+
 .recommendation-section {
     text-align: center;
     color: #FFF;
     padding: 2rem;
-    background-color: #020814;
 }
-
-.recommendation-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
 .recommendation-swiper {
-    width: 100%;
-    max-width: 900px;
+    height: 80vh;
+    max-width: 70%;
     margin: auto;
+}
+
+.swiper-wrapper{
+    max-width: 100%;
 }
 
 .recommendation-swiper .swiper-slide {
@@ -24,7 +180,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: #222;
+    background-color: #102544;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     max-height: 500px;
@@ -146,58 +302,54 @@
     text-align: center;
     color: #FFF;
     padding: 2rem 1rem; 
-    background-color: #020814;
-}
-
-.popular-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    margin: 0 60px;
 }
 
 .popular-swiper {
     width: 100%; 
     margin: auto;
-    padding: 0 1rem; /* Add padding for side spacing */
+    padding: 0 1rem;
 }
 
 .popular-swiper .swiper-slide {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
     align-items: center;
     padding: 1rem;
-    background-color: #222;
+    background-color: #102544;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin: 0.5rem;
+    margin: 10px;
+    height: 600px;
     max-height: 600px;
+    transition: transform 0.3s ease; 
+    max-width: 300px;
+}
+
+.popular-swiper .swiper-slide:hover {
+    transform: scale(1.05); 
 }
 
 .popular-swiper .swiper-slide img {
-    width: 100%;
-    border-radius: 10px;
+    width: 90%;
+    max-width: 100%;
     height: 400px;
     object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
-.popular-number {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #1475E6;
-    color: #FFF;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50%;
-    z-index: 1;
-}
+
 
 /* Popular Details Section */
 .popular-details {
     text-align: left;
     padding: 1rem 0.5rem;
     color: #FFF;
+    flex-grow: 1;
 }
 
 .popular-details h3 {
@@ -211,20 +363,40 @@
     color: #BBB;
 }
 
+.popular-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4500;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* Swiper Navigation Buttons */
 .swiper-button-prev,
 .swiper-button-next {
     color: #FFF;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 3;
 }
 
 .swiper-button-prev:hover,
@@ -242,5 +414,3 @@
         max-height: 500px;
     }
 }
-
-

@@ -10,10 +10,4 @@ include "connection.php";
     
     // We used this as to return as JSON ARRAY
     echo json_encode($result);
-
-    if ($query->execute()) {
-        echo "Succesful";
-    } else {
-        echo "Failed";
-    }
 ?>
