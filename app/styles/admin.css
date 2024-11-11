@@ -93,45 +93,70 @@ main .main{
 }
 
 
+.main > h1{
+    color: #FFF;
+    font-size: 20px;
+    padding: 44px 0px 10px 69px;
+}
 
+.table-container{
+    width: 90%;
+    height: 50%;
+    background-color: #0d1a3394;
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+    position: relative;
+}
 
+table.Users {
+    background-color: #2A3D60;
+    width: 90%;
+    text-align: left;
+    border-collapse: collapse;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsiveness */
-/* @media (max-width: 1000px) { */
-    /* .login-header > h1{
-        color: #FFF;
-        font-size: 40px;
-        margin-bottom: 2%;
-    }
-    
-    .login-form{
-        width: 400px;
-        height: 400px;
-    }
-    
-    .login-form > input{
-        width: 60%;
-        height: 30px;
-    }
-    
-    .login-form > input::placeholder{
-        font-size: 18px;
-    }
-    
-    .login-button{
-        margin: 5% auto 1%;
-    }
-} */
+  }
+  table.Users td, table.Users th {
+    border: 0px solid #AAAAAA;
+    padding: 3px 2px;
+  }
+  table.Users tbody td {
+    font-size: 16px;
+    color: #524F4F;
+  }
+  table.Users tr:nth-child(even) {
+    background: #020814;
+  }
+  table.Users thead {
+    background: #020814;
+  }
+  table.Users thead th {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+  table.Users tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #020814;
+  }
+  table.Users tfoot td {
+    font-size: 14px;
+  }
+  table.Users tfoot .links {
+    text-align: right;
+  }
+  table.Users tfoot .links a{
+    display: inline-block;
+    background: #2A3D60;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
