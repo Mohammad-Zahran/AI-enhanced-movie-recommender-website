@@ -55,7 +55,7 @@ let popularSwiper = new Swiper('.popular-swiper', {
             slidesPerView: 4,  // 4 cards for desktops
         },
         1200: {
-            slidesPerView: 5,  // 5 cards for larger screens
+            slidesPerView: 4,  // 5 cards for larger screens
         },
     },
 });

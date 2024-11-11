@@ -24,7 +24,7 @@ h2{
 .movies-cards {
     justify-content: space-around;
     padding: 20px;
-    margin: 50px;
+    margin: 0 50px 50px 50px;
 }
 
 .movie-card {
@@ -40,6 +40,7 @@ h2{
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    justify-content: space-between;
 }
 
 .bookmark-btn {
@@ -61,8 +62,11 @@ h2{
 }
 
 .movie-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex-grow: 1;
-    position: relative;
+    margin-bottom: 40px; 
 }
 
 .title-like-container {
@@ -87,6 +91,10 @@ h2{
     color: #ccc;
 }
 
+.like:hover {
+    color: #1a73e8;
+}
+
 .likes-number {
     margin-left: 5px;
     color: #aaaaaa;
@@ -109,19 +117,26 @@ h2{
 }
 
 .bookmark-btn:hover{
-    color: green;
+    color:  #4CAF50;
 }
 
 .movie-rating {
+    position: absolute;
+    bottom: 20px;
+    left: 90%;
+    transform: translateX(-90%);
     display: flex;
-    gap: 3px;
-    font-size: 25px;
-    color: #ffdd57;
-    margin-top: 5px;
+    align-items: center;
+    gap: 5px;
 }
-
-.movie-rating span {
-    color: #ccc;
+.movie-rating i {
+    color: #e6e6e6;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.movie-rating i.active {
+    color: #ff9c1a;
 }
 
 .view-more-btn {
@@ -153,6 +168,10 @@ h2{
     width: 100%;
     max-width: 900px;
     margin: auto;
+}
+
+.swiper-wrapper{
+    padding: 20px;
 }
 
 .recommendation-swiper .swiper-slide {
@@ -374,5 +393,3 @@ h2{
         max-height: 500px;
     }
 }
-
-

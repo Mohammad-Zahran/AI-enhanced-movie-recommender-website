@@ -4,6 +4,7 @@ class Movies{
         this.apiUrl = apiUrl;
     }
 
+    // fetch the API of get movies
     async fetchMovies(){
         try{
             const response = await fetch(`${this.apiUrl}/getMovies.php`);
@@ -12,13 +13,14 @@ class Movies{
             const movies = JSON.parse(rawResponse);
             
             const eightMovies = movies.slice(0, 8);
-            this.displayMovies(eightMovies)
+            this.displayMovies(eightMovies);
         }
         catch(error){
             console.error("Error fetching data ", error);
         }
     }
 
+    // function to display movies on the section movies
     displayMovies(movies) {
         const movies_cards = document.getElementById("movies-cards");
         movies.forEach(movie=>{
@@ -43,12 +45,28 @@ class Movies{
                         </div>
                         <span class="movie-duration">${movie.duaration}</span>
                         <div class="movie-rating">
-                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
                     </div>
                 </div>
             `;
             movies_cards.innerHTML += movieCard;
+        });
+
+        const allMovieCards = movies_cards.querySelectorAll(".movie-card");
+        allMovieCards.forEach(card => {
+            const stars = card.querySelectorAll(".movie-rating i");
+            stars.forEach((star, index1) => {
+                star.addEventListener("click", () => {
+                    stars.forEach((star, index2) => {
+                        index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+                    });
+                });
+            });
         });
     }
 }
