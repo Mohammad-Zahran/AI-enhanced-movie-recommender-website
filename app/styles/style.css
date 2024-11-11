@@ -132,3 +132,121 @@ footer{
     font-weight: bold;
     color: #FFF;
 }
+
+
+
+/* Burger menu */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger > .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.active .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .line2 {
+    opacity: 0;
+}
+
+.burger.active .line3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
+
+/* Responsiveness */
+@media (max-width: 1000px) {
+    /* Responsiveness for the navbar  */
+    .nav-links {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+    }
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    .nav-links li{
+        margin: 1%;
+    }
+
+    .active{
+        z-index: 3;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+    .burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar{
+        border-bottom: none;
+    }
+
+    /* Header Section */
+    .header{
+        background-position:right;
+    }
+
+    .header > h1, .header > p, .header > button{
+    text-align: center;
+    }
+    .header > button{
+        display: block;
+        margin: 0 auto;
+    }
+    .header > h1{
+        font-size: 60px;
+    }
+
+    .header > p{
+        font-size: 20px;
+        width: 80%;
+    }
+
+
+    /* Footer */
+    footer{
+        height: 470px;
+    }
+
+    .footer-1, .footer-2{
+        width: 100%;
+    }
+
+    .footer-1{
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .footer-2{
+        gap: 50px; 
+        text-align: center ; 
+        justify-content: center;
+
+    }
+
+}
