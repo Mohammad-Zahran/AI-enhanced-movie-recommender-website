@@ -19,14 +19,21 @@ body{
 }
 
 
+/* Main */
+main .sidebar{
+    width: 250px;
+    height: calc(100vh - 87px);
+    margin-top: 87px;
+    background-color: #001030a6;
+}
 
-
-
-
-
-
-
-
-
-
-
+main .sidebar .sidebar-links > a{
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
+main .sidebar .sidebar-links > a:focus{
+    color: #524F4F;
+}
