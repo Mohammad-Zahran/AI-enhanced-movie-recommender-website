@@ -1,7 +1,8 @@
 class Movies{
 
-    constructor(apiUrl){
+    constructor(apiUrl, userId){
         this.apiUrl = apiUrl;
+        this.userId = userId;
     }
 
     // fetch the API of get movies
@@ -22,7 +23,7 @@ class Movies{
 
     async markBookmarkedMovies(movies){
         try{
-            const bookmarkResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=2`);
+            const bookmarkResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=${this.userId}`);
             if (!bookmarkResponse.ok) throw new Error('Failed to fetch bookmarks');
             const responseData = await bookmarkResponse.json();
 
@@ -122,8 +123,7 @@ class Movies{
 
     async toggleBookmark(event, movieId, bookmarkBtn){
         try {
-            const userId = 2;
-            const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${userId}&movie_id=${movieId}`);
+            const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${this.userId}&movie_id=${movieId}`);
             const result = await response.json();
 
             if (result.message === "Added") {
@@ -190,7 +190,8 @@ class Movies{
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
+    const userId = localStorage.getItem("UserId")
+    const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
     movieFetcher.fetchMovies();
     movieFetcher.fetchMostPopularMovies();
     movieFetcher.viewMore();
