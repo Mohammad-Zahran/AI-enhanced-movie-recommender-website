@@ -32,7 +32,6 @@ class Movies{
             const bookmarks = responseData.bookmarkedMovies;
 
             if (Array.isArray(bookmarks)) {
-                const bookmarkedIds = new Set(bookmarks.map(b => b.movie_id));
     
                 movies.forEach(movie => {
                     const movieCard = document.getElementById(`movie-${movie.id}`);
@@ -99,10 +98,9 @@ class Movies{
             const bookmark_button = movieCard.querySelector(".bookmark-btn");
             bookmark_button.addEventListener("click", (e) => {
                 e.stopPropagation();
-                this.toggleBookmark(e, movie.id, bookmark_button);
+                this.toggleBookmark(movie.id, bookmark_button);
             });
 
-            
         });
 
         
@@ -121,7 +119,7 @@ class Movies{
         });
     }
 
-    async toggleBookmark(event, movieId, bookmarkBtn){
+    async toggleBookmark(movieId, bookmarkBtn){
         try {
             const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${this.userId}&movie_id=${movieId}`);
             const result = await response.json();
