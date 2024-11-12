@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 include "connection.php";
 
 $email = $_POST["email"] ?? null;
@@ -13,7 +13,7 @@ if (!$email || !$password) {
     exit();
 }
 
-$query = $connection->prepare("SELECT username, email, password FROM users WHERE email = ?");
+$query = $connection->prepare("SELECT id, username, email, password FROM users WHERE email = ?");
 $query->bind_param("s", $email);
 $query->execute();
 $result = $query->get_result();
@@ -39,6 +39,11 @@ if (!password_verify($password, $user['password'])) {
 $updateStatus = $connection->prepare("UPDATE users SET is_online = true WHERE id = ?");
 $updateStatus->bind_param("i", $user['id']);
 $updateStatus->execute();
+
+// Store user information in the session
+$_SESSION['userId'] = $user['id'];
+$_SESSION['username'] = $user['username'];
+$_SESSION['email'] = $user['email'];
 
 echo json_encode([
     "status" => "Successful",
