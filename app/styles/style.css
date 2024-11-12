@@ -333,6 +333,7 @@ h2{
     max-height: 600px;
     transition: transform 0.3s ease; 
     max-width: 300px;
+    cursor: pointer;
 }
 
 .popular-swiper .swiper-slide:hover {

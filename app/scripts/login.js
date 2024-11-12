@@ -23,8 +23,7 @@ form.addEventListener("submit", async (e) => {
         console.log(response.data);
 
         if (responseData.status === "Successful") { 
-            localStorage.setItem("UserId", responseData.userId); 
-            console.log(localStorage.getItem("UserId"));
+            localStorage.setItem("UserId", responseData.userId);
             setTimeout(() => {
                 window.location.href = "../index.html";
             }, 400); 

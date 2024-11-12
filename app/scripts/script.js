@@ -162,18 +162,22 @@ class Movies{
         let count = 1;
         const swiper_wrapper = document.getElementById("swiper-wrapper");
         movies.forEach(movie=>{
-            const swiper_slide =`
-                <div class="swiper-slide">
-                    <div class="popular-number">${count++}</div>
-                    <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
-                    <div class="popular-details">
-                        <h3>${movie.movie_title}</h3>
-                        <p>Number of likes: ${movie.number_of_likes}</p>
-                        <p>Top spot this week for action fans!</p>
-                    </div>
+            const swiper_slide = document.createElement('div');
+            swiper_slide.classList.add('swiper-slide');
+            swiper_slide.innerHTML =`
+                <div class="popular-number">${count++}</div>
+                <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
+                <div class="popular-details">
+                    <h3>${movie.movie_title}</h3>
+                    <p>Number of likes: ${movie.number_of_likes}</p>
+                    <p>Top spot this week for action fans!</p>
                 </div>
             `;
-            swiper_wrapper.innerHTML += swiper_slide;
+            swiper_wrapper.append(swiper_slide);
+
+            swiper_slide.addEventListener("click", () => {
+                window.location.href = `./pages/movie-details.html?id=${movie.id}`;
+            });
         });
     }
 
