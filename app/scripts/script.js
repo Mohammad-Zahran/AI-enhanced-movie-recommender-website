@@ -55,7 +55,6 @@ class Movies{
                 </div>
             `;
             movies_cards.appendChild(movieCard);
-            console.log(movie.id)
 
             movieCard.addEventListener("click", () => {
                 window.location.href = `./pages/movie-details.html?id=${movie.id}`;

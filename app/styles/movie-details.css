@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cairo:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #040e22;
+    color: #f5f5f5;
+    font-family: 'Poppins', Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Movie Details Container */
+
+.movie-details-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #0a162f;
+    color: #d1e0ff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.movie-details-container h2 {
+    color: #a1c4ff;
+    margin-bottom: 20px;
+}
+
+.movie-details-container img {
+    width: 60%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.movie-details-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-details-container p {
+    font-size: 15px;
+    color: #c3d4ff;
+    text-align: justify;
+    margin: 10px auto;
+    max-width: 700px;
+}
+
+.movie-details-container .highlight {
+    color: #a1c4ff;
+    font-weight: bold;
+    font-size: 16px;
+    color: #d1e0ff;
+}
+
+.movie-details-container a {
+    color: #a1c4ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.movie-details-container a:hover {
+    color: #d1e0ff;
+}
+
+/*Responsiveness*/
+@media (max-width: 768px) {
+    .movie-details-container {
+        padding: 20px;
+    }
+
+    .movie-details-container img {
+        width: 80%;
+    }
+
+    .movie-details-container p {
+        font-size: 14px;
+    }
+}
