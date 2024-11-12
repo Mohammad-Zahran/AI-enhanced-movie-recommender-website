@@ -19,6 +19,41 @@ class Movies{
             console.error("Error fetching data ", error);
         }
     }
+
+    async markBookmarkedMovies(movies){
+        try{
+            const bookmarkResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=2`);
+            if (!bookmarkResponse.ok) throw new Error('Failed to fetch bookmarks');
+            const responseData = await bookmarkResponse.json();
+
+            console.log("Response Data:", responseData);
+
+            const bookmarks = responseData.bookmarkedMovies;
+
+            if (Array.isArray(bookmarks)) {
+                const bookmarkedIds = new Set(bookmarks.map(b => b.movie_id));
+    
+                movies.forEach(movie => {
+                    const movieCard = document.getElementById(`movie-${movie.id}`);
+                
+                    const bookmarkBtn = movieCard.querySelector(".bookmark-btn");
+
+                    if (bookmarks.includes(movie.id)) {
+                        bookmarkBtn.classList.add("active");
+                    } else {
+                        bookmarkBtn.classList.remove("active");
+                    }
+                });
+                
+            } else {
+                console.error("Invalid bookmarks data format:", bookmarks);
+            }
+        }
+        catch (error) {
+            console.error("Error fetching bookmarks", error);
+        }
+    }
+
     // function to display movies on the section movies
     displayMovies(movies) {
         const movies_cards = document.getElementById("movies-cards");
@@ -68,6 +103,9 @@ class Movies{
 
             
         });
+
+        
+        this.markBookmarkedMovies(movies);
 
         const allMovieCards = movies_cards.querySelectorAll(".movie-card");
         allMovieCards.forEach(card => {
