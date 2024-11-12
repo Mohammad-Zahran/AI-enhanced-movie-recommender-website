@@ -21,6 +21,37 @@ class Movies{
         }
     }
 
+    async markLikedMovies(movies){
+        try{
+            const LikesResponse = await fetch(`${this.apiUrl}/getLike.php?user_id=${this.userId}`);
+            if (!LikesResponse.ok) throw new Error('Failed to fetch Likes');
+            const responseData = await LikesResponse.json();
+
+            const likes = responseData.likedMovies;
+
+            if (Array.isArray(likes)) {
+    
+                movies.forEach(movie => {
+                    const movieCard = document.getElementById(`movie-${movie.id}`);
+                
+                    const likeBtn = movieCard.querySelector(".like-btn");
+
+                    if (likes.includes(movie.id)) {
+                        likeBtn.classList.add("active");
+                    } else {
+                        likeBtn.classList.remove("active");
+                    }
+                });
+                
+            } else {
+                console.error("Invalid likes data format:", likes);
+            }
+        }
+        catch (error) {
+            console.error("Error fetching likes", error);
+        }
+    }
+
     async markBookmarkedMovies(movies){
         try{
             const LikesResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=${this.userId}`);
@@ -110,6 +141,7 @@ class Movies{
 
         
         this.markBookmarkedMovies(movies);
+        this.markLikedMovies(movies);
 
         const allMovieCards = movies_cards.querySelectorAll(".movie-card");
         allMovieCards.forEach(card => {
