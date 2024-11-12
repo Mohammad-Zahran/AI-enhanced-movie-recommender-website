@@ -23,34 +23,34 @@ class Movies{
 
     async markBookmarkedMovies(movies){
         try{
-            const bookmarkResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=${this.userId}`);
-            if (!bookmarkResponse.ok) throw new Error('Failed to fetch bookmarks');
-            const responseData = await bookmarkResponse.json();
+            const LikesResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=${this.userId}`);
+            if (!LikesResponse.ok) throw new Error('Failed to fetch likes');
+            const responseData = await LikesResponse.json();
 
             console.log("Response Data:", responseData);
 
-            const bookmarks = responseData.bookmarkedMovies;
+            const likes = responseData.bookmarkedMovies;
 
-            if (Array.isArray(bookmarks)) {
+            if (Array.isArray(likes)) {
     
                 movies.forEach(movie => {
                     const movieCard = document.getElementById(`movie-${movie.id}`);
                 
-                    const bookmarkBtn = movieCard.querySelector(".bookmark-btn");
+                    const likeBtn = movieCard.querySelector(".bookmark-btn");
 
-                    if (bookmarks.includes(movie.id)) {
-                        bookmarkBtn.classList.add("active");
+                    if (likes.includes(movie.id)) {
+                        likeBtn.classList.add("active");
                     } else {
-                        bookmarkBtn.classList.remove("active");
+                        likeBtn.classList.remove("active");
                     }
                 });
                 
             } else {
-                console.error("Invalid bookmarks data format:", bookmarks);
+                console.error("Invalid likes data format:", likes);
             }
         }
         catch (error) {
-            console.error("Error fetching bookmarks", error);
+            console.error("Error fetching likes", error);
         }
     }
 
@@ -124,17 +124,17 @@ class Movies{
         });
     }
 
-    async toggleBookmark(movieId, bookmarkBtn){
+    async toggleBookmark(movieId, likeBtn){
         try {
             const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${this.userId}&movie_id=${movieId}`);
             const result = await response.json();
 
             if (result.message === "Added") {
                 // Toggle the "filled" class on success
-                bookmarkBtn.classList.toggle("active");
+                likeBtn.classList.toggle("active");
             } 
             else if(result.message === "Deleted"){
-                bookmarkBtn.classList.remove("active");
+                likeBtn.classList.remove("active");
             }
             else if (result.error) {
                 console.error(result.error);

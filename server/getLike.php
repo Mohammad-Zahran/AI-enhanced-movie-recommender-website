@@ -12,17 +12,17 @@
     }
 
     try {
-        $query = $connection->prepare("SELECT movie_id FROM user_bookmark_movies WHERE user_id = ?");
+        $query = $connection->prepare("SELECT movie_id FROM user_likes_movies WHERE user_id = ?");
         $query->bind_param("i", $user_id);
         $query->execute();
         $result = $query->get_result();
 
-        $bookmarkedMovies = [];
+        $likedMovies = [];
         while ($row = $result->fetch_assoc()) {
-            $bookmarkedMovies[] = $row['movie_id'];
+            $likedMovies[] = $row['movie_id'];
         }
 
-        echo json_encode(['bookmarkedMovies' => $bookmarkedMovies]);
+        echo json_encode(['likedMovies' => $likedMovies]);
     } catch (Exception $error) {
         echo json_encode(['error' => 'Database error: ' . $error->getMessage()]);
     }
