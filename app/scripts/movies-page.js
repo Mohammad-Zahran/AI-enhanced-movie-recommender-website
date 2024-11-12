@@ -19,6 +19,40 @@ class MoviesPage{
         }
     }
 
+    async markBookmarkedMovies(movies){
+        try{
+            const bookmarkResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=2`);
+            if (!bookmarkResponse.ok) throw new Error('Failed to fetch bookmarks');
+            const responseData = await bookmarkResponse.json();
+
+            console.log("Response Data:", responseData);
+
+            const bookmarks = responseData.bookmarkedMovies;
+
+            if (Array.isArray(bookmarks)) {
+                const bookmarkedIds = new Set(bookmarks.map(b => b.movie_id));
+    
+                movies.forEach(movie => {
+                    const movieCard = document.getElementById(`movie-${movie.id}`);
+                
+                    const bookmarkBtn = movieCard.querySelector(".bookmark-btn");
+
+                    if (bookmarks.includes(movie.id)) {
+                        bookmarkBtn.classList.add("active");
+                    } else {
+                        bookmarkBtn.classList.remove("active");
+                    }
+                });
+                
+            } else {
+                console.error("Invalid bookmarks data format:", bookmarks);
+            }
+        }
+        catch (error) {
+            console.error("Error fetching bookmarks", error);
+        }
+    }
+
     // function to display all movies on a page
     displayMoviesOnPage(movies) {
         const movies_cards = document.getElementById("movies-cards-page");
@@ -26,6 +60,7 @@ class MoviesPage{
         movies.forEach(movie=>{
             const movieCard = document.createElement('div');
             movieCard.classList.add('movie-card');
+            movieCard.id = `movie-${movie.id}`;
             movieCard.innerHTML = `
                 <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
                 <span class="bookmark-btn">
@@ -57,10 +92,18 @@ class MoviesPage{
             movies_cards.appendChild(movieCard);
             console.log(movie.id)
 
+            const bookmark_button = movieCard.querySelector(".bookmark-btn");
+            bookmark_button.addEventListener("click", (e) => {
+                e.stopPropagation();
+                this.toggleBookmark(e, movie.id, bookmark_button);
+            });
+
             movieCard.addEventListener("click", () => {
                 window.location.href = `../pages/movie-details.html?id=${movie.id}`;
             });
         });
+
+        this.markBookmarkedMovies(movies);
 
         const allMovieCards = movies_cards.querySelectorAll(".movie-card");
         allMovieCards.forEach(card => {
@@ -73,6 +116,27 @@ class MoviesPage{
                 });
             });
         });
+    }
+
+    async toggleBookmark(event, movieId, bookmarkBtn){
+        try {
+            const userId = 2;
+            const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${userId}&movie_id=${movieId}`);
+            const result = await response.json();
+
+            if (result.message === "Added") {
+                // Toggle the "filled" class on success
+                bookmarkBtn.classList.toggle("active");
+            } 
+            else if(result.message === "Deleted"){
+                bookmarkBtn.classList.remove("active");
+            }
+            else if (result.error) {
+                console.error(result.error);
+            }
+        } catch (error) {
+            console.error("Error updating bookmark status:", error);
+        }
     }
 }
 
