@@ -1,5 +1,6 @@
 <?php
 
+    session_start(); 
     include "connection.php";
 
     // This will Check if the required fields are set in POST, otherwise assign default values 
@@ -8,7 +9,7 @@
     $email = isset($_POST["email"]) ? $_POST["email"] : '';
     $password = isset($_POST["password"]) ? $_POST["password"] : '';
     $is_banned = isset($_POST["is_banned"]) ? $_POST["is_banned"] : false; 
-    $is_online = isset($_POST["is_online"]) ? $_POST["is_online"] : false; 
+    $is_online = isset($_POST["is_online"]) ? $_POST["is_online"] : true; 
     $role = isset($_POST["role"]) ? $_POST["role"] : 'user'; 
 
     $hashed = password_hash($password, PASSWORD_BCRYPT);
@@ -60,10 +61,17 @@
 
         // Return response based on the result of the insertion
         if ($result != 0) {
+
+            $user_id = $connection->insert_id;
+
+            $_SESSION['userId'] = $user_id;
+            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
+
             echo json_encode([
                 "status" => "Successful",
                 "message" => "$result user(s) created",
-
+                "userId" => $user_id,
             ]);
         } else {
             echo json_encode([

@@ -21,7 +21,9 @@ form.addEventListener("submit", async (e) => {
         console.log(response.data); 
 
         if (response.data.status === "Successful") {
-            alert("Registration Successful");
+            const userId = response.data.userId;
+            localStorage.setItem("UserId", userId);
+            window.location.href = "../index.html"; 
         } else if (response.data.message === "Username already taken.") {
             // put in the form that it is already used
         } else if (response.data.message === "Email already taken.") {
