@@ -19,13 +19,13 @@ class Movies{
             console.error("Error fetching data ", error);
         }
     }
-
     // function to display movies on the section movies
     displayMovies(movies) {
         const movies_cards = document.getElementById("movies-cards");
         movies.forEach(movie=>{
             const movieCard = document.createElement('div');
             movieCard.classList.add('movie-card');
+            movieCard.id = `movie-${movie.id}`;
             movieCard.innerHTML = `
                 <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
                 <span class="bookmark-btn">
@@ -60,6 +60,13 @@ class Movies{
                 window.location.href = `./pages/movie-details.html?id=${movie.id}`;
             });
 
+            const bookmark_button = movieCard.querySelector(".bookmark-btn");
+            bookmark_button.addEventListener("click", (e) => {
+                e.stopPropagation();
+                this.toggleBookmark(e, movie.id, bookmark_button);
+            });
+
+            
         });
 
         const allMovieCards = movies_cards.querySelectorAll(".movie-card");
@@ -73,6 +80,27 @@ class Movies{
                 });
             });
         });
+    }
+
+    async toggleBookmark(event, movieId, bookmarkBtn){
+        try {
+            const userId = 2;
+            const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${userId}&movie_id=${movieId}`);
+            const result = await response.json();
+
+            if (result.message === "Added") {
+                // Toggle the "filled" class on success
+                bookmarkBtn.classList.toggle("active");
+            } 
+            else if(result.message === "Deleted"){
+                bookmarkBtn.classList.remove("active");
+            }
+            else if (result.error) {
+                console.error(result.error);
+            }
+        } catch (error) {
+            console.error("Error updating bookmark status:", error);
+        }
     }
     
     // fetch the API of get the most popular movies
