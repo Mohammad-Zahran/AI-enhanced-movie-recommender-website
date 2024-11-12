@@ -3,12 +3,10 @@
 include "connection.php";
 
 $id = $_POST["id"] ?? null;
-
-
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-$query = $connection->prepare("SELECT email, password FROM users WHERE id = $id ");
+$query = $connection->prepare("SELECT email, password FROM users WHERE id = ? ");
 $query->bind_param("i", $id);
 $query->execute();
 $result = $query->get_result();
@@ -33,9 +31,22 @@ if (!password_verify($password, $user['password'])) {
     exit();
 }
 
+// If login is successful, We will set is_online  to true
 
+$updateStatus = $connection->prepare("UPDATE users SET is_online = true WHERE id= ?");
+$updateStatus->bind_param("i", $id);
+$updateStatus->execute();
 
+echo json_encode([
+    "status" => "Successful",
+    "message" => "Login Succesful",
+    "userId" => $id,
+    "username" => $user['username']
+]);
 
+$query->close();
+$updateStatus->close();
+$connection->close();
 
 
 ?>
