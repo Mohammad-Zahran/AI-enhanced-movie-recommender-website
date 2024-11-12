@@ -13,13 +13,13 @@ $role = isset($_POST["role"]) ? $_POST["role"] : 'user';
 
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 
-// Check if username already exists
+// This will check if the username is taken or not to have unique names
 $username_check = $connection->prepare("SELECT id FROM users WHERE username = ?");
 $username_check->bind_param("s", $username);
 $username_check->execute();
 $username_check_result = $username_check->get_result();
 
-// Check if email already exists
+// This will check if the emaail is taken or not to have unique emails
 $email_check = $connection->prepare("SELECT id FROM users WHERE email = ?");
 $email_check->bind_param("s", $email);
 $email_check->execute();

@@ -22,6 +22,10 @@ form.addEventListener("submit", async (e) => {
 
         if (response.data.status === "Successful") {
             alert("Registration Successful");
+        } else if (response.data.message === "Username already taken.") {
+            alert("The username is already taken. Please choose a different one.");
+        } else if (response.data.message === "Email already taken.") {
+            alert("The email is already registered. Please use a different one.");
         } else {
             alert(response.data.message); 
         }
