@@ -101,6 +101,11 @@ class Movies{
                 this.toggleBookmark(movie.id, bookmark_button);
             });
 
+            const like_btn = movieCard.querySelector(".like-btn");
+            like_btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                this.toggleLikeBtn(movie.id, like_btn);
+            });
         });
 
         
@@ -136,6 +141,26 @@ class Movies{
             }
         } catch (error) {
             console.error("Error updating bookmark status:", error);
+        }
+    }
+
+    async toggleLikeBtn(movieId, likeBtn){
+        try {
+            const response = await fetch(`${this.apiUrl}/like.php?user_id=${this.userId}&movie_id=${movieId}`);
+            const result = await response.json();
+
+            if (result.message === "Added") {
+                // Toggle the "filled" class on success
+                likeBtn.classList.toggle("active");
+            } 
+            else if(result.message === "Deleted"){
+                likeBtn.classList.remove("active");
+            }
+            else if (result.error) {
+                console.error(result.error);
+            }
+        } catch (error) {
+            console.error("Error updating like status:", error);
         }
     }
     
