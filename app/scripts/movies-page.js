@@ -18,7 +18,6 @@ class MoviesPage{
             console.error("Error fetching data ", error);
         }
     }
-
     // function to display all movies on a page
     displayMoviesOnPage(movies) {
         const movies_cards = document.getElementById("movies-cards-page");
