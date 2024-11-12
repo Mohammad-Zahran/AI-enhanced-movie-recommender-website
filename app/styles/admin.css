@@ -35,7 +35,7 @@ main .sidebar .sidebar-links > a{
     font-weight: bold;
 }
 main .sidebar .sidebar-links > a:focus{
-    color: #524F4F;
+    color: #FFF;
 }
 
 main .main{
@@ -58,7 +58,7 @@ main .main{
     padding: 29px 0px 0px 32px;
 }
 .main > .welcome-div > p{
-    color: #524F4F;
+    color: #FFF;
     font-size: 16px;
     padding: 15px 0px 0px 32px;
 }
@@ -87,7 +87,7 @@ main .main{
 
 .main > .stats > .stats-card > .stats-container > p{
     font-size: 16px;
-    color: #524F4F;
+    color: #FFF;
     padding: 81px 0px 0px 27px;
 
 }
@@ -120,15 +120,14 @@ table.Users {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-
   }
   table.Users td, table.Users th {
     border: 0px solid #AAAAAA;
-    padding: 3px 2px;
+    padding: 10px 5px;
   }
   table.Users tbody td {
     font-size: 16px;
-    color: #524F4F;
+    color: #FFF;
   }
   table.Users tr:nth-child(even) {
     background: #020814;
@@ -137,7 +136,7 @@ table.Users {
     background: #020814;
   }
   table.Users thead th {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     color: #FFFFFF;
   }
