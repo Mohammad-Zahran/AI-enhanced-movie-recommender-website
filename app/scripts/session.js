@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (data.status === "Logged in") {
             // Display username and logout button
             userInfo.innerHTML = `
-                <h1>Welcome, ${data.username}</h1>
+                <span>Welcome, ${data.username}</span>
                 <button class="button login" id="logout-btn">Logout</button>
             `;
             // Handle logout button click
