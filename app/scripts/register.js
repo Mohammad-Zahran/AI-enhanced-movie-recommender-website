@@ -4,7 +4,7 @@ const EmailInput = document.getElementById('email');
 const PasswordInput = document.getElementById('password');
 
 form.addEventListener("submit", async (e) => {
-    e.preventDefault(); 
+    e.preventDefault(); // this is called to prevent normall submitings 
 
     const data = new FormData();
     data.append("username", UsernameInput.value);

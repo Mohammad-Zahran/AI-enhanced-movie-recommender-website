@@ -13,6 +13,19 @@ $role = isset($_POST["role"]) ? $_POST["role"] : 'user';
 
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 
+// Check if username already exists
+$username_check = $connection->prepare("SELECT id FROM users WHERE username = ?");
+$username_check->bind_param("s", $username);
+$username_check->execute();
+$username_check_result = $username_check->get_result();
+
+// Check if email already exists
+$email_check = $connection->prepare("SELECT id FROM users WHERE email = ?");
+$email_check->bind_param("s", $email);
+$email_check->execute();
+$email_check_result = $email_check->get_result();
+
+
 // Validate input data: check if one of the required inputs are empty
 if (empty($username) || empty($email) || empty($password)) {
     echo json_encode([
