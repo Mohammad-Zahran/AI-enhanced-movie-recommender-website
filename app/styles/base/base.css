@@ -1,6 +1,257 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
+.navbar{
+  justify-content: space-around;
+  align-items: center;
+  height: 87px;
+  width: 100%;
+  padding: 0 25px;
+  position: fixed;
+  background-color: #02081433;
+  z-index: 1000;
+}
+
+.navbar > h1{
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.logo{
+  align-items: center;
+  color: #FFF;
+}
+
+.navbar > ul > li > a{
+  font-size: 18px;
+  color: #FFF;
+}
+
+.navbar > ul{
+  justify-content: center;
+  gap: 50px;
+}
+
+.navbar-tools{
+  gap: 20px;
+}
+
+.navbar-tools > button{
+  width: auto;
+  font-size: 18px;
+  padding: 7px 11px;
+}
+
+.search-bar > input{
+  width: 150px;
+  height: 36px;
+  background-color: #d9d9d9b3;
+  border-radius: 28px;
+  outline: 0;
+  border: 0;
+  padding-left: 20px;
+}
+
+.search-bar > input::placeholder{
+  color: #3d3d3d;
+}
+
+.search-bar{
+  position: relative;
+}
+
+.search-icon{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Header Section */
+.header{
+  background-image: url(./../../assets/images/spider-man.jpeg);
+  height: 100vh;
+  background-size: cover;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header > h1, .header > p, .header > button{
+  margin-left: 10%;
+}
+
+.header > h1{
+  font-size: 120px;
+  color: #FFF;
+}
+
+.header > p{
+  font-size: 30px;
+  color: #BACDF5;
+  width: 600px;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.header > h1 > span{
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg,  rgba(17,68,170,1) 0%, rgba(136,161,212,1) 70%, rgba(255,255,255,1) 100%);    
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* Footer */
+footer{
+  height: 194px;
+  align-items: center;
+  background-color: #1b2a47;
+}
+
+.footer-1, .footer-2{
+  width: 50%;
+}
+
+.footer-1{
+  justify-content: flex-start;
+  padding-left: 156px;
+}
+
+.footer-2{
+  gap: 100px;   
+}
+
+.footer-2 ul li a {
+  font-size: 16px;
+  color: #BACDF5;
+}
+
+.footer-1 > p {
+  font-size: 18px;
+  color: #BACDF5;
+}
+
+.footer-1 > h2 ,.footer-2 ul li:first-child a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+
+
+/* Burger menu */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger > .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .line2 {
+  opacity: 0;
+}
+
+.burger.active .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsiveness */
+@media (max-width: 1000px) {
+  /* Responsiveness for the navbar  */
+  .nav-links {
+      display: none !important;
+      flex-direction: column;
+      position: absolute;
+      top: 85px;
+      right: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+  }
+  .nav-links.active {
+      transform: translateX(0);
+  }
+  .nav-links li{
+      margin: 1%;
+  }
+
+  .active{
+      z-index: 3;
+  }
+
+  .nav-links.active {
+      display: flex !important;
+  }
+  .burger {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .navbar{
+      border-bottom: none;
+  }
+
+  /* Header Section */
+  .header{
+      background-position:right;
+  }
+
+  .header > h1, .header > p, .header > button{
+  text-align: center;
+  }
+  .header > button{
+      display: block;
+      margin: 0 auto;
+  }
+  .header > h1{
+      font-size: 60px;
+  }
+
+  .header > p{
+      font-size: 20px;
+      width: 80%;
+  }
+
+
+  /* Footer */
+  footer{
+      height: 470px;
+  }
+
+  .footer-1, .footer-2{
+      width: 100%;
+  }
+
+  .footer-1{
+      padding-left: 0px;
+      text-align: center;
+  }
+
+  .footer-2{
+      gap: 50px; 
+      text-align: center ; 
+      justify-content: center;
+
+  }
+
+}

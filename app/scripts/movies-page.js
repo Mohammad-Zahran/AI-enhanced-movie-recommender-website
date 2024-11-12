@@ -1,4 +1,4 @@
-class Movies{
+class MoviesPage{
 
     constructor(apiUrl){
         this.apiUrl = apiUrl;
@@ -12,17 +12,17 @@ class Movies{
             const rawResponse = await response.text();
             const movies = JSON.parse(rawResponse);
             
-            const eightMovies = movies.slice(0, 8);
-            this.displayMovies(eightMovies);
+            this.displayMoviesOnPage(movies);
         }
         catch(error){
             console.error("Error fetching data ", error);
         }
     }
 
-    // function to display movies on the section movies
-    displayMovies(movies) {
-        const movies_cards = document.getElementById("movies-cards");
+    // function to display all movies on a page
+    displayMoviesOnPage(movies) {
+        const movies_cards = document.getElementById("movies-cards-page");
+        if (!movies_cards) return;
         movies.forEach(movie=>{
             const movieCard = `
                 <div class="movie-card">
@@ -69,65 +69,9 @@ class Movies{
             });
         });
     }
-    
-    // fetch the API of get the most popular movies
-    async fetchMostPopularMovies(){
-        try{
-            const response = await fetch(`${this.apiUrl}/getMostPopularMovies.php`);
-            if (!response.ok) throw new Error('Failed to fetch most popular movies');
-            const data = await response.json();
-            console.log(data);
-
-            const mostPopular = data.movies.slice(0, 10);
-            this.displayMostPopularMovies(mostPopular);
-        }
-        catch(error){
-            console.error("Error fetching data ", error);
-        }
-    }
-
-    // function to display most 10 popular moves
-    displayMostPopularMovies(movies){
-        let count = 1;
-        const swiper_wrapper = document.getElementById("swiper-wrapper");
-        movies.forEach(movie=>{
-            const swiper_slide =`
-                <div class="swiper-slide">
-                    <div class="popular-number">${count++}</div>
-                    <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
-                    <div class="popular-details">
-                        <h3>${movie.movie_title}</h3>
-                        <p>Number of likes: ${movie.number_of_likes}</p>
-                        <p>Top spot this week for action fans!</p>
-                    </div>
-                </div>
-            `;
-            swiper_wrapper.innerHTML += swiper_slide;
-        });
-    }
-
-    viewMore(){
-        const view_button = document.getElementById("view-more-btn");
-        view_button.addEventListener("click", ()=>{
-            window.location.href = "./pages/movies-page.html";
-        })
-    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
+    const movieFetcher = new MoviesPage('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
     movieFetcher.fetchMovies();
-    movieFetcher.fetchMostPopularMovies();
-    movieFetcher.viewMore();
-
-    // Burger Menu
-    const burger = document.getElementById("burger");
-    const navLinks = document.querySelector(".nav-links");
-    var startButton = document.getElementById("start");
-    var start = document.getElementById("start-now");
-
-    burger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    burger.classList.toggle("active");
-    });
 });
