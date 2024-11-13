@@ -17,6 +17,28 @@
   z-index: 1000;
 }
 
+.navbar-tools{
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  font-size: 18px;
+  color: #FFF;
+}
+
+.user-info span {
+  margin-right: 10px;
+}
+
+.user-info .button {
+  font-size: 18px;
+  padding: 7px 11px;
+  width: 80px;
+}
+
+
 .navbar > h1{
   font-size: 20px;
   font-weight: bold;

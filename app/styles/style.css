@@ -51,6 +51,20 @@ h2{
     cursor: pointer;
 }
 
+.bookmark-btn svg {
+    cursor: pointer;
+    transition: stroke 0.3s ease;
+}
+
+.bookmark-btn:hover{
+    color:  #4CAF50;
+}
+
+.bookmark-btn.active svg{
+    color: #ffcc00;
+    fill: #ffcc00; 
+}
+
 .movie-card:hover {
     transform: scale(1.05);
 }
@@ -96,6 +110,10 @@ h2{
     color: #1a73e8;
 }
 
+.like-btn.active {
+    color: #1a73e8;
+}
+
 .likes-number {
     margin-left: 5px;
     color: #aaaaaa;
@@ -111,14 +129,6 @@ h2{
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.bookmark-btn svg {
-    cursor: pointer;
-}
-
-.bookmark-btn:hover{
-    color:  #4CAF50;
 }
 
 .movie-rating {
@@ -327,6 +337,7 @@ h2{
     max-height: 600px;
     transition: transform 0.3s ease; 
     max-width: 300px;
+    cursor: pointer;
 }
 
 .popular-swiper .swiper-slide:hover {
