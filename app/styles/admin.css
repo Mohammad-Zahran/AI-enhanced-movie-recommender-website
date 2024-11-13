@@ -76,7 +76,7 @@ main .main{
 }
 .main > .stats > .stats-card > p{
   color: #FFF;
-  font-size: 16px;
+  font-size: 18px;
   padding: 21px 0px 0px 27px;
 }
 .main > .stats > .stats-card > .stats-container > h1{
@@ -87,7 +87,7 @@ main .main{
 
 .main > .stats > .stats-card > .stats-container > p{
   font-size: 16px;
-  color: #FFF;
+  color: #BACDF5;
   padding: 81px 0px 0px 27px;
 
 }
