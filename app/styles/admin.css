@@ -24,7 +24,7 @@ main .sidebar{
   width: 250px;
   height: calc(100vh - 87px);
   margin-top: 87px;
-  background-color: #001030a6;
+  background-color: #0D1A33;
 }
 
 main .sidebar .sidebar-links > a{
@@ -158,4 +158,46 @@ table.Users tfoot .links a{
   color: #FFFFFF;
   padding: 2px 8px;
   border-radius: 5px;
+}
+
+td > .options{
+  text-align: center;
+  background-color: transparent;
+}
+
+/* Style for the buttons */
+.popup_button {
+  padding: 0px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style for the popups (hidden initially) */
+.popup {
+  width: 140px;
+  display: none;
+  position: absolute;
+  top: 40px; /* Adjust distance from button */
+  left: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+
+
+.user-edit-button,.user-delete-button{
+  color: #3D3D3D;
+  font-size: 16px;
+  background-color: transparent;
+  width: 100px;
+  margin-bottom: 10px;
+}
+.user-delete-button{
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 18px;
 }

@@ -50,7 +50,7 @@
 }
 
 .navbar-tools > button{
-  width: 76px;
+  width: 100px;
   font-size: 18px;
   padding: 7px 11px;
 }
@@ -288,6 +288,10 @@ footer{
   .footer-1 .logo{
       display: block;
       margin: 0px auto 10px;
+      color: #FFF;
   }
+  .footer-2 .icons{
+    justify-content: space-between;
+}
 
 }
