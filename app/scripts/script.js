@@ -136,6 +136,7 @@ class Movies{
             }
 
             movieCard.addEventListener("click", () => {
+                this.trackClick(movie.id);
                 setTimeout(() => {
                     window.location.href = `./pages/movie-details.html?id=${movie.id}`;
                 }, 500);
@@ -300,6 +301,27 @@ class Movies{
             return [];
         }
     }
+    
+    // Track click event
+    async trackClick(movieId) {
+
+        const response = await fetch(`${this.apiUrl}/updateClicksDuration.php`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: this.userId,
+                movieId: movieId,
+                action: 'click'
+            }),
+        })
+        
+        if (response.ok){
+            console.log("done click");
+        }
+    }
+
     
     // fetch the API of get the most popular movies
     async fetchMostPopularMovies(){
