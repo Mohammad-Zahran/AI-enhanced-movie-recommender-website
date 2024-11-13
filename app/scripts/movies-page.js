@@ -238,8 +238,49 @@ class MoviesPage{
             else if (result.error) {
                 console.error(result.error);
             }
-        } catch (error) {
+            
+            const movieCard = document.getElementById(`movie-${movieId}`);
+            const likesNumber = movieCard.querySelector(".likes-number");
+            let currentLikes = parseInt(likesNumber.textContent);
+
+            // Update the number of likes
+            if (likeBtn.classList.contains("active")) {
+                currentLikes += 1; // increment
+            } 
+            else {
+                currentLikes -= 1; // Decrement
+            }
+
+            likesNumber.textContent = currentLikes;
+
+            // Update the like count in the database
+            await this.updateLikesInDatabase(movieId, currentLikes);
+        } 
+        catch (error) {
             console.error("Error updating like status:", error);
+        }
+    }
+
+    async updateLikesInDatabase(movieId, currentLikes) {
+        try {
+            const response = await fetch(`${this.apiUrl}/updateLikes.php`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    movieId: movieId,
+                    currentLikes: currentLikes,
+                }),
+            });
+    
+            const result = await response.json();
+            if (result.status === "Success") {
+            } else {
+                console.error("Error updating like count in database:", result.message);
+            }
+        } catch (error) {
+            console.error("Error updating like count in database:", error);
         }
     }
 
@@ -260,6 +301,7 @@ class MoviesPage{
 
 document.addEventListener("DOMContentLoaded", () => {
     const userId = localStorage.getItem("UserId");
-    const movieFetcher = new MoviesPage('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
-    movieFetcher.fetchMovies();
+    const moviePageFetcher = new MoviesPage('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
+    moviePageFetcher.fetchMovies();
+    
 });

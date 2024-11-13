@@ -414,4 +414,3 @@ popup_buttons.forEach(button => {
   });
 });
 // Pop up for the admin page - End
-
