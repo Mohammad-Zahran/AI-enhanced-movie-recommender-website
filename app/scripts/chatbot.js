@@ -31,4 +31,37 @@ function scrollDown(){
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-// Put response
+// Bot response
+function bot(){
+    var http = new XMLHttpRequest()
+    var data = new FormData()
+    data.append('prompt', input.value)
+    http.open('POST', 'request.php', true)
+    http.send(data)
+    setTimeout(() => {
+        // preloader
+        chatContainer.innerHTML += `
+        <div class="message response">
+            <div>
+                <img src="../assets/img/preloader.gif" alt="preloader">
+            </div>
+        </div>
+        `
+        scrollDown();
+    }, 1000);
+    http.onload = () => {
+        // process response
+    let response = JSON.parse(http.response)
+    let replyText = processResponse(response.choices[0].text)
+    let replyContainer = document.querySelectorAll('.response')
+    replyContainer[replyContainer.length-1].querySelector('div').innerHTML = replyText
+    scrollDown();
+    }
+}
+
+function processResponse(res){
+    let arr = res.split(':')
+    return arr[arr.length-1]
+        .replace(/(\r\n|\r|\n)/gm, '')
+        .trim()
+}
