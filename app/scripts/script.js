@@ -14,7 +14,9 @@ class Movies{
             const movies = JSON.parse(rawResponse);
             
             const eightMovies = movies.slice(0, 8);
-            this.displayMovies(eightMovies);
+            const userRatings = await this.fetchUserRatings() || [];
+            this.displayMovies(eightMovies, userRatings);
+
         }
         catch(error){
             console.error("Error fetching data ", error);
@@ -86,7 +88,7 @@ class Movies{
     }
 
     // function to display movies on the section movies
-    displayMovies(movies) {
+    async displayMovies(movies, userRatings = []) {
         const movies_cards = document.getElementById("movies-cards");
         movies.forEach(movie=>{
             const movieCard = document.createElement('div');
@@ -121,6 +123,20 @@ class Movies{
                 </div>
             `;
             movies_cards.appendChild(movieCard);
+
+            console.log(userRatings)
+
+            // Display the saved rating for this movie, if available
+            const savedRating = userRatings.find(r => r.movie_id === movie.id);
+            console.log("Saved rating for movie", movie.id, savedRating);
+            if (savedRating) {
+                const stars = movieCard.querySelectorAll(".movie-rating i");
+                stars.forEach((star, index) => {
+                    if (index < savedRating.rate) {
+                        star.classList.add("active");
+                    }
+                });
+            }
 
             movieCard.addEventListener("click", () => {
                 window.location.href = `./pages/movie-details.html?id=${movie.id}`;
@@ -229,6 +245,20 @@ class Movies{
             console.error("Error updating like status:", error);
         }
     }
+
+    async fetchUserRatings() {
+        try {
+            const response = await fetch(`${this.apiUrl}/getUserRatings.php?user_id=${this.userId}`);
+            if (!response.ok) throw new Error("Failed to fetch user ratings");
+            const data = await response.json();
+            console.log("User Ratings:", data);
+            return data.ratings;
+        } 
+        catch (error) {
+            console.error("Error fetching user ratings", error);
+            return [];
+        }
+    }    
     
     // fetch the API of get the most popular movies
     async fetchMostPopularMovies(){
