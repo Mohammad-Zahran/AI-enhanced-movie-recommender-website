@@ -124,11 +124,8 @@ class Movies{
             `;
             movies_cards.appendChild(movieCard);
 
-            console.log(userRatings)
-
             // Display the saved rating for this movie, if available
             const savedRating = userRatings.find(r => r.movie_id === movie.id);
-            console.log("Saved rating for movie", movie.id, savedRating);
             if (savedRating) {
                 const stars = movieCard.querySelectorAll(".movie-rating i");
                 stars.forEach((star, index) => {
@@ -309,7 +306,7 @@ class Movies{
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const userId = localStorage.getItem("UserId")
+    const userId = localStorage.getItem("UserId");
     const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
     movieFetcher.fetchMovies();
     movieFetcher.fetchMostPopularMovies();
