@@ -136,6 +136,7 @@ class Movies{
             }
 
             movieCard.addEventListener("click", () => {
+                this.incrementClickCount(movie.id);
                 window.location.href = `./pages/movie-details.html?id=${movie.id}`;
             });
 
@@ -297,6 +298,22 @@ class Movies{
             return [];
         }
     }
+    
+    async incrementClickCount(movieId) {
+        try {
+            const response = await fetch(`${this.apiUrl}/incrementClick.php?movie_id=${movieId}&user_id=${this.userId}`);
+            const result = await response.json();
+    
+            if (result.status !== "Success") {
+                console.error("Error updating click count:", result.message);
+            } else {
+                console.log("Click count incremented for movie ID:", movieId);
+            }
+        } catch (error) {
+            console.error("Failed to increment click count:", error);
+        }
+    }
+    
     
     // fetch the API of get the most popular movies
     async fetchMostPopularMovies(){
