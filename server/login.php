@@ -1,30 +1,61 @@
 <?php
 
+    session_start(); 
     include "connection.php";
-    include "connection.php";
-    header('Content-Type: application/json');
 
-    $user_id = $_GET["user_id"] ?? null;
+    $email = $_POST["email"] ?? null;
+    $password = $_POST["password"] ?? null;
 
-    // Check if ID is provided
-    if ($user_id === null) {
-        echo json_encode(["error" => "User ID is required."]);
-        exit;
+    if (!$email || !$password) {
+        echo json_encode([
+            "status" => "Failed",
+            "message" => "Email and password are required."
+        ]);
+        exit();
     }
 
-    try {
-        $query = $connection->prepare("SELECT movie_id FROM user_bookmark_movies WHERE user_id = ?");
-        $query->bind_param("i", $user_id);
-        $query->execute();
-        $result = $query->get_result();
+    $query = $connection->prepare("SELECT id, username, email, password FROM users WHERE email = ?");
+    $query->bind_param("s", $email);
+    $query->execute();
+    $result = $query->get_result();
 
-        $bookmarkedMovies = [];
-        while ($row = $result->fetch_assoc()) {
-            $bookmarkedMovies[] = $row['movie_id'];
-        }
-
-        echo json_encode(['bookmarkedMovies' => $bookmarkedMovies]);
-    } catch (Exception $error) {
-        echo json_encode(['error' => 'Database error: ' . $error->getMessage()]);
+    if ($result->num_rows === 0) {
+        echo json_encode([
+            "status" => "Failed",
+            "message" => "Invalid email or password."
+        ]);
+        exit();
     }
+
+    $user = $result->fetch_assoc();
+
+    if (!password_verify($password, $user['password'])) {
+        echo json_encode([
+            "status" => "Failed",
+            "message" => "Incorrect password."
+        ]);
+        exit();
+    }
+
+    $updateStatus = $connection->prepare("UPDATE users SET is_online = true WHERE id = ?");
+    $updateStatus->bind_param("i", $user['id']);
+    $updateStatus->execute();
+    
+
+    // Store user information in the session
+    $_SESSION['userId'] = $user['id'];
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['email'] = $user['email'];
+
+    echo json_encode([
+        "status" => "Successful",
+        "message" => "Login Successful",
+        "userId" => $user['id'],
+        "username" => $user['username']
+    ]);
+
+    $query->close();
+    $updateStatus->close();
+    $connection->close();
+
 ?>
