@@ -1,7 +1,8 @@
 class MoviesPage{
 
-    constructor(apiUrl){
+    constructor(apiUrl, userId){
         this.apiUrl = apiUrl;
+        this.userId = userId;
     }
 
     // fetch the API of get movies
@@ -12,7 +13,8 @@ class MoviesPage{
             const rawResponse = await response.text();
             const movies = JSON.parse(rawResponse);
             
-            this.displayMoviesOnPage(movies);
+            const userRatings = await this.fetchUserRatings() || [];
+            this.displayMoviesOnPage(movies, userRatings);
         }
         catch(error){
             console.error("Error fetching data ", error);
@@ -85,7 +87,7 @@ class MoviesPage{
     }
 
     // function to display all movies on a page
-    displayMoviesOnPage(movies) {
+    async displayMoviesOnPage(movies, userRatings = []) {
         const movies_cards = document.getElementById("movies-cards-page");
         if (!movies_cards) return;
         movies.forEach(movie=>{
@@ -123,6 +125,17 @@ class MoviesPage{
             movies_cards.appendChild(movieCard);
             console.log(movie.id)
 
+            // Display the saved rating for this movie, if available
+            const savedRating = userRatings.find(r => r.movie_id === movie.id);
+            if (savedRating) {
+                const stars = movieCard.querySelectorAll(".movie-rating i");
+                stars.forEach((star, index) => {
+                    if (index < savedRating.rate) {
+                        star.classList.add("active");
+                    }
+                });
+            }
+
             const bookmark_button = movieCard.querySelector(".bookmark-btn");
             bookmark_button.addEventListener("click", (e) => {
                 e.stopPropagation();
@@ -146,11 +159,45 @@ class MoviesPage{
         const allMovieCards = movies_cards.querySelectorAll(".movie-card");
         allMovieCards.forEach(card => {
             const stars = card.querySelectorAll(".movie-rating i");
-            stars.forEach((star, index1) => {
-                star.addEventListener("click", () => {
-                    stars.forEach((star, index2) => {
-                        index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
-                    });
+            let currentRating = 0;
+
+            stars.forEach((star, index) => {
+                star.addEventListener("click", async (event) => {
+                    event.stopPropagation();
+                    if (index === 0 && star.classList.contains("active")) {
+                        // If first star is clicked and already active, reset rating
+                        stars.forEach(s => s.classList.remove("active"));
+                        currentRating = 0;
+                    } else {
+                        // Set rating based on clicked star index
+                        currentRating = index + 1;
+                        stars.forEach((s, i) => {
+                            i < currentRating ? s.classList.add("active") : s.classList.remove("active");
+                        });
+                    }
+                    // Send the rating to the server
+                    const movieId = card.id.split('-')[1]; // Extract movie ID
+                    try {
+                        const response = await fetch(`${this.apiUrl}/rateMovie.php`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                userId: this.userId,
+                                movieId: movieId,
+                                rating: currentRating,
+                            }),
+                        });
+                        const result = await response.json();
+                        if (result.status === "Success") {
+                            console.log("Rating submitted:", currentRating);
+                        } else {
+                            console.error("Error submitting rating:", result.message);
+                        }
+                    } catch (error) {
+                        console.error("Failed to submit rating:", error);
+                    }
                 });
             });
         });
@@ -158,8 +205,7 @@ class MoviesPage{
 
     async toggleBookmark(event, movieId, bookmarkBtn){
         try {
-            const userId = 2;
-            const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${userId}&movie_id=${movieId}`);
+            const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${this.userId}&movie_id=${movieId}`);
             const result = await response.json();
 
             if (result.message === "Added") {
@@ -196,9 +242,24 @@ class MoviesPage{
             console.error("Error updating like status:", error);
         }
     }
+
+    async fetchUserRatings() {
+        try {
+            const response = await fetch(`${this.apiUrl}/getUserRatings.php?user_id=${this.userId}`);
+            if (!response.ok) throw new Error("Failed to fetch user ratings");
+            const data = await response.json();
+            console.log("User Ratings:", data);
+            return data.ratings;
+        } 
+        catch (error) {
+            console.error("Error fetching user ratings", error);
+            return [];
+        }
+    }   
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const movieFetcher = new MoviesPage('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server');
+    const userId = localStorage.getItem("UserId");
+    const movieFetcher = new MoviesPage('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
     movieFetcher.fetchMovies();
 });
