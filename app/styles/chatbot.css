@@ -126,7 +126,7 @@ body{
 }
 
 .chat-body{
-    background-color: #0D1A33;
+    background-color: #1A2B50;
     width: calc(100% - 30px);
     min-height: 500px;
     border-radius: 33px;
@@ -213,8 +213,8 @@ body{
 }
 
 .chat-body .sender input::placeholder {
-    color: #ffffff; /* Set placeholder text color to white */
-    opacity: 1; /* Ensures the color is fully opaque */
+    color: #ffffff; 
+    opacity: 1; 
 }
 
 
