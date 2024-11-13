@@ -22,9 +22,11 @@ if ($prompt) {
         'frequency_penalty' => 0,
         'presence_penalty' => 0.6,
     ]);
+    echo $complete;
 
     // Decode the response
     $response = json_decode($complete, true);
+
 
     // Check if response is valid
     if (isset($response["choices"][0]["text"])) {
