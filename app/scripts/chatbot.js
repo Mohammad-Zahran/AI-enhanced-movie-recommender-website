@@ -12,6 +12,8 @@ send.onclick = () => {
             </div>
         `;
         chatContainer.innerHTML+=message;
+        scrollDown();
+        bot();
         input.value = null;
     }
 }
@@ -33,17 +35,17 @@ function scrollDown(){
 
 // Bot response
 function bot(){
-    var http = new XMLHttpRequest()
-    var data = new FormData()
-    data.append('prompt', input.value)
-    http.open('POST', 'request.php', true)
-    http.send(data)
+    var http = new XMLHttpRequest();
+    var data = new FormData();
+    data.append('prompt', input.value);
+    http.open('POST', './../../server/request.php', true);
+    http.send(data);
     setTimeout(() => {
         // preloader
         chatContainer.innerHTML += `
         <div class="message response">
             <div>
-                <img src="../assets/img/preloader.gif" alt="preloader">
+                <img src="../assets/images/preloader.gif" alt="preloader">
             </div>
         </div>
         `
@@ -51,17 +53,18 @@ function bot(){
     }, 1000);
     http.onload = () => {
         // process response
-    let response = JSON.parse(http.response)
-    let replyText = processResponse(response.choices[0].text)
-    let replyContainer = document.querySelectorAll('.response')
-    replyContainer[replyContainer.length-1].querySelector('div').innerHTML = replyText
+    var response = JSON.parse(http.response);
+    var replyText = processResponse(response.choices[0].text);
+    var replyContainer = document.querySelectorAll('.response');
+    replyContainer[replyContainer.length-1].querySelector('div').innerHTML = replyText;
     scrollDown();
     }
 }
 
 function processResponse(res){
-    let arr = res.split(':')
+    var arr = res.split(':')
     return arr[arr.length-1]
         .replace(/(\r\n|\r|\n)/gm, '')
         .trim()
 }
+
