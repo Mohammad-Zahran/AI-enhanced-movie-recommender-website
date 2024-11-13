@@ -296,7 +296,7 @@ class Movies{
             console.error("Error fetching user ratings", error);
             return [];
         }
-    }    
+    }
     
     // fetch the API of get the most popular movies
     async fetchMostPopularMovies(){

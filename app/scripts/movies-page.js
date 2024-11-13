@@ -14,7 +14,7 @@ class MoviesPage{
             const movies = JSON.parse(rawResponse);
             
             const userRatings = await this.fetchUserRatings() || [];
-            this.displayMoviesOnPage(movies, userRatings);
+            await this.displayMoviesOnPage(movies, userRatings);
         }
         catch(error){
             console.error("Error fetching data ", error);
@@ -54,35 +54,34 @@ class MoviesPage{
 
     async markBookmarkedMovies(movies){
         try{
-            const bookmarkResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=2`);
-            if (!bookmarkResponse.ok) throw new Error('Failed to fetch bookmarks');
-            const responseData = await bookmarkResponse.json();
+            const LikesResponse = await fetch(`${this.apiUrl}/getBookmark.php?user_id=${this.userId}`);
+            if (!LikesResponse.ok) throw new Error('Failed to fetch likes');
+            const responseData = await LikesResponse.json();
 
             console.log("Response Data:", responseData);
 
-            const bookmarks = responseData.bookmarkedMovies;
+            const likes = responseData.bookmarkedMovies;
 
-            if (Array.isArray(bookmarks)) {
-                const bookmarkedIds = new Set(bookmarks.map(b => b.movie_id));
+            if (Array.isArray(likes)) {
     
                 movies.forEach(movie => {
                     const movieCard = document.getElementById(`movie-${movie.id}`);
                 
-                    const bookmarkBtn = movieCard.querySelector(".bookmark-btn");
+                    const likeBtn = movieCard.querySelector(".bookmark-btn");
 
-                    if (bookmarks.includes(movie.id)) {
-                        bookmarkBtn.classList.add("active");
+                    if (likes.includes(movie.id)) {
+                        likeBtn.classList.toggle("active");
                     } else {
-                        bookmarkBtn.classList.remove("active");
+                        likeBtn.classList.remove("active");
                     }
                 });
                 
             } else {
-                console.error("Invalid bookmarks data format:", bookmarks);
+                console.error("Invalid likes data format:", likes);
             }
         }
         catch (error) {
-            console.error("Error fetching bookmarks", error);
+            console.error("Error fetching likes", error);
         }
     }
 
