@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <td>Null</td>
                         <td>Null</td>
                         <td>${user.bookmark_count}</td>
-                        <td>${user.is_banned ? "Banned" : "Not Banned"}</td>
+                        <td>${user.role == "admin" ? "Admin":user.is_banned ? "Banned" : "Not Banned"}</td>
                         <td class="flex center">
                             <button class="options popup_button">
                                 <img src="../assets/icons/three-dots.svg" alt="">
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>
             <button class="user-edit-button">Set admin</button>
             <button class="user-edit-button">Ban user</button>
-            <button class="user-delete-button">Delete user</button>
         </p>
     `;
     popup.style.display = 'none'; // Initially hidden
