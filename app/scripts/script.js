@@ -146,11 +146,45 @@ class Movies{
         const allMovieCards = movies_cards.querySelectorAll(".movie-card");
         allMovieCards.forEach(card => {
             const stars = card.querySelectorAll(".movie-rating i");
-            stars.forEach((star, index1) => {
-                star.addEventListener("click", () => {
-                    stars.forEach((star, index2) => {
-                        index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
-                    });
+            let currentRating = 0;
+
+            stars.forEach((star, index) => {
+                star.addEventListener("click", async (event) => {
+                    event.stopPropagation();
+                    if (index === 0 && star.classList.contains("active")) {
+                        // If first star is clicked and already active, reset rating
+                        stars.forEach(s => s.classList.remove("active"));
+                        currentRating = 0;
+                    } else {
+                        // Set rating based on clicked star index
+                        currentRating = index + 1;
+                        stars.forEach((s, i) => {
+                            i < currentRating ? s.classList.add("active") : s.classList.remove("active");
+                        });
+                    }
+                    // Send the rating to the server
+                    const movieId = card.id.split('-')[1]; // Extract movie ID
+                    try {
+                        const response = await fetch(`${this.apiUrl}/rateMovie.php`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                userId: this.userId,
+                                movieId: movieId,
+                                rating: currentRating,
+                            }),
+                        });
+                        const result = await response.json();
+                        if (result.status === "Success") {
+                            console.log("Rating submitted:", currentRating);
+                        } else {
+                            console.error("Error submitting rating:", result.message);
+                        }
+                    } catch (error) {
+                        console.error("Failed to submit rating:", error);
+                    }
                 });
             });
         });
