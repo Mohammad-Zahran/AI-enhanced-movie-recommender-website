@@ -20,11 +20,14 @@ form.addEventListener("submit", async (e) => {
         });
 
         const responseData = response.data;
-        console.log(responseData);
+        console.log(response.data);
 
-        if (responseData.status === "Successful") {
-            alert("Login Successful");
-            window.location.href = "../index.html"; 
+        if (responseData.status === "Successful") { 
+            localStorage.setItem("UserId", responseData.userId); 
+            console.log(localStorage.getItem("UserId"));
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, 400); 
         } else {
             alert(responseData.message); 
         }

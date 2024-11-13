@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/base/base.css">
+        <link rel="stylesheet" href="../styles/base/utilities.css">
+        <link rel="stylesheet" href="../styles/base/colors.css">
+        <link rel="stylesheet" href="./../styles/movie-details.css">
+        <title id="title"></title>
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar flex wrap">
+                <a href="" class="logo flex">
+                    <img src="./../assets/images/cinemate-logo.svg" alt="">
+                    <h1>CineMate</h1>
+                </a>
+                <ul class="nav-links flex">
+                    <li><a href="">Recommendations</a></li>
+                    <li><a href="">Movies</a></li>
+                    <li><a href="">Popular</a></li>
+                    <li><a href="">About Us</a></li>
+                </ul>
+                <div class="flex navbar-tools">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search">
+                        <img class="search-icon" src="./../assets/icons/search-icon.svg" alt="">
+                    </div>
+                    <div class="bookmark-icon">
+                        <a href="">
+                            <img src="./../assets/icons/bookmark.svg" alt="">
+                        </a>
+                    </div>
+                    <button class="button login">Log In</button>
+                </div>
+                <div id="burger" class="burger column">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="movie-details-page">
+            <div id="movie-details-container" class="movie-details-container">
+                
+            </div>
+        </div>
+        <script src="./../scripts/movie-details.js"></script>
+    </body>
+</html>
