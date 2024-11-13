@@ -50,4 +50,37 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error fetching movie details:", error);
         }
     }
+
+    // Calculate duration on movie details page
+    let startTime = performance.now();
+
+    function getTimeSpent() {
+        let endTime = performance.now();
+        let timeSpent = endTime - startTime; 
+        const userId = localStorage.getItem("UserId");
+        sendDuration(userId, movieId, timeSpent / 1000)
+    }
+
+    window.addEventListener('beforeunload', getTimeSpent);
+
+    async function sendDuration(userId, movieId, duration) {
+        console.log(duration)
+        const response = await fetch('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server/updateClicksDuration.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: userId,
+                movieId: movieId,
+                duration: duration,
+                action: 'duration' 
+            }),
+        })
+        
+        if (response.ok){
+            console.log("duration done");
+        }
+    }
+
 });
