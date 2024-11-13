@@ -229,7 +229,7 @@ class Movies{
             const result = await response.json();
 
             if (result.message === "Added") {
-                likeBtn.classList.toggle("active");
+                likeBtn.classList.add("active");
             } 
             else if(result.message === "Deleted"){
                 likeBtn.classList.remove("active");
@@ -254,6 +254,7 @@ class Movies{
 
             // Update the like count in the database
             await this.updateLikesInDatabase(movieId, currentLikes);
+            this.updateMostPopularMoviesLikes(movieId, currentLikes);
 
         } catch (error) {
             console.error("Error updating like status:", error);
@@ -275,7 +276,6 @@ class Movies{
     
             const result = await response.json();
             if (result.status === "Success") {
-                console.log("Like count updated in database.");
             } else {
                 console.error("Error updating like count in database:", result.message);
             }
@@ -321,12 +321,13 @@ class Movies{
         movies.forEach(movie=>{
             const swiper_slide = document.createElement('div');
             swiper_slide.classList.add('swiper-slide');
+            swiper_slide.id = `popular-${movie.id}`;
             swiper_slide.innerHTML =`
                 <div class="popular-number">${count++}</div>
                 <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
                 <div class="popular-details">
                     <h3>${movie.movie_title}</h3>
-                    <p>Number of likes: ${movie.number_of_likes}</p>
+                    <p>Number of likes: <span class="number_of_likes">${movie.number_of_likes}</span></p>
                     <p>Top spot this week for action fans!</p>
                 </div>
             `;
@@ -336,6 +337,24 @@ class Movies{
                 window.location.href = `./pages/movie-details.html?id=${movie.id}`;
             });
         });
+    }
+
+    async updateMostPopularMoviesLikes(movieId, currentLikes) {
+        console.log("hello");
+        const swiperSlide = document.getElementById(`popular-${movieId}`);
+        if(swiperSlide){
+            const numberOfLikes = swiperSlide.querySelector(".number_of_likes");
+
+            if(numberOfLikes){
+                numberOfLikes.textContent = currentLikes;
+            }
+            else {
+                console.error("Number of likes element not found.");
+            }
+        } 
+        else {
+            console.error("Popular movie slide not found.");
+        }
     }
 
     viewMore(){
