@@ -165,8 +165,6 @@ td > .options{
   background-color: transparent;
 }
 
-
-/* Pop up for the admin page - Start */
 .popup_button {
   padding: 0px 20px;
   font-size: 16px;
@@ -187,18 +185,17 @@ td > .options{
   z-index: 100;
 }
 
-
-
-.user-edit-button,.user-delete-button{
+.user-edit-button, .user-delete-button {
   color: #3D3D3D;
   font-size: 16px;
   background-color: transparent;
   width: 100px;
   margin-bottom: 10px;
 }
-.user-delete-button{
+
+.user-delete-button {
   color: #FF0000;
   font-weight: bold;
   font-size: 18px;
 }
-/* Pop up for the admin page - End */
+

@@ -264,33 +264,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Pop up for the admin page - Start
-const popup_buttons = document.querySelectorAll('.popup_button');
-
-popup_buttons.forEach(button => {
-  const popup = document.createElement('div');
-  popup.classList.add('popup');
-  popup.innerHTML = `
-  
-  <p>
-    <button class="user-edit-button">Set admin</button>
-    <button class="user-edit-button">Ban user</button>
-    <button class="user-delete-button">Delete user</button>
-  </p>
-  
-  `;
-
-  document.body.appendChild(popup);
-  button.addEventListener('click', function() {
-    if (popup.style.display === 'block') {
-      popup.style.display = 'none';
-    } else {
-      const buttonRect = button.getBoundingClientRect();
-      popup.style.top = `${buttonRect.bottom + window.scrollY + 10}px`;
-      popup.style.left = `${buttonRect.left + window.scrollX}px`;
-      popup.style.display = 'block';
-    }
-  });
-});
-// Pop up for the admin page - End
 
