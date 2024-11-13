@@ -13,6 +13,7 @@
   padding: 0 25px;
   position: fixed;
   background-color: #02081433;
+  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
@@ -54,6 +55,13 @@
   color: #FFF;
 }
 
+.navbar > ul > li{
+  transition: 1s;
+}
+.navbar > ul > li:hover{
+  transform: scale(1.1);
+}
+
 .navbar > ul{
   justify-content: center;
   gap: 50px;
@@ -64,7 +72,7 @@
 }
 
 .navbar-tools > button{
-  width: auto;
+  width: 100px;
   font-size: 18px;
   padding: 7px 11px;
 }
@@ -96,7 +104,7 @@
 
 /* Header Section */
 .header{
-  background-image: url(./../../assets/images/spider-man.jpeg);
+  background-image: url(../../assets/images/spider-man.jpeg);
   height: 100vh;
   background-size: cover;
   justify-content: center;
@@ -131,7 +139,7 @@
 footer{
   height: 194px;
   align-items: center;
-  background-color: #1b2a47;
+  background-color: rgb(0, 20, 40);
 }
 
 .footer-1, .footer-2{
@@ -161,6 +169,25 @@ footer{
   font-size: 20px;
   font-weight: bold;
   color: #FFF;
+}
+
+.footer-1 > h2{
+  margin-bottom: 10px;
+}
+
+.footer-1 .logo{
+  margin-bottom: 10px;
+}
+
+.footer-2 ul li{
+  margin-bottom: 8px;
+}
+.footer-2 ul li:first-child{
+  margin-bottom: 10px;
+}
+
+.footer-2 .icons{
+  justify-content: space-between;
 }
 
 
@@ -203,7 +230,7 @@ footer{
       right: 0;
       width: 100%;
       height: calc(100vh - 80px);
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(10px);
       justify-content: center;
       align-items: center;
@@ -238,9 +265,12 @@ footer{
       background-position:right;
   }
 
-  .header > h1, .header > p, .header > button{
+  .header > h1, .header > p{
   text-align: center;
+  width: 100%;
+  margin-left: 0;
   }
+
   .header > button{
       display: block;
       margin: 0 auto;
@@ -250,6 +280,8 @@ footer{
   }
 
   .header > p{
+      display: block;
+      margin: 20px auto;
       font-size: 20px;
       width: 80%;
   }
@@ -275,5 +307,13 @@ footer{
       justify-content: center;
 
   }
+  .footer-1 .logo{
+      display: block;
+      margin: 0px auto 10px;
+      color: #FFF;
+  }
+  .footer-2 .icons{
+    justify-content: space-between;
+}
 
 }
