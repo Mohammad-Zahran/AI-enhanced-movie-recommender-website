@@ -2,10 +2,8 @@
 
 include "connection.php";
 
-// Get search query from URL (GET method)
 $search = $_GET['search'] ?? '';
 
-// Query to search for movies based on the title
 if ($search) {
     $query = $connection->prepare("SELECT id, movie_title, image FROM movies WHERE movie_title LIKE ?");
     $searchTerm = "%$search%";

@@ -80,15 +80,11 @@ body{
 
 
 .container {
-    width: 70%; /* Set chat container to 70% */
+    width: 75%; /* Set chat container to 70% */
     min-height: 580px;
-    background-color: #ffffff35;
     border-radius: 47px;
     padding: 15px;
     position: relative;
-    box-shadow: rgb(255 255 255 / 10%) 0px 1px 1px 0px inset, 
-                rgb(50 50 93 / 3%) 0px 50px 100px -20px, 
-                rgb(0 0 0 / 24%) 0px 30px 60px -30px;
 }
 
 
@@ -128,7 +124,7 @@ body{
 .chat-body{
     background-color: #1A2B50;
     width: calc(100% - 30px);
-    min-height: 500px;
+    min-height: 580px;
     border-radius: 33px;
     position: absolute;
     top: 95px;
@@ -339,7 +335,6 @@ body{
     .container {
         width: 70%;
         min-height: 580px;
-        padding: 15px;
     }
 
     .chat-header {
@@ -347,7 +342,7 @@ body{
     }
 
     .chat-body {
-        min-height: 500px;
+        min-height: 520px;
     }
 
     .chat-body .sender {
