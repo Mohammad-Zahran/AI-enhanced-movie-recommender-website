@@ -4,7 +4,7 @@ include "connection.php";
 $response = [];
 
 // Fetch total users
-$totalUsersQuery = "SELECT COUNT(*) AS total_users FROM users";
+$totalUsersQuery = "SELECT COUNT(*) AS total_users FROM users WHERE role = 'user'";
 $totalUsersResult = $connection->query($totalUsersQuery);
 $response['total_users'] = $totalUsersResult->fetch_assoc()['total_users'];
 
