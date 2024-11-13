@@ -4,30 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
-  <link rel="stylesheet" href="../styles/register.css">
+  <link rel="stylesheet" href="../styles/style.css">
   <link rel="stylesheet" href="../styles/base/base.css">
-  <link rel="stylesheet" href="../styles/base/colors.css">
   <link rel="stylesheet" href="../styles/base/utilities.css">
+  <link rel="stylesheet" href="../styles/base/colors.css">
+  <link rel="stylesheet" href="../styles/register.css">
+  <script src="scripts/script.js" defer></script>
 </head>
 <body>
-  <div class="container">
+  <nav class="navbar flex">
+    <a href="" class="logo flex">
+        <img src="../assets/images/cinemate-logo.svg" alt="">
+        <h1>CineMate</h1>
+    </a>
+</nav>
+<header class="register-header flex column center">
     <h1 class="title">Register</h1>
-    <form class="form">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-
-      <a href="#" class="forgot-password">Forgot password?</a>
-
-      <button type="submit" class="register-button">Register</button>
+    <form action="" class="register-form flex column center">
+        <label for=""></label>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <label for=""></label>
+        <input id="email" type="email" placeholder="Email Address" required>
+        <label for=""></label>
+        <input id="password" type="password" placeholder="Password" required>
+        <button class="button register-button">
+            Register
+        </button>
+        <div class="flex no-account">
+            <span>Already have an Account?</span><a href="login.html">LogIn</a>
+        </div>
     </form>
-    <p class="no-account"><a href="login.html" class="create-one">already have an account</a></p>
-  </div>
+</header>
   <script src="../scripts/register.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

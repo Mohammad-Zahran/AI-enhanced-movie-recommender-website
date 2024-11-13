@@ -1,4 +1,4 @@
-const form = document.querySelector('.form');
+const form = document.querySelector('.register-form');
 const UsernameInput = document.getElementById('username');
 const EmailInput = document.getElementById('email');
 const PasswordInput = document.getElementById('password');

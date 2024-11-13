@@ -16,6 +16,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
         <script src="./scripts/gsap.js"></script>
         <script src="./scripts/script.js"></script>
+        <script src="./scripts/search.js" defer></script>
     </head>
     <body>
         <header>
@@ -32,9 +33,11 @@
                 </ul>
                 <div class="flex navbar-tools">
                     <div class="search-bar">
-                        <input type="text" placeholder="Search">
-                        <img class="search-icon" src="./assets/icons/search-icon.svg" alt="">
-                    </div>
+                        <input type="text" id="search-input" name="search" placeholder="Search">
+                        <button class="search-icon-button" id="search-button">
+                            <img class="search-icon" src="./assets/icons/search-icon.svg" alt="Search">
+                        </button>
+                    </div>                    
                     <div class="bookmark-icon">
                         <a href="">
                             <img src="./assets/icons/bookmark.svg" alt="">

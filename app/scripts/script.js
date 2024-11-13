@@ -23,6 +23,8 @@ class Movies{
         }
     }
 
+
+    
     async markLikedMovies(movies){
         try{
             const LikesResponse = await fetch(`${this.apiUrl}/getLike.php?user_id=${this.userId}`);

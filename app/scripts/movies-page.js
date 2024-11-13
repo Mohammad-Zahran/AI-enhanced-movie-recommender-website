@@ -20,7 +20,6 @@ class MoviesPage{
             console.error("Error fetching data ", error);
         }
     }
-
     async markLikedMovies(movies){
         try{
             const LikesResponse = await fetch(`${this.apiUrl}/getLike.php?user_id=${this.userId}`);
