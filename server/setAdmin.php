@@ -13,15 +13,14 @@ if ($userId === null) {
 $query = $connection->prepare("UPDATE users SET role = 'admin' WHERE id = ?");
 $query->bind_param("i", $userId);
 
-$query->execute()
-$result = $query->get_result();
-
-if ($result) {
+// Check if the query executes successfully
+if ($query->execute()) {
     echo json_encode(['success' => true, 'message' => 'User role updated to admin']);
 } else {
     echo json_encode(['success' => false, 'message' => 'Error updating user role: ' . $query->error]);
 }
 
+// Clean up
 $query->close();
 $connection->close();
 ?>
