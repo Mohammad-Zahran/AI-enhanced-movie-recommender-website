@@ -165,19 +165,19 @@ td > .options{
   background-color: transparent;
 }
 
-/* Style for the buttons */
+
+/* Pop up for the admin page - Start */
 .popup_button {
   padding: 0px 20px;
   font-size: 16px;
   cursor: pointer;
 }
 
-/* Style for the popups (hidden initially) */
 .popup {
   width: 140px;
   display: none;
   position: absolute;
-  top: 40px; /* Adjust distance from button */
+  top: 40px;
   left: 0;
   padding: 20px;
   background-color: rgba(0, 0, 0, 1);
@@ -201,3 +201,4 @@ td > .options{
   font-weight: bold;
   font-size: 18px;
 }
+/* Pop up for the admin page - End */
