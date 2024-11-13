@@ -85,6 +85,26 @@ class MoviesPage{
         }
     }
 
+    // Track click event
+    async trackClick(movieId) {
+
+        const response = await fetch(`${this.apiUrl}/updateClicksDuration.php`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: this.userId,
+                movieId: movieId,
+                action: 'click'
+            }),
+        })
+        
+        if (response.ok){
+            console.log("done click");
+        }
+    }
+
     // function to display all movies on a page
     async displayMoviesOnPage(movies, userRatings = []) {
         const movies_cards = document.getElementById("movies-cards-page");
@@ -142,7 +162,10 @@ class MoviesPage{
             });
 
             movieCard.addEventListener("click", () => {
-                window.location.href = `../pages/movie-details.html?id=${movie.id}`;
+                this.trackClick(movie.id);
+                setTimeout(() => {
+                    window.location.href = `../pages/movie-details.html?id=${movie.id}`;
+                }, 500);
             });
 
             const like_btn = movieCard.querySelector(".like-btn");

@@ -359,7 +359,10 @@ class Movies{
             swiper_wrapper.append(swiper_slide);
 
             swiper_slide.addEventListener("click", () => {
-                window.location.href = `./pages/movie-details.html?id=${movie.id}`;
+                this.trackClick(movie.id);
+                setTimeout(() => {
+                    window.location.href = `./pages/movie-details.html?id=${movie.id}`;
+                }, 500);
             });
         });
     }

@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Handle logout button click
             document.getElementById("logout-btn").addEventListener("click", async () => {
                 const logoutResponse = await fetch("../server/logout.php");
+                localStorage.removeItem("UserId"); 
                 const logoutData = await logoutResponse.json();
                 alert(logoutData.message);
                 window.location.href = "index.html"; // Redirect to login page after logout
