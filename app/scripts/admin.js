@@ -81,7 +81,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('No user selected');
                 return;
             }
-
+    
+            // Get the current row and role cell
+            const row = document.querySelector(`tr[data-user-id="${currentUserId}"]`);
+            const roleCell = row.querySelector('td:nth-child(3)'); // Role column
+            const statusCell = row.querySelector('td:nth-child(7)'); // Banned/Admin status column
+    
+            const currentRole = roleCell.textContent.trim();
+            const currentStatus = statusCell.textContent.trim();
+    
+            // Prevent API call if the user is already an admin or banned
+            if (currentRole === 'admin') {
+                alert('User is already an admin');
+                popup.style.display = 'none';
+                return;
+            }
+    
+            if (currentStatus === 'Banned') {
+                alert('User is banned and cannot be updated');
+                popup.style.display = 'none';
+                return;
+            }
+    
             // Send API request to set admin
             fetch('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server/setAdmin.php', {
                 method: 'POST',
@@ -95,8 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (data.success) {
                         alert('User role updated to admin');
                         // Update the user role in the table
-                        const row = document.querySelector(`tr[data-user-id="${currentUserId}"]`);
-                        const roleCell = row.querySelector('td:nth-child(3)'); // Update role column
                         roleCell.textContent = 'admin';
                     } else {
                         alert(data.message);
@@ -106,11 +125,50 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.error('Error updating user role:', error);
                     alert('Error updating user role');
                 });
-
+    
             // Hide the popup
             popup.style.display = 'none';
         }
     });
+    
+
+    popup.addEventListener('click', function (event) {
+        if (event.target.classList.contains('ban-user-button')) {
+            if (!currentUserId) {
+                alert('No user selected');
+                return;
+            }
+    
+            // Send API request to ban user
+            fetch('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server/banUser.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({ user_id: currentUserId }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('User has been banned successfully');
+                        // Update the user's banned status in the table
+                        const statusCell = document.querySelector(`tr[data-user-id="${currentUserId}"] td:nth-child(7)`);
+                        statusCell.textContent = 'Banned';
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error banning user:', error);
+                    alert('Error banning user');
+                });
+    
+            // Hide the popup
+            popup.style.display = 'none';
+        }
+    });
+    
+    
 
     // Hide popup when clicking anywhere outside it
     document.addEventListener('click', function (event) {

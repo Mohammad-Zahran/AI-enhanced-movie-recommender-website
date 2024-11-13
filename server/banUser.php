@@ -9,7 +9,7 @@ if ($userId === null) {
     exit;
 }
 
-// Check the current role and status of the user
+// Check if the user exists and get their role and banned status
 $query = $connection->prepare("SELECT role, is_banned FROM users WHERE id = ?");
 $query->bind_param("i", $userId);
 $query->execute();
@@ -17,32 +17,36 @@ $result = $query->get_result();
 
 if ($result->num_rows === 0) {
     echo json_encode(['success' => false, 'message' => 'User not found']);
+    $query->close();
+    $connection->close();
     exit;
 }
 
 $user = $result->fetch_assoc();
 $query->close();
 
-// Prevent updating if already admin
+// Check if the user is already an admin
 if ($user['role'] === 'admin') {
-    echo json_encode(['success' => false, 'message' => 'User is already an admin']);
+    echo json_encode(['success' => false, 'message' => 'Cannot ban an admin user']);
+    $connection->close();
     exit;
 }
 
-// Prevent updating if banned
+// Check if the user is already banned
 if ($user['is_banned'] == 1) {
-    echo json_encode(['success' => false, 'message' => 'Cannot update a banned user']);
+    echo json_encode(['success' => false, 'message' => 'User is already banned']);
+    $connection->close();
     exit;
 }
 
-// Update the user's role to admin
-$query = $connection->prepare("UPDATE users SET role = 'admin' WHERE id = ?");
+// Update the user's banned status
+$query = $connection->prepare("UPDATE users SET is_banned = 1 WHERE id = ?");
 $query->bind_param("i", $userId);
 
 if ($query->execute()) {
-    echo json_encode(['success' => true, 'message' => 'User role updated to admin']);
+    echo json_encode(['success' => true, 'message' => 'User has been banned successfully']);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Error updating user role: ' . $query->error]);
+    echo json_encode(['success' => false, 'message' => 'Error banning user: ' . $query->error]);
 }
 
 $query->close();
