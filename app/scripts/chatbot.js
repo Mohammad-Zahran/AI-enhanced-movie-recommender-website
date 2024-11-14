@@ -2,6 +2,8 @@ const input = document.querySelector('input');
 const send = document.querySelector('button');
 const chatContainer = document.querySelector('.chats');
 
+const userId = localStorage.getItem("UserId");
+
 send.onclick = () => {
     if (input.value) {
         const userMessage = `
@@ -45,6 +47,7 @@ function bot() {
     const http = new XMLHttpRequest();
     const data = new FormData();
     data.append('prompt', input.value);
+    data.append("user_id", userId);
     http.open('POST', './../../server/request.php', true);
     http.send(data);
 

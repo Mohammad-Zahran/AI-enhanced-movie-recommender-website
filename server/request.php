@@ -1,5 +1,6 @@
 <?php 
 
+    include "connection.php";
     header('Content-Type: application/json');
     require __DIR__ . '/../vendor/autoload.php'; // Correct path to autoload
     use Orhanerday\OpenAi\OpenAi;
@@ -7,10 +8,8 @@
     $open_ai_key = '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';
     $open_ai = new OpenAi($open_ai_key);
 
-
-    include 'connection.php';
-
     $prompt = isset($_POST['prompt']) ? $_POST['prompt'] : null;
+    $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : null; 
 
     if ($prompt) {
         // Load the movie data from a JSON file
@@ -55,7 +54,7 @@
             $data = [
                 "model" => "gpt-3.5-turbo",
                 "messages" => [
-                    ["role" => "system", "content" => "You are Robimo, a chatbot that recommends movies based on given details, it can be in engkish or france. You must not answer outside the json file"],
+                    ["role" => "system", "content" => "You are Robimo, a chatbot that can only provide information about movies in the given movie database. You must only respond with movie details from the provided JSON file, and if the movie is not found, respond with 'Sorry, movie not found in the database.' Do not answer anything that is not related to movies or outside the data provided."],
                     ["role" => "user", "content" => $prompt]
                 ],
                 "temperature" => 0.9,
@@ -79,12 +78,12 @@
                 $responseText = $responseData["choices"][0]["message"]["content"];
             }
         }
+        
+        $chat_id = 1;
+        $query = $connection->prepare("INSERT INTO ai_chatbot (user_id, chat_id, prompt, response) VALUES (?, ?, ?, ?)");
+        $query->bind_param("iiss", $user_id, $chat_id, $prompt, $responseText); 
+        $query->execute();
 
-        // Save the prompt and response in the database
-        // $stmt = $db->prepare("INSERT INTO chatbot (prompt, response) VALUES (:prompt, :response)");
-        // $stmt->execute([':prompt' => $prompt, ':response' => $responseText]);
-
-        // Send the response back to the frontend
         echo json_encode(["response" => $responseText]);
     } 
 ?>
