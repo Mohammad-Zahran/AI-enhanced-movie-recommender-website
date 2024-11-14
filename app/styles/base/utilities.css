@@ -62,6 +62,10 @@ li{
 button{
   cursor: pointer;
 }
+
+html {
+  scroll-behavior: smooth;
+}
   
 .button{
   width: 240px;

@@ -22,6 +22,11 @@ form.addEventListener("submit", async (e) => {
         const responseData = response.data;
         console.log(response.data);
 
+        // If the user is banned
+        if (responseData.status === "Failed") {
+            alert(responseData.message);
+        }
+
         if (responseData.status === "Successful") { 
             localStorage.setItem("UserId", responseData.userId); 
             console.log(localStorage.getItem("UserId"));

@@ -20,22 +20,27 @@
                     <h1>CineMate</h1>
                 </a>
                 <ul class="nav-links flex">
-                    <li><a href="">Recommendations</a></li>
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">Popular</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#movies">Movies</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#recommendations">Recommendations</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#popular">Popular</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#about-us">About Us</a></li>
                 </ul>
                 <div class="flex navbar-tools">
                     <div class="search-bar">
                         <input type="text" placeholder="Search">
                         <img class="search-icon" src="./../assets/icons/search-icon.svg" alt="">
                     </div>
-                    <div class="bookmark-icon">
+                    <div id="account-info" class="account-tools hidden flex column center">
+                        <a href="">Bookmark</a>
+                        <button class="button login" id="logout-btn">Logout</button>
+                    </div>
+                    <!-- <div class="bookmark-icon">
                         <a href="">
                             <img src="./../assets/icons/bookmark.svg" alt="">
                         </a>
-                    </div>
-                    <button class="button login">Log In</button>
+                    </div> -->
+                    <!-- Placeholder for login info or logout button -->
+                    <div class="user-info" id="user-info"></div>
                 </div>
                 <div id="burger" class="burger column">
                     <div class="line line1"></div>

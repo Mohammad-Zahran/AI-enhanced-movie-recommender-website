@@ -14,7 +14,7 @@
         exit();
     }
 
-    $query = $connection->prepare("SELECT id, username, email, password FROM users WHERE email = ?");
+    $query = $connection->prepare("SELECT id, username, email, password, is_banned FROM users WHERE email = ?");
     $query->bind_param("s", $email);
     $query->execute();
     $result = $query->get_result();
@@ -29,6 +29,15 @@
 
     $user = $result->fetch_assoc();
 
+    // Check if the user is banned
+    if ($user['is_banned'] == 1) {
+        echo json_encode([
+            "status" => "Failed",
+            "message" => "Your account is banned. Please contact support."
+        ]);
+        exit();
+    }
+
     if (!password_verify($password, $user['password'])) {
         echo json_encode([
             "status" => "Failed",
@@ -40,7 +49,6 @@
     $updateStatus = $connection->prepare("UPDATE users SET is_online = true WHERE id = ?");
     $updateStatus->bind_param("i", $user['id']);
     $updateStatus->execute();
-    
 
     // Store user information in the session
     $_SESSION['userId'] = $user['id'];

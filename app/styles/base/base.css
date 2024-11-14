@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   border: 0;
   box-sizing: border-box;
+}
+
+button{
+  font-family: 'Poppins';
 }
 
 .navbar{
@@ -23,6 +33,10 @@
   align-items: center;
 }
 
+.nav-links li{
+  font-family: 'Oswald';
+}
+
 .user-info {
   font-size: 18px;
   color: #FFF;
@@ -38,8 +52,40 @@
   width: 80px;
 }
 
+.account{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #d9d9d9b3;
+  color: #3d3d3d;
+}
 
-.navbar > h1{
+.hidden{
+  display: none !important;
+}
+
+.account-tools{
+  padding: 1%;
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #3d3d3dee;
+  gap: 10px;
+  top: 70px;
+  right: 60px;
+}
+.account-tools > button{
+  width: 100px;
+  background-color: orangered;
+}
+.account-tools > a{
+  color: white;
+}
+
+
+.navbar h1{
+  font-family: 'Montserrat Alternates';
   font-size: 20px;
   font-weight: bold;
   color: #FFF;
@@ -78,7 +124,7 @@
 }
 
 .search-bar > input{
-  width: 150px;
+  width: 250px;
   height: 36px;
   background-color: #d9d9d9b3;
   border-radius: 28px;
@@ -119,6 +165,7 @@
   color: white;
   border: none;
   outline: none;
+  font-size: 16px;
   border-radius: 12px;
   transition: 1s;
 }
@@ -128,16 +175,18 @@
 }
 
 .header > h1{
-  font-size: 120px;
+  font-size: 100px;
   color: #FFF;
+  font-family: 'Montserrat Alternates';
 }
 
-.header > p{
+.header  p{
   font-size: 30px;
   color: #BACDF5;
   width: 600px;
   margin-top: 1%;
   margin-bottom: 3%;
+  font-family: 'Roboto';
 }
 
 .header > h1 > span{
@@ -163,6 +212,13 @@ footer{
   padding-left: 156px;
 }
 
+.footer-1 h3{
+  font-family: 'Montserrat Alternates';
+}
+
+.footer-1 p{
+  font-family: 'Roboto';
+}
 .footer-2{
   gap: 100px;   
 }
@@ -202,6 +258,9 @@ footer{
   justify-content: space-between;
 }
 
+.footer-2{
+  font-family: 'Roboto';
+}
 
 
 /* Burger menu */

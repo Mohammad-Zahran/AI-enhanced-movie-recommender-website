@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 *{
     padding: 0;
     border: 0;
@@ -16,20 +23,18 @@ h2{
     text-align: center;
     color: white;
     margin-left: 120px;
+    font-family: 'Oswald';
 }
 
 
 .movies-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;  /* Distributes the items with space between them */
-    align-content: center;             /* Vertically aligns the items in the center */
-    width: 100%;                     /* Ensures the container takes up the full width */
+    justify-content: space-between; 
+    align-content: center;           
+    width: 100%;                
     padding-top: 30px;
 }
-
-
- 
 
 
 .movies-cards {
@@ -67,12 +72,12 @@ h2{
 }
 
 .bookmark-btn:hover{
-    color:  #4CAF50;
+    color:  orangered;
 }
 
 .bookmark-btn.active svg{
-    color: #ffcc00;
-    fill: #ffcc00; 
+    color: orangered;
+    fill: orangered; 
 }
 
 .movie-card:hover {
@@ -103,10 +108,11 @@ h2{
 }
 
 .movie-title {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     color: #ffffff;
     margin: 0;
+    font-family: 'Raleway';
 }
 
 .like {
@@ -116,12 +122,9 @@ h2{
     color: #ccc;
 }
 
-.like:hover {
-    color: #1a73e8;
-}
-
 .like-btn.active {
-    color: #1a73e8;
+    fill: #ffffff;
+    color: #ffffff;
 }
 
 .likes-number {
@@ -133,6 +136,7 @@ h2{
     font-size: 12px;
     color: #aaaaaa;
     margin: 5px 0;
+    font-family: 'Roboto';
 }
 
 .movie-icons {
@@ -157,7 +161,7 @@ h2{
     transition: color 0.2s ease;
 }
 .movie-rating i.active {
-    color: #ff9c1a;
+    color: orangered;
 }
 
 .view-more-btn {
@@ -170,11 +174,11 @@ h2{
     height: 50px;
     margin-right: 120px;
     transition: background-color 0.3s;
-    
+    font-family: 'Poppins';
 }
 
 .view-more-btn:hover {
-    background-color: #0059b3;
+    background-color: rgb(209, 57, 2);
 }
 
 
@@ -223,12 +227,14 @@ h2{
     font-size: 1.2rem;
     margin: 0.5rem 0;
     overflow: hidden;
+    font-family: 'Raleway';
 }
 
 .recommendation-swiper .swiper-slide p {
     font-size: 0.9rem;
     color: #BBB;
     overflow: hidden;
+    font-family: 'Roboto';
 }
 
 
@@ -378,11 +384,13 @@ h2{
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
     color: #1144AA;
+    font-family: 'Raleway';
 }
 
 .popular-details p {
-    font-size: 1rem;
+    font-size: 14px;
     color: #BBB;
+    font-family: 'Roboto';
 }
 
 .popular-number {
