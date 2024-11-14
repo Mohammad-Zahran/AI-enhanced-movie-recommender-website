@@ -15,12 +15,22 @@ h2{
     font-weight: bold;
     text-align: center;
     color: white;
+    margin-left: 120px;
 }
 
-/* Movies Section */
-.movies h2{
-    padding-top: 2rem;
+
+.movies-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  /* Distributes the items with space between them */
+    align-content: center;             /* Vertically aligns the items in the center */
+    width: 100%;                     /* Ensures the container takes up the full width */
+    padding-top: 30px;
 }
+
+
+ 
+
 
 .movies-cards {
     justify-content: space-around;
@@ -151,15 +161,16 @@ h2{
 }
 
 .view-more-btn {
-    display: block;
-    background-color: #1a73e8;
+    background-color: orangered;
     color: white;
     border: none;
     text-align: center;
-    margin: 20px auto;
     cursor: pointer;
     width: auto;
+    height: 50px;
+    margin-right: 120px;
     transition: background-color 0.3s;
+    
 }
 
 .view-more-btn:hover {

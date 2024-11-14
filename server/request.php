@@ -1,6 +1,6 @@
 <?php 
 
-require __DIR__ . '/../vendor/autoload.php'; // Correct path to autoload
+require __DIR__ . '/../vendor/autoload.php'; 
 
 use Orhanerday\OpenAi\OpenAi;
 
