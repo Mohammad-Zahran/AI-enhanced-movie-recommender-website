@@ -1,0 +1,201 @@
+body{
+  background-color: #020814;
+}
+
+.navbar{
+  background-color: #0D1A33;
+  justify-content: space-between;
+  padding: 0;
+  
+}
+.navbar > .logo,.navbar > .bell{
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar > .search-bar{
+  flex: 1;
+}
+
+
+/* Main */
+main .sidebar{
+  width: 250px;
+  height: calc(100vh - 87px);
+  margin-top: 87px;
+  background-color: #0D1A33;
+}
+
+main .sidebar .sidebar-links > a{
+  color: #FFF;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+}
+main .sidebar .sidebar-links > a:focus{
+  color: #FFF;
+}
+
+main .main{
+  flex: 1;
+  height: calc(100vh - 87px);
+  margin-top: 87px;
+}
+
+.main > .welcome-div{
+  width: 1071px;
+  height: 163px;
+  background-color: #0d1a3394;
+  border-radius: 12px;
+  display: block;
+  margin: 5% auto;
+}
+.main > .welcome-div > h1{
+  color: #FFF;
+  font-size: 20px;
+  padding: 29px 0px 0px 32px;
+}
+.main > .welcome-div > p{
+  color: #FFF;
+  font-size: 16px;
+  padding: 15px 0px 0px 32px;
+}
+
+.main > .stats{
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.main > .stats > .stats-card{
+  background-color: #0d1a3394;
+  border-radius: 12px;
+  width: 330px;
+  height: 163px;
+}
+.main > .stats > .stats-card > p{
+  color: #FFF;
+  font-size: 18px;
+  padding: 21px 0px 0px 27px;
+}
+.main > .stats > .stats-card > .stats-container > h1{
+  font-size: 60px;
+  color: #1144AA;
+  padding: 42px 0px 0px 27px;
+}
+
+.main > .stats > .stats-card > .stats-container > p{
+  font-size: 16px;
+  color: #BACDF5;
+  padding: 81px 0px 0px 27px;
+
+}
+
+
+.main > h1{
+  color: #FFF;
+  font-size: 20px;
+  padding: 44px 0px 10px 69px;
+}
+
+.table-container{
+  width: 90%;
+  height: 50%;
+  background-color: #0d1a3394;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
+table.Users {
+  background-color: #2A3D60;
+  width: 90%;
+  text-align: left;
+  border-collapse: collapse;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+table.Users td, table.Users th {
+  border: 0px solid #AAAAAA;
+  padding: 10px 5px;
+}
+table.Users tbody td {
+  font-size: 16px;
+  color: #FFF;
+}
+table.Users tr:nth-child(even) {
+  background: #020814;
+}
+table.Users thead {
+  background: #020814;
+}
+table.Users thead th {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+table.Users tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #020814;
+}
+table.Users tfoot td {
+  font-size: 14px;
+}
+table.Users tfoot .links {
+  text-align: right;
+}
+table.Users tfoot .links a{
+  display: inline-block;
+  background: #2A3D60;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+td > .options{
+  text-align: center;
+  background-color: transparent;
+}
+
+.popup_button {
+  padding: 0px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup {
+  width: 140px;
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.user-edit-button, .user-delete-button {
+  color: #FFF;
+  font-size: 16px;
+  background-color: transparent;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.user-delete-button {
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 18px;
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - CineMate</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/base/base.css">
+    <link rel="stylesheet" href="../styles/base/utilities.css">
+    <link rel="stylesheet" href="../styles/base/colors.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+    <script src="../scripts/dashboard.js" defer></script>
+</head>
+<body>
+    <nav class="navbar flex">
+        <a href="" class="logo flex">
+            <h1>ADMIN</h1>
+        </a>
+        <!-- <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div> -->
+        <div class="bell">
+            <a href=""><img src="../assets/icons/bell.svg" alt=""></a>
+        </div>
+    </nav>
+    <main class="flex ">
+        <div class="sidebar">
+            <ul class="sidebar-links flex colum center wrap">
+                <a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/pages/admin.html"><li>Main dashboard</li></a>
+                <a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/pages/user-management.html"><li>User management</li></a>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="welcome-div flex column">
+                <h1>Welcome back, Ahmad!</h1>
+                <p>You can view main information on this dashboard</p>
+            </div>
+            <div class="stats flex">
+                <div class="stats-card">
+                    <p>Number of users</p>
+                    <div class="flex stats-container">
+                        <h1 id="total-users"></h1>
+                        <p>New users</p>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <p>Number of movies</p>
+                    <div class="flex stats-container">
+                        <h1 id="total-movies"></h1>
+                        <p>Total movies</p>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <p>Number of admins</p>
+                    <div class="flex stats-container">
+                        <h1 id="total-admins"></h1>
+                        <p>Admins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

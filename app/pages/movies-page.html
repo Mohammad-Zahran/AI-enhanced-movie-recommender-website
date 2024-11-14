@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./../styles/base/colors.css">
+        <link rel="stylesheet" href="./../styles/base/utilities.css">
+        <link rel="stylesheet" href="./../styles/style.css">
+        <link rel="stylesheet" href="./../styles/base/base.css">
+        <link rel="stylesheet" href="./../styles/movies-page.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Movies Page</title>
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar flex wrap">
+                <a href="" class="logo flex">
+                    <img src="./../assets/images/cinemate-logo.svg" alt="">
+                    <h1>CineMate</h1>
+                </a>
+                <ul class="nav-links flex">
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#movies">Movies</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#recommendations">Recommendations</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#popular">Popular</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#about-us">About Us</a></li>
+                </ul>
+                <div class="flex navbar-tools">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search">
+                        <img class="search-icon" src="./../assets/icons/search-icon.svg" alt="">
+                    </div>
+                    <div id="account-info" class="account-tools hidden flex column center">
+                        <a href="">Bookmark</a>
+                        <button class="button login" id="logout-btn">Logout</button>
+                    </div>
+                    <!-- <div class="bookmark-icon">
+                        <a href="">
+                            <img src="./../assets/icons/bookmark.svg" alt="">
+                        </a>
+                    </div> -->
+                    <!-- Placeholder for login info or logout button -->
+                    <div class="user-info" id="user-info"></div>
+                </div>
+                <div id="burger" class="burger column">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </nav>
+        </header>
+
+
+        <!--Movies Section-->
+        <div class="movies_page">
+            <h2>Movies</h2>
+            <div class="movies-cards-page flex wrap" id="movies-cards-page">
+
+            </div>
+        </div>
+
+        <footer class="flex wrap">
+            <div class="footer-1 flex column wrap">
+                <a href="" class="flex logo">
+                    <img src="../assets/images/cinemate-logo.svg" alt="">
+                    <h3>CineMate</h3>
+                </a>
+                <p>Your resource for AI filtered<br> movie lists that helps your searching journey.</p>
+            </div>
+            <div class="footer-2 flex wrap">
+                <ul>
+                    <li><a href="">Generes</a></li>
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Horror</a></li>
+                    <li><a href="">Action</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Get to know us</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Let's connect</a></li>
+                    <div class="icons flex">
+                        <img src="../assets/icons/instagram.svg" alt="">
+                        <img src="../assets/icons/tiktok.svg" alt="">
+                        <img src="../assets/icons/discord.svg" alt="">
+                    </div>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="./../scripts/movies-page.js"></script>
+    </body>
+</html>

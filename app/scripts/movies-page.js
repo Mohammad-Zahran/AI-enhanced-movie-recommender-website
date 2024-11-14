@@ -1,4 +1,4 @@
-class Movies{
+class MoviesPage{
 
     constructor(apiUrl, userId){
         this.apiUrl = apiUrl;
@@ -13,18 +13,13 @@ class Movies{
             const rawResponse = await response.text();
             const movies = JSON.parse(rawResponse);
             
-            const eightMovies = movies.slice(0, 8);
             const userRatings = await this.fetchUserRatings() || [];
-            this.displayMovies(eightMovies, userRatings);
-
+            await this.displayMoviesOnPage(movies, userRatings);
         }
         catch(error){
             console.error("Error fetching data ", error);
         }
     }
-
-
-    
     async markLikedMovies(movies){
         try{
             const LikesResponse = await fetch(`${this.apiUrl}/getLike.php?user_id=${this.userId}`);
@@ -74,7 +69,7 @@ class Movies{
                     const likeBtn = movieCard.querySelector(".bookmark-btn");
 
                     if (likes.includes(movie.id)) {
-                        likeBtn.classList.add("active");
+                        likeBtn.classList.toggle("active");
                     } else {
                         likeBtn.classList.remove("active");
                     }
@@ -89,9 +84,30 @@ class Movies{
         }
     }
 
-    // function to display movies on the section movies
-    async displayMovies(movies, userRatings = []) {
-        const movies_cards = document.getElementById("movies-cards");
+    // Track click event
+    async trackClick(movieId) {
+
+        const response = await fetch(`${this.apiUrl}/updateClicksDuration.php`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: this.userId,
+                movieId: movieId,
+                action: 'click'
+            }),
+        })
+        
+        if (response.ok){
+            console.log("done click");
+        }
+    }
+
+    // function to display all movies on a page
+    async displayMoviesOnPage(movies, userRatings = []) {
+        const movies_cards = document.getElementById("movies-cards-page");
+        if (!movies_cards) return;
         movies.forEach(movie=>{
             const movieCard = document.createElement('div');
             movieCard.classList.add('movie-card');
@@ -122,6 +138,7 @@ class Movies{
                 </div>
             `;
             movies_cards.appendChild(movieCard);
+            console.log(movie.id)
 
             // Display the saved rating for this movie, if available
             const savedRating = userRatings.find(r => r.movie_id === movie.id);
@@ -134,18 +151,17 @@ class Movies{
                 });
             }
 
-            movieCard.addEventListener("click", () => {
-                this.trackClick(movie.id);
-                setTimeout(() => {
-                    window.location.href = `./pages/movie-details.html?id=${movie.id}`;
-                }, 500);
-                
-            });
-
             const bookmark_button = movieCard.querySelector(".bookmark-btn");
             bookmark_button.addEventListener("click", (e) => {
                 e.stopPropagation();
-                this.toggleBookmark(movie.id, bookmark_button);
+                this.toggleBookmark(e, movie.id, bookmark_button);
+            });
+
+            movieCard.addEventListener("click", () => {
+                this.trackClick(movie.id);
+                setTimeout(() => {
+                    window.location.href = `../pages/movie-details.html?id=${movie.id}`;
+                }, 500);
             });
 
             const like_btn = movieCard.querySelector(".like-btn");
@@ -155,7 +171,6 @@ class Movies{
             });
         });
 
-        
         this.markBookmarkedMovies(movies);
         this.markLikedMovies(movies);
 
@@ -206,17 +221,17 @@ class Movies{
         });
     }
 
-    async toggleBookmark(movieId, likeBtn){
+    async toggleBookmark(event, movieId, bookmarkBtn){
         try {
             const response = await fetch(`${this.apiUrl}/bookmark.php?user_id=${this.userId}&movie_id=${movieId}`);
             const result = await response.json();
 
             if (result.message === "Added") {
                 // Toggle the "filled" class on success
-                likeBtn.classList.toggle("active");
+                bookmarkBtn.classList.toggle("active");
             } 
             else if(result.message === "Deleted"){
-                likeBtn.classList.remove("active");
+                bookmarkBtn.classList.remove("active");
             }
             else if (result.error) {
                 console.error(result.error);
@@ -232,7 +247,8 @@ class Movies{
             const result = await response.json();
 
             if (result.message === "Added") {
-                likeBtn.classList.add("active");
+                // Toggle the "filled" class on success
+                likeBtn.classList.toggle("active");
             } 
             else if(result.message === "Deleted"){
                 likeBtn.classList.remove("active");
@@ -240,7 +256,7 @@ class Movies{
             else if (result.error) {
                 console.error(result.error);
             }
-
+            
             const movieCard = document.getElementById(`movie-${movieId}`);
             const likesNumber = movieCard.querySelector(".likes-number");
             let currentLikes = parseInt(likesNumber.textContent);
@@ -257,9 +273,8 @@ class Movies{
 
             // Update the like count in the database
             await this.updateLikesInDatabase(movieId, currentLikes);
-            this.updateMostPopularMoviesLikes(movieId, currentLikes);
-
-        } catch (error) {
+        } 
+        catch (error) {
             console.error("Error updating like status:", error);
         }
     }
@@ -299,144 +314,12 @@ class Movies{
             console.error("Error fetching user ratings", error);
             return [];
         }
-    }
-    
-    // Track click event
-    async trackClick(movieId) {
-
-        const response = await fetch(`${this.apiUrl}/updateClicksDuration.php`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userId: this.userId,
-                movieId: movieId,
-                action: 'click'
-            }),
-        })
-        
-        if (response.ok){
-            console.log("done click");
-        }
-    }
-
-    
-    // fetch the API of get the most popular movies
-    async fetchMostPopularMovies(){
-        try{
-            const response = await fetch(`${this.apiUrl}/getMostPopularMovies.php`);
-            if (!response.ok) throw new Error('Failed to fetch most popular movies');
-            const data = await response.json();
-            console.log(data);
-
-            const mostPopular = data.movies.slice(0, 10);
-            this.displayMostPopularMovies(mostPopular);
-        }
-        catch(error){
-            console.error("Error fetching data ", error);
-        }
-    }
-
-    // function to display most 10 popular moves
-    displayMostPopularMovies(movies){
-        let count = 1;
-        const swiper_wrapper = document.getElementById("swiper-wrapper");
-        movies.forEach(movie=>{
-            const swiper_slide = document.createElement('div');
-            swiper_slide.classList.add('swiper-slide');
-            swiper_slide.id = `popular-${movie.id}`;
-            swiper_slide.innerHTML =`
-                <div class="popular-number">${count++}</div>
-                <img src="${movie.image}" alt="${movie.movie_title} poster" class="movie-poster">
-                <div class="popular-details">
-                    <h3>${movie.movie_title}</h3>
-                    <p>Number of likes: <span class="number_of_likes">${movie.number_of_likes}</span></p>
-                    <p>Top spot this week for action fans!</p>
-                </div>
-            `;
-            swiper_wrapper.appendChild(swiper_slide);
-
-            swiper_slide.addEventListener("click", () => {
-                this.trackClick(movie.id);
-                setTimeout(() => {
-                    window.location.href = `./pages/movie-details.html?id=${movie.id}`;
-                }, 500);
-            });
-        });
-    }
-
-    async updateMostPopularMoviesLikes(movieId, currentLikes) {
-        console.log("hello");
-        const swiperSlide = document.getElementById(`popular-${movieId}`);
-        if(swiperSlide){
-            const numberOfLikes = swiperSlide.querySelector(".number_of_likes");
-
-            if(numberOfLikes){
-                numberOfLikes.textContent = currentLikes;
-            }
-            else {
-                console.error("Number of likes element not found.");
-            }
-        } 
-        else {
-            console.error("Popular movie slide not found.");
-        }
-    }
-
-    viewMore(){
-        const view_button = document.getElementById("view-more-btn");
-        view_button.addEventListener("click", ()=>{
-            window.location.href = "./pages/movies-page.html";
-        })
-    }
+    }   
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const userId = localStorage.getItem("UserId");
-    const movieFetcher = new Movies('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
-    movieFetcher.fetchMovies();
-    movieFetcher.fetchMostPopularMovies();
-    movieFetcher.viewMore();
-
-    // Burger Menu
-    const burger = document.getElementById("burger");
-    const navLinks = document.querySelector(".nav-links");
-    var startButton = document.getElementById("start");
-    var start = document.getElementById("start-now");
-
-    burger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    burger.classList.toggle("active");
-    });
+    const moviePageFetcher = new MoviesPage('http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/server', userId);
+    moviePageFetcher.fetchMovies();
+    
 });
-
-// Pop up for the admin page - Start
-const popup_buttons = document.querySelectorAll('.popup_button');
-
-popup_buttons.forEach(button => {
-  const popup = document.createElement('div');
-  popup.classList.add('popup');
-  popup.innerHTML = `
-  
-  <p>
-    <button class="user-edit-button">Set admin</button>
-    <button class="user-edit-button">Ban user</button>
-    <button class="user-delete-button">Delete user</button>
-  </p>
-  
-  `;
-
-  document.body.appendChild(popup);
-  button.addEventListener('click', function() {
-    if (popup.style.display === 'block') {
-      popup.style.display = 'none';
-    } else {
-      const buttonRect = button.getBoundingClientRect();
-      popup.style.top = `${buttonRect.bottom + window.scrollY + 10}px`;
-      popup.style.left = `${buttonRect.left + window.scrollX}px`;
-      popup.style.display = 'block';
-    }
-  });
-});
-// Pop up for the admin page - End

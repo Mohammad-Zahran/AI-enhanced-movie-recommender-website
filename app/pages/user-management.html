@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - CineMate</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/base/base.css">
+    <link rel="stylesheet" href="../styles/base/utilities.css">
+    <link rel="stylesheet" href="../styles/base/colors.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+
+    <script src="../scripts/admin.js" defer></script>
+
+</head>
+<body>
+    <nav class="navbar flex">
+        <a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/pages/admin.html" class="logo flex">
+            <h1>ADMIN</h1>
+        </a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="bell">
+            <a href=""><img src="../assets/icons/bell.svg" alt=""></a>
+        </div>
+    </nav>
+    <main class="flex ">
+        <div class="sidebar">
+            <ul class="sidebar-links flex colum center wrap">
+                <a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/pages/admin.html"><li>Main dashboard</li></a>
+                <a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/pages/user-management.html"><li>User management</li></a>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>Users</h1>
+            <div class="table-container flex center">
+                <table class="Users">
+                    <thead>
+                    <tr>
+
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Duration On the Website</th>
+                    <th>No. of clicks</th>
+                    <th>Bookmarks</th> <!-- Column for the number of bookmarks -->
+                    <th>Status</th>
+                    <th>Options</th>
+
+
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                    <td colspan="8">
+                    <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+                    </td>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr>
+                    <!-- <td class="flex center">
+                        <button id="popup_button" class="options popup_button">
+                            <img src="../assets/icons/three-dots.svg" alt="">
+                        </button>
+                    </td> -->
+                    </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+</html>
