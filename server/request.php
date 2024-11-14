@@ -31,7 +31,7 @@
             $data = [
                 "model" => "gpt-3.5-turbo",
                 "messages" => [
-                    ["role" => "system", "content" => "You are Ribimo, a chatbot that recommends movies based on given details."],
+                    ["role" => "system", "content" => "You are Robimo, a chatbot that recommends movies based on given details."],
                     ["role" => "user", "content" => $prompt]
                 ],
                 "temperature" => 0.9,

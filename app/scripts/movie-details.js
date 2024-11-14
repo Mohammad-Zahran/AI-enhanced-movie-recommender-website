@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <h2>${movie.movie_title}</h2>
                 <img src="${movie.image}" alt="${movie.movie_title}">
                 <p class="summary"><span class="highlight">Summary:</span> ${movie.summary}</p>
-                <p class="duration"><span class="highlight">Duration:</span> ${movie.duaration}</p>
+                <p class="duration"><span class="highlight"><i class="fa-solid fa-clock"></i></span> ${movie.duaration}</p>
                 <p class="genre"><span class="highlight">Genre:</span> ${movie.genre}</p>
             `;
 
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             movieDetailsContainer.innerHTML +=`
-                <p class="released-date"><span class="highlight">Released Date:</span> ${movie.release_date}</p>
-                <p class="likes"><span class="highlight">Number of Likes:</span> ${movie.number_of_likes}</p>
+                <p class="released-date"><span class="highlight"><i class="fa-solid fa-calendar-days"></i></span> ${movie.release_date}</p>
+                <p class="likes"><span class="highlight"><i class="fa-solid fa-heart"></i></span> ${movie.number_of_likes}</p>
             `;
 
             if(movie.nationality !== null){
