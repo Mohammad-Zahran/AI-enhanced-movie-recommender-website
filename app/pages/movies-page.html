@@ -20,22 +20,27 @@
                     <h1>CineMate</h1>
                 </a>
                 <ul class="nav-links flex">
-                    <li><a href="">Recommendations</a></li>
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">Popular</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#movies">Movies</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#recommendations">Recommendations</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#popular">Popular</a></li>
+                    <li><a href="http://localhost/FSW-SE-Factory/AI-enhanced-movie-recommender-website/app/#about-us">About Us</a></li>
                 </ul>
                 <div class="flex navbar-tools">
                     <div class="search-bar">
                         <input type="text" placeholder="Search">
                         <img class="search-icon" src="./../assets/icons/search-icon.svg" alt="">
                     </div>
-                    <div class="bookmark-icon">
+                    <div id="account-info" class="account-tools hidden flex column center">
+                        <a href="">Bookmark</a>
+                        <button class="button login" id="logout-btn">Logout</button>
+                    </div>
+                    <!-- <div class="bookmark-icon">
                         <a href="">
                             <img src="./../assets/icons/bookmark.svg" alt="">
                         </a>
-                    </div>
-                    <button class="button login">Log In</button>
+                    </div> -->
+                    <!-- Placeholder for login info or logout button -->
+                    <div class="user-info" id="user-info"></div>
                 </div>
                 <div id="burger" class="burger column">
                     <div class="line line1"></div>
@@ -56,7 +61,10 @@
 
         <footer class="flex wrap">
             <div class="footer-1 flex column wrap">
-                <h2>CineMate</h2>
+                <a href="" class="flex logo">
+                    <img src="../assets/images/cinemate-logo.svg" alt="">
+                    <h3>CineMate</h3>
+                </a>
                 <p>Your resource for AI filtered<br> movie lists that helps your searching journey.</p>
             </div>
             <div class="footer-2 flex wrap">
@@ -72,10 +80,10 @@
                 </ul>
                 <ul>
                     <li><a href="">Let's connect</a></li>
-                    <div>
-                        <img src="./../assets/icons/instagram.svg" alt="">
-                        <img src="./../assets/icons/tiktok.svg" alt="">
-                        <img src="./../assets/icons/discord.svg" alt="">
+                    <div class="icons flex">
+                        <img src="../assets/icons/instagram.svg" alt="">
+                        <img src="../assets/icons/tiktok.svg" alt="">
+                        <img src="../assets/icons/discord.svg" alt="">
                     </div>
                 </ul>
             </div>

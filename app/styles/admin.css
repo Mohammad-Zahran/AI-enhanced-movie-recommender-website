@@ -24,7 +24,7 @@ main .sidebar{
   width: 250px;
   height: calc(100vh - 87px);
   margin-top: 87px;
-  background-color: #001030a6;
+  background-color: #0D1A33;
 }
 
 main .sidebar .sidebar-links > a{
@@ -35,7 +35,7 @@ main .sidebar .sidebar-links > a{
   font-weight: bold;
 }
 main .sidebar .sidebar-links > a:focus{
-  color: #524F4F;
+  color: #FFF;
 }
 
 main .main{
@@ -58,7 +58,7 @@ main .main{
   padding: 29px 0px 0px 32px;
 }
 .main > .welcome-div > p{
-  color: #524F4F;
+  color: #FFF;
   font-size: 16px;
   padding: 15px 0px 0px 32px;
 }
@@ -76,7 +76,7 @@ main .main{
 }
 .main > .stats > .stats-card > p{
   color: #FFF;
-  font-size: 16px;
+  font-size: 18px;
   padding: 21px 0px 0px 27px;
 }
 .main > .stats > .stats-card > .stats-container > h1{
@@ -87,7 +87,7 @@ main .main{
 
 .main > .stats > .stats-card > .stats-container > p{
   font-size: 16px;
-  color: #524F4F;
+  color: #BACDF5;
   padding: 81px 0px 0px 27px;
 
 }
@@ -120,15 +120,14 @@ table.Users {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-
 }
 table.Users td, table.Users th {
   border: 0px solid #AAAAAA;
-  padding: 3px 2px;
+  padding: 10px 5px;
 }
 table.Users tbody td {
   font-size: 16px;
-  color: #524F4F;
+  color: #FFF;
 }
 table.Users tr:nth-child(even) {
   background: #020814;
@@ -137,7 +136,7 @@ table.Users thead {
   background: #020814;
 }
 table.Users thead th {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #FFFFFF;
 }
@@ -160,3 +159,43 @@ table.Users tfoot .links a{
   padding: 2px 8px;
   border-radius: 5px;
 }
+
+td > .options{
+  text-align: center;
+  background-color: transparent;
+}
+
+.popup_button {
+  padding: 0px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.popup {
+  width: 140px;
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.user-edit-button, .user-delete-button {
+  color: #FFF;
+  font-size: 16px;
+  background-color: transparent;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.user-delete-button {
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 18px;
+}
+

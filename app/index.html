@@ -16,6 +16,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
         <script src="./scripts/gsap.js"></script>
         <script src="./scripts/script.js"></script>
+        <script src="./scripts/search.js" defer></script>
     </head>
     <body>
         <header>
@@ -25,22 +26,29 @@
                     <h1>CineMate</h1>
                 </a>
                 <ul class="nav-links flex">
-                    <li><a href="">Recommendations</a></li>
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">Popular</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                    <li><a href="#popular">Popular</a></li>
+                    <li><a href="#about-us">About Us</a></li>
                 </ul>
                 <div class="flex navbar-tools">
                     <div class="search-bar">
-                        <input type="text" placeholder="Search">
-                        <img class="search-icon" src="./assets/icons/search-icon.svg" alt="">
+                        <input type="text" id="search-input" name="search" placeholder="Search">
+                        <button class="search-icon-button" id="search-button">
+                            <img class="search-icon" src="./assets/icons/search-icon.svg" alt="Search">
+                        </button>
+                    </div>  
+                    <div id="account-info" class="account-tools hidden flex column center">
+                        <!-- <a href="">Bookmark</a> -->
+                        <button class="button login" id="logout-btn">Logout</button>
                     </div>
-                    <div class="bookmark-icon">
+                    <!-- <div class="bookmark-icon">
                         <a href="">
                             <img src="./assets/icons/bookmark.svg" alt="">
                         </a>
-                    </div>
-                    <button class="button register">Register</button>
+                    </div> -->
+                    <!-- Placeholder for login info or logout button -->
+                    <div class="user-info" id="user-info"></div>
                 </div>
                 <div id="burger" class="burger column">
                     <div class="line line1"></div>
@@ -55,21 +63,24 @@
                 <p>
                     Your resource for AI filtered movie lists that helps your searching journey.
                 </p>
-                <button class="button">Pick a movie now</button>
+                <button class="hero-button" onclick="window.location.href='pages/chatbot.html'">Chat with Robima</button>
             </div>
         </header>
+        
 
         <!--Movies Section-->
         <div class="movies">
+            <div class="movies-header">
             <h2>Movies</h2>
+            <button class="view-more-btn button" id="view-more-btn">View More</button>
+            </div>
             <div class="movies-cards flex wrap" id="movies-cards">
 
             </div>
-            <button class="view-more-btn button" id="view-more-btn">View More</button>
         </div>
 
         <!-- Recommendation Section -->
-        <section class="recommendation-section">
+        <section id="recommendations" class="recommendation-section">
             <h2>Recommendations</h2>
             <div class="swiper recommendation-swiper">
                 <div class="swiper-wrapper">
@@ -109,7 +120,7 @@
         </section>
 
         <!-- Popular Slide Item -->
-        <section class="popular-section">
+        <section id="popular" class="popular-section">
             <h2>Top 10 on Title This Week</h2>
             <div class="swiper popular-swiper">
                 <div class="swiper-wrapper" id="swiper-wrapper">
@@ -122,9 +133,12 @@
             </div>
         </section>
     
-        <footer class="flex wrap">
+        <footer id="about-us" class="flex wrap">
             <div class="footer-1 flex column wrap">
-                <h2>CineMate</h2>
+                <a href="" class="flex logo">
+                    <img src="./assets/images/cinemate-logo.svg" alt="">
+                    <h3>CineMate</h3>
+                </a>
                 <p>Your resource for AI filtered<br> movie lists that helps your searching journey.</p>
             </div>
             <div class="footer-2 flex wrap">
@@ -140,7 +154,7 @@
                 </ul>
                 <ul>
                     <li><a href="">Let's connect</a></li>
-                    <div>
+                    <div class="icons flex">
                         <img src="./assets/icons/instagram.svg" alt="">
                         <img src="./assets/icons/tiktok.svg" alt="">
                         <img src="./assets/icons/discord.svg" alt="">
@@ -148,8 +162,10 @@
                 </ul>
             </div>
         </footer>
+        
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./scripts/swiper.js"></script>
+        <script src="scripts/session.js"></script> 
     </body>
 </html>

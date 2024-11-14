@@ -11,3 +11,4 @@ include "connection.php";
     // We used this as to return as JSON ARRAY
     echo json_encode($result);
 ?>
+

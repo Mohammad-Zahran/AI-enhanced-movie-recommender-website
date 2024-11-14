@@ -16,3 +16,5 @@ if ($connection->connect_error){
   die("Error happened");
 }
 
+?>
+
