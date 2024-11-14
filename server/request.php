@@ -1,4 +1,6 @@
 <?php 
+
+    header('Content-Type: application/json');
     require __DIR__ . '/../vendor/autoload.php'; // Correct path to autoload
     use Orhanerday\OpenAi\OpenAi;
 
@@ -19,7 +21,29 @@
         // Check if any movie in the JSON matches the user input
         foreach ($movies as $movie) {
             if (stripos($prompt, $movie['title']) !== false) {
-                $responseText = "Here are the details for {$movie['title']}:{$movie['genres']} ";
+                $responseText = "Here are the details for {$movie['title']}:<br>
+                    <strong>Summary:</strong> {$movie['additionalData']['summary']},<br>
+                    <strong>Genres:</strong> {$movie['genres']},<br>
+                ";
+                if (!empty($movie['additionalData']['directors'])){
+                    $responseText .= "<strong>Directors:</strong> {$movie['additionalData']['directors']}<br>";
+                }
+                if (!empty($movie['additionalData']['cast']) && is_array($movie['additionalData']['cast'])) {
+                    $castList = implode(" ", $movie['additionalData']['cast']);
+                    $responseText .= "<strong>Cast:</strong> {$castList}<br>";
+                }
+                $responseText .= "Duration: {$movie['duration']}<br>";
+                if (!empty($movie['additionalData']['releaseDate'])){
+                    $responseText .= "<strong>Released Date:</strong> {$movie['additionalData']['releaseDate']}<br>";
+                }
+
+                $likes = !empty($movie['additionalData']['numberOfLikes']) ? $movie['additionalData']['numberOfLikes'] : "0";
+                $responseText .= "<strong>Number of likes:</strong> {$likes}<br>";
+
+                if (!empty($movie['additionalData']['nationality'])){
+                    $responseText .= "<strong>Nationality:</strong> {$movie['additionalData']['nationality']}<br>";
+                }
+
                 $movieFound = true;
                 break;
             }
@@ -31,7 +55,7 @@
             $data = [
                 "model" => "gpt-3.5-turbo",
                 "messages" => [
-                    ["role" => "system", "content" => "You are Robimo, a chatbot that recommends movies based on given details."],
+                    ["role" => "system", "content" => "You are Robimo, a chatbot that recommends movies based on given details, it can be in engkish or france. You must not answer outside the json file"],
                     ["role" => "user", "content" => $prompt]
                 ],
                 "temperature" => 0.9,
