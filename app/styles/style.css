@@ -344,7 +344,7 @@ h2{
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 10px;
-    height: 600px;
+    height: 500px;
     max-height: 600px;
     transition: transform 0.3s ease; 
     max-width: 300px;
@@ -358,10 +358,11 @@ h2{
 .popular-swiper .swiper-slide img {
     width: 90%;
     max-width: 100%;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;
+    margin-left: 15px;
 }
 
 
@@ -377,12 +378,12 @@ h2{
 .popular-details h3 {
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
-    color: #1144AA;
+    color: white;
 }
 
 .popular-details p {
     font-size: 1rem;
-    color: #BBB;
+    color: #0059b3;
 }
 
 .popular-number {
