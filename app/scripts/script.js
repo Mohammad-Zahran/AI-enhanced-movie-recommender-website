@@ -323,6 +323,3 @@ document.addEventListener("DOMContentLoaded", () => {
     burger.classList.toggle("active");
     });
 });
-
-
-

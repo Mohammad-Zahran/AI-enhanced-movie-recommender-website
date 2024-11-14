@@ -7,13 +7,27 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
 
         if (data.status === "Logged in") {
+            
             // Display username and logout button
-            userInfo.innerHTML = `
-                <span>
-                    ${data.username.slice(0,2).toUpperCase()}
-                </span>
-                <button class="button login" id="logout-btn">Logout</button>
+            const accountLink = document.createElement('a');
+            accountLink.id = 'account';
+            accountLink.href = '';
+            accountLink.innerHTML = `
+                <div class="account flex center">
+                    ${data.username.slice(0, 2).toUpperCase()}
+                </div>
             `;
+
+            // Append the new element to the userInfo container
+            userInfo.appendChild(accountLink);
+
+            // Attach the event listener
+            const accountInfoDiv = document.getElementById('account-info');
+            accountLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                accountInfoDiv.classList.toggle('hidden');
+            });
+
             // Handle logout button click
             document.getElementById("logout-btn").addEventListener("click", async () => {
                 const logoutResponse = await fetch("../server/logout.php");
