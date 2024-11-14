@@ -1,8 +1,15 @@
 const input = document.querySelector('input');
-const send = document.querySelector('button');
+const send = document.getElementById('send');
 const chatContainer = document.querySelector('.chats');
+const newChatButton = document.getElementById("new-chat-btn");
+const chatHistoryContainer = document.querySelector(".chat-history");
 
 const userId = localStorage.getItem("UserId");
+let chatId = localStorage.getItem("ChatId") || generateChatId();
+
+function generateChatId(){
+    return Math.ceil((Math.random() * 100));
+}
 
 send.onclick = () => {
     if (input.value) {
@@ -24,7 +31,7 @@ send.onclick = () => {
         `;
         scrollDown();
 
-        bot(); // Call bot function to get response
+        bot(input.value); // Call bot function to get response
         input.value = null;
     }
 }
@@ -32,6 +39,7 @@ send.onclick = () => {
 // When pressing Enter key
 input.addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
+        console.log('Enter key pressed');
         e.preventDefault();
         send.click();
     }
@@ -43,11 +51,12 @@ function scrollDown() {
 }
 
 // Bot response
-function bot() {
+function bot(userMessage) {
     const http = new XMLHttpRequest();
     const data = new FormData();
-    data.append('prompt', input.value);
+    data.append('prompt', userMessage);
     data.append("user_id", userId);
+    data.append("chat_id", chatId);
     http.open('POST', './../../server/request.php', true);
     http.send(data);
 
@@ -64,9 +73,69 @@ function bot() {
         }
 
         scrollDown();
-    }
+
+        saveChatHistory();
+    };
 }
 
 function processResponse(res) {
     return res.replace(/(\r\n|\r|\n)/gm, '').trim();
 }
+
+newChatButton.addEventListener("click", () => { 
+    console.log("New chat button clicked"); 
+
+    saveChatHistory();
+
+    chatContainer.innerHTML = ''; 
+
+    chatId = generateChatId(); 
+
+    localStorage.setItem("ChatId", chatId);
+
+    const lastMessage = chatContainer.querySelector('.message:last-child'); 
+    const snippet = lastMessage ? lastMessage.innerText : 'No messages'; 
+    const timestamp = new Date().toLocaleString(); 
+
+    chatHistoryContainer.innerHTML += ` 
+        <div class="chat-item"> 
+            <p class="chat-title">Chat with Robima</p> 
+            <p class="chat-snippet">${snippet}</p> 
+            <span class="chat-timestamp">${timestamp}</span> 
+        </div>
+    `; 
+});
+
+function saveChatHistory() { 
+    const chatHistory = localStorage.getItem("ChatHistory") || "[]"; 
+    const chatHistoryArray = JSON.parse(chatHistory); 
+    const currentChat = { 
+        chatId: chatId, 
+        chatContent: chatContainer.innerHTML 
+    }; 
+    chatHistoryArray.push(currentChat); 
+    localStorage.setItem("ChatHistory", JSON.stringify(chatHistoryArray));
+}
+
+function loadChatHistory() { 
+    const chatHistory = localStorage.getItem("ChatHistory") || "[]"; 
+    const chatHistoryArray = JSON.parse(chatHistory); 
+    chatHistoryArray.forEach(chat => { 
+        if (chat.chatId === chatId) { 
+            chatContainer.innerHTML = chat.chatContent; 
+        } 
+        else { 
+            const lastMessage = chat.chatContent.split('<div class="message">').pop().split('</div>')[0]; 
+            const snippet = lastMessage ? lastMessage : 'No messages'; 
+            const timestamp = new Date().toLocaleString(); 
+            chatHistoryContainer.innerHTML += ` 
+                <div class="chat-item"> 
+                <p class="chat-title">Chat with Robima</p> 
+                <p class="chat-snippet">${snippet}</p> 
+                <span class="chat-timestamp">${timestamp}</span> 
+                </div> 
+            `; 
+        } 
+    }); 
+}      
+window.onload = loadChatHistory;

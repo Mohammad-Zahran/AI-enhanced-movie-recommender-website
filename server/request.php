@@ -10,6 +10,7 @@
 
     $prompt = isset($_POST['prompt']) ? $_POST['prompt'] : null;
     $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : null; 
+    $chat_id = isset($_POST['chat_id']) ? $_POST['chat_id'] : null;
 
     if ($prompt) {
         // Load the movie data from a JSON file
@@ -54,7 +55,7 @@
             $data = [
                 "model" => "gpt-3.5-turbo",
                 "messages" => [
-                    ["role" => "system", "content" => "You are Robimo, a chatbot that can only provide information about movies in the given movie database. You must only respond with movie details from the provided JSON file, and if the movie is not found, respond with 'Sorry, movie not found in the database.' Do not answer anything that is not related to movies or outside the data provided."],
+                    ["role" => "system", "content" => "You are Robimo, a chatbot that can  provide information about movies in the given movie database. You must only respond with movie details from the provided JSON file, and if the movie is not found, respond with 'Sorry, movie not found in the database.'"],
                     ["role" => "user", "content" => $prompt]
                 ],
                 "temperature" => 0.9,
@@ -79,7 +80,6 @@
             }
         }
         
-        $chat_id = 1;
         $query = $connection->prepare("INSERT INTO ai_chatbot (user_id, chat_id, prompt, response) VALUES (?, ?, ?, ?)");
         $query->bind_param("iiss", $user_id, $chat_id, $prompt, $responseText); 
         $query->execute();
