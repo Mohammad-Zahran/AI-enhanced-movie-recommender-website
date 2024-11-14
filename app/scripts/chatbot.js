@@ -52,19 +52,21 @@ function bot(){
         scrollDown();
     }, 1000);
     http.onload = () => {
-        // process response
-    var response = JSON.parse(http.response);
-    var replyText = processResponse(response.choices[0].text);
-    var replyContainer = document.querySelectorAll('.response');
-    replyContainer[replyContainer.length-1].querySelector('div').innerHTML = replyText;
-    scrollDown();
+        var response = JSON.parse(http.response);
+    
+        if (response.error) {
+            var replyText = "Sorry, there was an error with the response.";
+        } 
+        else {
+            var replyText = processResponse(response.response);
+        }
+        var replyContainer = document.querySelectorAll('.response');
+        replyContainer[replyContainer.length - 1].querySelector('div').innerHTML = replyText;
+        scrollDown();
     }
 }
 
-function processResponse(res){
-    var arr = res.split(':')
-    return arr[arr.length-1]
-        .replace(/(\r\n|\r|\n)/gm, '')
-        .trim()
+function processResponse(res) {
+    return res.replace(/(\r\n|\r|\n)/gm, '').trim();
 }
 

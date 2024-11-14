@@ -1,8 +1,9 @@
 body{
     background-color: #0D1A33;
-    font-family: 'Neue Haas Unica', sans-serif;
+    /*font-family: 'Neue Haas Unica', sans-serif;*/
     color: white;
 }
+/*
 @font-face {
     font-family: 'Neue Haas Unica';
     src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Regular.ttf') format('truetype');
@@ -19,7 +20,7 @@ body{
     font-family: 'Neue Haas Unica';
     src: url('../../assets/fonts/neue-haas-unica/NeueHaasUnica-Bold.ttf') format('truetype');
     font-weight: 700; 
-}
+}*/
 
 .ai-section {
     display: flex;
@@ -199,7 +200,7 @@ body{
 }
 .chat-body .sender input{
     background-color: #1144AA;
-    font-family: 'Noto Sans Adlam Unjoined', sans-serif;
+    /*font-family: 'Noto Sans Adlam Unjoined', sans-serif;*/
     padding: 16px 20px;
     font-size: 17px;
     border-radius: 30px;
