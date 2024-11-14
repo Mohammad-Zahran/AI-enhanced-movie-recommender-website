@@ -350,7 +350,7 @@ h2{
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 10px;
-    height: 600px;
+    height: 500px;
     max-height: 600px;
     transition: transform 0.3s ease; 
     max-width: 300px;
@@ -364,10 +364,11 @@ h2{
 .popular-swiper .swiper-slide img {
     width: 90%;
     max-width: 100%;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;
+    margin-left: 15px;
 }
 
 
@@ -383,6 +384,7 @@ h2{
 .popular-details h3 {
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
+<<<<<<< HEAD
     color: #1144AA;
     font-family: 'Raleway';
 }
@@ -391,6 +393,14 @@ h2{
     font-size: 14px;
     color: #BBB;
     font-family: 'Roboto';
+=======
+    color: white;
+}
+
+.popular-details p {
+    font-size: 1rem;
+    color: #0059b3;
+>>>>>>> 1a3ecb95d7aff9f05bb76938edddbe3a21b1a04f
 }
 
 .popular-number {
