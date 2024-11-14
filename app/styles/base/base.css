@@ -211,7 +211,9 @@ footer{
   justify-content: flex-start;
   padding-left: 156px;
 }
-
+.user-info .button{
+  background-color: orangered !important;
+}
 .footer-1 h3{
   font-family: 'Montserrat Alternates';
 }
